@@ -1,161 +1,270 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us - Akula Cybersecurity</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary-orange-start": "#F58220",
-            "primary-orange-end": "#FF9F43",
-            "text-gray-start": "#7A7A7A",
-            "text-gray-end": "#9C9C9C",
-            "background-light": "#FFFFFF",
-            "background-dark": "#101922",
-          },
-          fontFamily: {
-            "display": ["Inter", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About Us - Akula Cybersecurity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-start": "#F58220",
+              "primary-end": "#FF9F43",
+              "text-primary": "#2D3748",
+              "text-secondary": "#7A7A7A",
+              "text-secondary-end": "#9C9C9C",
+              "background-light": "#FFFFFF",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
           },
         },
-      },
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-    }
-  </style>
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark">
-<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="flex items-center justify-between whitespace-nowrap border-b border-zinc-200/50 dark:border-zinc-800/50 px-4 sm:px-6 lg:px-10 py-3 max-w-7xl mx-auto">
-<div class="flex items-center gap-4 text-zinc-900 dark:text-white">
-<div class="size-6 text-primary-orange-start">
-<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
-</svg>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Akula Cybersecurity</h2>
-</div>
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-zinc-600 dark:text-zinc-300 hover:text-primary-orange-start dark:hover:text-primary-orange-start text-sm font-medium leading-normal transition-colors" href="/">Home</a>
-<a class="text-zinc-600 dark:text-zinc-300 hover:text-primary-orange-start dark:hover:text-primary-orange-start text-sm font-medium leading-normal transition-colors" href="/">Services</a>
-<a class="text-primary-orange-start dark:text-primary-orange-start text-sm font-bold leading-normal" href="/">About Us</a>
-<a class="text-zinc-600 dark:text-zinc-300 hover:text-primary-orange-start dark:hover:text-primary-orange-start text-sm font-medium leading-normal transition-colors" href="/">Internships</a>
-<a class="text-zinc-600 dark:text-zinc-300 hover:text-primary-orange-start dark:hover:text-primary-orange-start text-sm font-medium leading-normal transition-colors" href="/">Contact</a>
-</nav>
-</div>
-</header>
-<main class="flex-1 px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-<div class="mx-auto max-w-5xl flex flex-col gap-12 sm:gap-20">
-<section class="w-full @container">
-<div class="@[480px]:p-4">
-<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-6" data-alt="Abstract blue and dark gray technological grid pattern" style='background-image: linear-gradient(rgba(16, 25, 34, 0.8) 0%, rgba(16, 25, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-9qhewNVgP2hV1B1ri6cc38lB7cykcJmWr_zTw-yoE5CQA3xF4KbDP55YZjkk1XVaCtO03yerFdVbrjJqz-2eEZKUfBTo7kE5rphtCL_kqY-_iWxBKf3ZsE_k3qDfRNasWbWABs4GKCfGP1deI5GbsOjftKbLBsi0KcHDzMWlraWi0rZH-KfAkjBmXBquddaqHdVeHsozxHwEww3wmm9VnAc5AcY2Ysn06DHojuDIaV1YHHu6s86ZRPNKLaWTXapgVQuqAEN-jizX");'>
-<div class="flex flex-col gap-4 text-center max-w-3xl">
-<h1 class="bg-gradient-to-r from-primary-orange-start to-primary-orange-end text-transparent bg-clip-text text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Our Vision: A Secure Digital Future</h1>
-<p class="text-zinc-300 text-base font-normal leading-relaxed @[480px]:text-lg @[480px]:font-normal @[480px]:leading-relaxed">Akula Cybersecurity is at the forefront of developing next-generation security solutions, powered by artificial intelligence to protect the digital world from evolving threats.</p>
-</div>
-</div>
-</div>
-</section>
-<section>
-<h2 class="text-zinc-900 dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 text-center">Our Core Principles</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="flex flex-1 flex-col gap-4 rounded-xl border border-zinc-200/80 dark:border-zinc-800 bg-background-light dark:bg-zinc-900/50 p-6 transition-transform hover:-translate-y-1">
-<div class="text-primary-orange-start"><span class="material-symbols-outlined" style="font-size: 32px;">emoji_objects</span></div>
-<div class="flex flex-col gap-1">
-<h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Innovation</h3>
-<p class="text-text-gray-start dark:text-text-gray-end text-sm font-normal leading-normal">We constantly push the boundaries of technology to create cutting-edge security solutions.</p>
-</div>
-</div>
-<div class="flex flex-1 flex-col gap-4 rounded-xl border border-zinc-200/80 dark:border-zinc-800 bg-background-light dark:bg-zinc-900/50 p-6 transition-transform hover:-translate-y-1">
-<div class="text-primary-orange-start"><span class="material-symbols-outlined" style="font-size: 32px;">verified_user</span></div>
-<div class="flex flex-col gap-1">
-<h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Integrity</h3>
-<p class="text-text-gray-start dark:text-text-gray-end text-sm font-normal leading-normal">Our commitment to ethical practices and transparency builds trust with our clients and partners.</p>
-</div>
-</div>
-<div class="flex flex-1 flex-col gap-4 rounded-xl border border-zinc-200/80 dark:border-zinc-800 bg-background-light dark:bg-zinc-900/50 p-6 transition-transform hover:-translate-y-1">
-<div class="text-primary-orange-start"><span class="material-symbols-outlined" style="font-size: 32px;">groups</span></div>
-<div class="flex flex-col gap-1">
-<h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Collaboration</h3>
-<p class="text-text-gray-start dark:text-text-gray-end text-sm font-normal leading-normal">The best solutions are born from diverse minds working together towards a common goal.</p>
-</div>
-</div>
-<div class="flex flex-1 flex-col gap-4 rounded-xl border border-zinc-200/80 dark:border-zinc-800 bg-background-light dark:bg-zinc-900/50 p-6 transition-transform hover:-translate-y-1">
-<div class="text-primary-orange-start"><span class="material-symbols-outlined" style="font-size: 32px;">workspace_premium</span></div>
-<div class="flex flex-col gap-1">
-<h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Excellence</h3>
-<p class="text-text-gray-start dark:text-text-gray-end text-sm font-normal leading-normal">We strive for the highest standards in everything we do, from development to client support.</p>
-</div>
-</div>
-</div>
-</section>
-<section>
-<h2 class="text-zinc-900 dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 text-center">The Minds Behind Akula</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="flex flex-col items-center text-center bg-background-light dark:bg-zinc-900/50 rounded-xl p-6 border border-zinc-200/80 dark:border-zinc-800">
-<img class="w-28 h-28 rounded-full mb-4 object-cover" data-alt="Professional headshot of John Carter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTTPbBi8btSUb3cigbSqQWm_TvfN_R7oHs_CBRXX8Dil3Hq473yOuAcec-GkRJRw-hKopiL5a1ihyXlwLhgeVC6EktEe1krQfhc8PkFyRTsjpNOK_ZB1y78o5Kxl5BeBQw1yUEmKNC16BbOQdyxfteBaMvB5M1Caw-0vUhNUwcERYMNObP55uKxc_oB8mT4gg2Aoi5BM8LYiEqZODvSNB-aWhgnxr-xV2D3_f1PusstuJqUsOIuLq4mg16XhbW01AINEdlRrP8muoa"/>
-<h3 class="text-lg font-bold text-zinc-900 dark:text-white">John Carter</h3>
-<p class="text-sm text-primary-orange-start font-medium">Founder &amp; CEO</p>
-<p class="text-text-gray-start dark:text-text-gray-end text-sm mt-2">Visionary leader with 20+ years in cybersecurity, driving our mission to secure the digital frontier.</p>
-<div class="flex gap-4 mt-4">
-<a class="text-zinc-500 dark:text-zinc-400 hover:text-primary-orange-start dark:hover:text-primary-orange-start transition-colors" href="/"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
-<a class="text-zinc-500 dark:text-zinc-400 hover:text-primary-orange-start dark:hover:text-primary-orange-start transition-colors" href="/"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg></a>
-</div>
-</div>
-<div class="flex flex-col items-center text-center bg-background-light dark:bg-zinc-900/50 rounded-xl p-6 border border-zinc-200/80 dark:border-zinc-800">
-<img class="w-28 h-28 rounded-full mb-4 object-cover" data-alt="Professional headshot of Dr. Anya Sharma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtcg6hVeXrXohmFmDU7jgLn1sXVLhKnRtEcvg-FdqkKFLtgPi67VmIZUTNXX-_cPJbU14EOXCBJkJJRv5xiZvDfkaW7yR80d6G2lEH6Y4LNpJ1MlksX_R8U-B6KGSCD9q2jzEmh6-m9busaB9VP5BF0o3KTBJtdXG0T2GXmHemD6QRlc7NsBOaM5r9j8KHMfs_8exKqeKxirY8bmKnHxY0Oem4Lt3Bcl9l2pKFQJp443-tt7hzuw-EGEaDTyOYT2qOxiS6uYvtay7T"/>
-<h3 class="text-lg font-bold text-zinc-900 dark:text-white">Dr. Anya Sharma</h3>
-<p class="text-sm text-primary-orange-start font-medium">Head of AI Research</p>
-<p class="text-text-gray-start dark:text-text-gray-end text-sm mt-2">Leading our AI division to build predictive threat intelligence models and autonomous defense systems.</p>
-<div class="flex gap-4 mt-4">
-<a class="text-zinc-500 dark:text-zinc-400 hover:text-primary-orange-start dark:hover:text-primary-orange-start transition-colors" href="/"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
-</div>
-</div>
-<div class="flex flex-col items-center text-center bg-background-light dark:bg-zinc-900/50 rounded-xl p-6 border border-zinc-200/80 dark:border-zinc-800">
-<img class="w-28 h-28 rounded-full mb-4 object-cover" data-alt="Professional headshot of Michael Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUPDbbYAraAmjTVBuTIVYsEPLHDATa8IdBFjuy7MPP3BRcPQR0gNsumgJBfm3pPqoRwVOIOts9oA92rndEKkmEqegnW8GpIeG8XHJv8HBYxJ4iMX81Y7ovvMjFQC50Wq-lnPXXaULjOwtwJlz4qavgMtirbHAYryjjJmPAnVle7t01S79RElic8ifBWJl9MKSGoDSbWqFSZggDaEs7uZVm4Ma-vSqTxqoFAtYRTl56SYahd6z-OZqYaowbWzDsiIoP2MIepNM-pd11"/>
-<h3 class="text-lg font-bold text-zinc-900 dark:text-white">Michael Chen</h3>
-<p class="text-sm text-primary-orange-start font-medium">Lead Security Engineer</p>
-<p class="text-text-gray-start dark:text-text-gray-end text-sm mt-2">Architect of our core security platform, ensuring robust and scalable protection for our clients.</p>
-<div class="flex gap-4 mt-4">
-<a class="text-zinc-500 dark:text-zinc-400 hover:text-primary-orange-start dark:hover:text-primary-orange-start transition-colors" href="/"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
-<a class="text-zinc-500 dark:text-zinc-400 hover:text-primary-orange-start dark:hover:text-primary-orange-start transition-colors" href="/"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg></a>
-</div>
-</div>
-</div>
-</section>
-<section class="w-full bg-zinc-100 dark:bg-zinc-900/70 py-12 px-6 sm:px-10 rounded-xl">
-<div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-<div class="max-w-xl">
-<h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">Shape the Future of Cybersecurity</h2>
-<p class="mt-2 text-text-gray-start dark:text-text-gray-end">Join our team of innovators and help build a safer digital world. We are looking for passionate individuals to join our mission.</p>
-</div>
-<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gradient-to-r from-primary-orange-start to-primary-orange-end text-white text-base font-bold leading-normal tracking-[0.015em] whitespace-nowrap transition-transform hover:scale-105" href="/">
-<span>View Internships</span>
-</a>
-</div>
-</section>
-</div>
-</main>
-</div>
-</div>
-</body></html>
+<body class="font-display bg-background-light text-text-primary">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header - Matching index.html -->
+            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
+                <a class="flex items-center gap-3" href="index.html">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                        <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                            <path d="m8.5 10.5 3-2.5 4 2"></path>
+                            <path d="m15.5 10.5-3 2.5-4-2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                        <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="index.html">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Internships</a>
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
+                    </div>
+                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <span class="truncate">Get a Quote</span>
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-text-primary p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
+                    
+                    <!-- Hero Section -->
+                    <section>
+                        <div class="@container">
+                            <div class="@[480px]:p-0">
+                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-6 py-10" style='background-image: linear-gradient(rgba(16, 25, 34, 0.8) 0%, rgba(16, 25, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-9qhewNVgP2hV1B1ri6cc38lB7cykcJmWr_zTw-yoE5CQA3xF4KbDP55YZjkk1XVaCtO03yerFdVbrjJqz-2eEZKUfBTo7kE5rphtCL_kqY-_iWxBKf3ZsE_k3qDfRNasWbWABs4GKCfGP1deI5GbsOjftKbLBsi0KcHDzMWlraWi0rZH-KfAkjBmXBquddaqHdVeHsozxHwEww3wmm9VnAc5AcY2Ysn06DHojuDIaV1YHHu6s86ZRPNKLaWTXapgVQuqAEN-jizX");'>
+                                    <div class="flex flex-col gap-4 text-center max-w-3xl">
+                                        <h1 class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                            Our Vision: A Secure Digital Future
+                                        </h1>
+                                        <p class="text-gray-300 text-base font-normal leading-relaxed @[480px]:text-lg @[480px]:font-normal @[480px]:leading-relaxed">
+                                            Akula Cybersecurity is at the forefront of developing next-generation security solutions, powered by artificial intelligence to protect the digital world from evolving threats.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Core Principles Section -->
+                    <section>
+                        <h2 class="text-text-primary text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 text-center">Our Core Principles</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-transform hover:-translate-y-1 hover:shadow-lg">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined text-4xl">emoji_objects</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-lg font-bold leading-tight">Innovation</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">We constantly push the boundaries of technology to create cutting-edge security solutions.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-transform hover:-translate-y-1 hover:shadow-lg">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined text-4xl">verified_user</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-lg font-bold leading-tight">Integrity</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Our commitment to ethical practices and transparency builds trust with our clients and partners.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-transform hover:-translate-y-1 hover:shadow-lg">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined text-4xl">groups</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-lg font-bold leading-tight">Collaboration</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">The best solutions are born from diverse minds working together towards a common goal.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-transform hover:-translate-y-1 hover:shadow-lg">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined text-4xl">workspace_premium</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-lg font-bold leading-tight">Excellence</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">We strive for the highest standards in everything we do, from development to client support.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Team Section -->
+                    <section>
+                        <h2 class="text-text-primary text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 text-center">The Minds Behind Akula</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+                            <!-- Team Member 1 -->
+                            <div class="flex flex-col items-center text-center bg-gray-50 rounded-xl p-6 border border-gray-200">
+                                <img class="w-28 h-28 rounded-full mb-4 object-cover" alt="Professional headshot of John Carter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTTPbBi8btSUb3cigbSqQWm_TvfN_R7oHs_CBRXX8Dil3Hq473yOuAcec-GkRJRw-hKopiL5a1ihyXlwLhgeVC6EktEe1krQfhc8PkFyRTsjpNOK_ZB1y78o5Kxl5BeBQw1yUEmKNC16BbOQdyxfteBaMvB5M1Caw-0vUhNUwcERYMNObP55uKxc_oB8mT4gg2Aoi5BM8LYiEqZODvSNB-aWhgnxr-xV2D3_f1PusstuJqUsOIuLq4mg16XhbW01AINEdlRrP8muoa"/>
+                                <h3 class="text-lg font-bold text-text-primary">John Carter</h3>
+                                <p class="text-sm text-primary-start font-medium">Founder & CEO</p>
+                                <p class="text-text-secondary text-sm mt-2">Visionary leader with 20+ years in cybersecurity, driving our mission to secure the digital frontier.</p>
+                                <div class="flex gap-4 mt-4">
+                                    <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Team Member 2 -->
+                            <div class="flex flex-col items-center text-center bg-gray-50 rounded-xl p-6 border border-gray-200">
+                                <img class="w-28 h-28 rounded-full mb-4 object-cover" alt="Professional headshot of Dr. Anya Sharma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtcg6hVeXrXohmFmDU7jgLn1sXVLhKnRtEcvg-FdqkKFLtgPi67VmIZUTNXX-_cPJbU14EOXCBJkJJRv5xiZvDfkaW7yR80d6G2lEH6Y4LNpJ1MlksX_R8U-B6KGSCD9q2jzEmh6-m9busaB9VP5BF0o3KTBJtdXG0T2GXmHemD6QRlc7NsBOaM5r9j8KHMfs_8exKqeKxirY8bmKnHxY0Oem4Lt3Bcl9l2pKFQJp443-tt7hzuw-EGEaDTyOYT2qOxiS6uYvtay7T"/>
+                                <h3 class="text-lg font-bold text-text-primary">Dr. Anya Sharma</h3>
+                                <p class="text-sm text-primary-start font-medium">Head of AI Research</p>
+                                <p class="text-text-secondary text-sm mt-2">Leading our AI division to build predictive threat intelligence models and autonomous defense systems.</p>
+                                <div class="flex gap-4 mt-4">
+                                    <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Team Member 3 -->
+                            <div class="flex flex-col items-center text-center bg-gray-50 rounded-xl p-6 border border-gray-200">
+                                <img class="w-28 h-28 rounded-full mb-4 object-cover" alt="Professional headshot of Michael Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUPDbbYAraAmjTVBuTIVYsEPLHDATa8IdBFjuy7MPP3BRcPQR0gNsumgJBfm3pPqoRwVOIOts9oA92rndEKkmEqegnW8GpIeG8XHJv8HBYxJ4iMX81Y7ovvMjFQC50Wq-lnPXXaULjOwtwJlz4qavgMtirbHAYryjjJmPAnVle7t01S79RElic8ifBWJl9MKSGoDSbWqFSZggDaEs7uZVm4Ma-vSqTxqoFAtYRTl56SYahd6z-OZqYaowbWzDsiIoP2MIepNM-pd11"/>
+                                <h3 class="text-lg font-bold text-text-primary">Michael Chen</h3>
+                                <p class="text-sm text-primary-start font-medium">Lead Security Engineer</p>
+                                <p class="text-text-secondary text-sm mt-2">Architect of our core security platform, ensuring robust and scalable protection for our clients.</p>
+                                <div class="flex gap-4 mt-4">
+                                    <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CTA Section -->
+                    <section class="bg-gray-100 rounded-lg">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left py-12 px-6 sm:px-10">
+                            <div class="max-w-xl">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">Shape the Future of Cybersecurity</h2>
+                                <p class="mt-2 text-text-secondary">Join our team of innovators and help build a safer digital world. We are looking for passionate individuals to join our mission.</p>
+                            </div>
+                            <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-base font-bold leading-normal tracking-[0.015em] whitespace-nowrap transition-opacity hover:opacity-90" href="internships.html">
+                                <span>View Internships</span>
+                            </a>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+
+            <!-- Footer - Matching index.html -->
+            <footer class="w-full flex justify-center border-t border-solid border-gray-200 mt-12 md:mt-20">
+                <div class="max-w-[960px] flex-1 px-4 sm:px-10 py-10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                        <a class="flex items-center gap-3" href="index.html">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                                <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                                    <path d="m8.5 10.5 3-2.5 4 2"></path>
+                                    <path d="m15.5 10.5-3 2.5-4-2"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                                <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                            </div>
+                        </a>
+                        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
+                            <div class="flex gap-6 text-sm">
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="internships.html">Internships</a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="aboutus.html">About</a>
+                            </div>
+                            <div class="flex gap-4">
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center text-gray-500 text-sm mt-8 border-t border-solid border-gray-200 pt-8">
+                        © 2024 Akula Cybersecurity. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</body>
+</html>

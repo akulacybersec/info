@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact Us - Akula Cybersecurity</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact Us - Akula Cybersecurity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "primary-orange-start": "#F58220",
-              "primary-orange-end": "#FF9F43",
-              "text-gray-start": "#7A7A7A",
-              "text-gray-end": "#9C9C9C",
+              "primary-start": "#F58220",
+              "primary-end": "#FF9F43",
+              "text-primary": "#2D3748",
+              "text-secondary": "#7A7A7A",
+              "text-secondary-end": "#9C9C9C",
+              "background-light": "#FFFFFF",
             },
             fontFamily: {
               "display": ["Inter", "sans-serif"]
@@ -25,7 +30,7 @@
         },
       }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings:
             'FILL' 0,
@@ -33,153 +38,242 @@
             'GRAD' 0,
             'opsz' 24
         }
-        .dark {
-            display: none;
-        }
     </style>
 </head>
-<body class="bg-white font-display text-gray-800">
-<div class="relative flex h-auto min-h-screen w-full flex-col">
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm">
-<div class="container mx-auto px-4">
-<div class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 py-4">
-<div class="flex items-center gap-3 text-gray-900">
-<div class="size-8 text-primary-orange-start">
-<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient id="logoGradient" x1="0%" x2="100%" y1="0%" y2="100%">
-<stop offset="0%" style="stop-color:#F58220;stop-opacity:1"></stop>
-<stop offset="100%" style="stop-color:#FF9F43;stop-opacity:1"></stop>
-</linearGradient>
-</defs>
-<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="url(#logoGradient)"></path>
-</svg>
-</div>
-<h2 class="text-lg font-bold leading-tight text-gray-900">Akula Cybersecurity</h2>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium text-text-gray-start hover:text-primary-orange-start" href="/">Home</a>
-<a class="text-sm font-medium text-text-gray-start hover:text-primary-orange-start" href="/">AI Projects</a>
-<a class="text-sm font-medium text-text-gray-start hover:text-primary-orange-start" href="/">Internships</a>
-<a class="text-sm font-medium text-text-gray-start hover:text-primary-orange-start" href="/">About</a>
-<a class="text-sm font-bold text-primary-orange-start" href="/">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-orange-start to-primary-orange-end text-white text-sm font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity">
-<span class="truncate">Request a Demo</span>
-</button>
-</div>
-</div>
-</div>
-</header>
-<main class="flex-grow">
-<div class="container mx-auto px-4 py-16 sm:py-24">
-<div class="mb-16 text-center">
-<h1 class="text-4xl sm:text-5xl font-black leading-tight tracking-tighter text-gray-900">Get in Touch</h1>
-<p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg font-normal text-text-gray-start">Reach out for inquiries about our AI projects, cybersecurity services, or our internship program. We're here to help.</p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-<div class="lg:col-span-3 bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-<form action="#" class="space-y-6" method="POST">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-<div>
-<label class="block text-sm font-medium pb-2 text-gray-900" for="full-name">Full Name</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-gray-start focus:outline-0 focus:ring-2 focus:ring-primary-orange-start border-gray-300 bg-white focus:border-primary-orange-start h-12 placeholder:text-text-gray-end px-4 text-base font-normal leading-normal" id="full-name" name="full-name" placeholder="Enter your full name" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium pb-2 text-gray-900" for="company-email">Company Email</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-gray-start focus:outline-0 focus:ring-2 focus:ring-primary-orange-start border-gray-300 bg-white focus:border-primary-orange-start h-12 placeholder:text-text-gray-end px-4 text-base font-normal leading-normal" id="company-email" name="company-email" placeholder="name@company.com" type="email"/>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium pb-2 text-gray-900" for="phone-number">Phone Number</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-gray-start focus:outline-0 focus:ring-2 focus:ring-primary-orange-start border-gray-300 bg-white focus:border-primary-orange-start h-12 placeholder:text-text-gray-end px-4 text-base font-normal leading-normal" id="phone-number" name="phone-number" placeholder="(123) 456-7890" type="tel"/>
-</div>
-<div>
-<label class="block text-sm font-medium pb-2 text-gray-900" for="message">Your Message</label>
-<textarea class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-gray-start focus:outline-0 focus:ring-2 focus:ring-primary-orange-start border-gray-300 bg-white focus:border-primary-orange-start min-h-36 placeholder:text-text-gray-end p-4 text-base font-normal leading-normal" id="message" name="message" placeholder="Tell us how we can help..." rows="5"></textarea>
-</div>
-<div class="flex items-start">
-<div class="flex items-center h-5">
-<input class="h-4 w-4 rounded border-gray-300 text-primary-orange-start focus:ring-primary-orange-start bg-gray-100" id="consent" name="consent" type="checkbox"/>
-</div>
-<div class="ml-3 text-sm">
-<label class="font-medium text-text-gray-start" for="consent">I agree to the <a class="text-primary-orange-start hover:underline" href="/">Privacy Policy</a>.</label>
-<p class="text-text-gray-end">By checking this box, you consent to us processing your information.</p>
-</div>
-</div>
-<div>
-<button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-primary-orange-start to-primary-orange-end text-white text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-orange-start" type="submit">
-<span class="truncate">Send Message</span>
-</button>
-</div>
-</form>
-</div>
-<div class="lg:col-span-2 space-y-12">
-<div>
-<h3 class="text-xl font-bold mb-6 text-gray-900">Other Ways to Connect</h3>
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<div class="flex-shrink-0 size-12 bg-primary-orange-start/10 text-primary-orange-start rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-2xl">mail</span>
-</div>
-<div>
-<h4 class="font-semibold text-gray-900">Email</h4>
-<p class="text-text-gray-start">General inquiries &amp; support</p>
-<a class="text-primary-orange-start font-medium hover:underline" href="mailto:contact@akula.com">contact@akula.com</a>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="flex-shrink-0 size-12 bg-primary-orange-start/10 text-primary-orange-start rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-2xl">call</span>
-</div>
-<div>
-<h4 class="font-semibold text-gray-900">Phone</h4>
-<p class="text-text-gray-start">Mon-Fri, 9am - 5pm EST</p>
-<a class="text-primary-orange-start font-medium hover:underline" href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="flex-shrink-0 size-12 bg-primary-orange-start/10 text-primary-orange-start rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-2xl">location_on</span>
-</div>
-<div>
-<h4 class="font-semibold text-gray-900">Office</h4>
-<p class="text-text-gray-start">456 Cyber Drive, Suite 100<br/>Innovation City, USA 90210</p>
-</div>
-</div>
-</div>
-</div>
-<div>
-<h3 class="text-xl font-bold mb-4 text-gray-900">Our Location</h3>
-<div class="aspect-video w-full overflow-hidden rounded-xl border border-gray-200">
-<iframe allowfullscreen="" data-location="Innovation City, USA" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.719692482345!2d-118.40157038478438!3d34.05151598060647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d60a15ed%3A0x501b12b3c2a6b2ef!2sBeverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2s!4v1678886463567!5m2!1sen!2s" style="border:0;" width="100%"></iframe>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<footer class="bg-white border-t border-gray-200">
-<div class="container mx-auto px-4 py-8">
-<div class="flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="text-sm text-text-gray-start text-center md:text-left">
+<body class="font-display bg-background-light text-text-primary">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header - Matching index.html -->
+            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
+                <a class="flex items-center gap-3" href="index.html">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                        <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                            <path d="m8.5 10.5 3-2.5 4 2"></path>
+                            <path d="m15.5 10.5-3 2.5-4-2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                        <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="index.html">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Internships</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="contactus.html">Contact</a>
+                    </div>
+                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <span class="truncate">Get a Quote</span>
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-text-primary p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-16">
+                    
+                    <!-- Page Header -->
+                    <section class="text-center pt-8">
+                        <h1 class="text-4xl sm:text-5xl font-black leading-tight tracking-tighter text-text-primary">Get in Touch</h1>
+                        <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg font-normal text-text-secondary">
+                            Reach out for inquiries about our AI projects, cybersecurity services, or our internship program. We're here to help.
+                        </p>
+                    </section>
+
+                    <!-- Contact Form and Info -->
+                    <section class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+                        <!-- Contact Form -->
+                        <div class="lg:col-span-3 bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                            <form action="#" method="POST" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium pb-2 text-text-primary" for="full-name">Full Name</label>
+                                        <input 
+                                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
+                                            id="full-name" 
+                                            name="full-name" 
+                                            placeholder="Enter your full name" 
+                                            type="text"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium pb-2 text-text-primary" for="company-email">Company Email</label>
+                                        <input 
+                                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
+                                            id="company-email" 
+                                            name="company-email" 
+                                            placeholder="name@company.com" 
+                                            type="email"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium pb-2 text-text-primary" for="phone-number">Phone Number</label>
+                                    <input 
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
+                                        id="phone-number" 
+                                        name="phone-number" 
+                                        placeholder="(123) 456-7890" 
+                                        type="tel"
+                                    />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium pb-2 text-text-primary" for="message">Your Message</label>
+                                    <textarea 
+                                        class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start min-h-36 placeholder:text-text-secondary p-4 text-base font-normal leading-normal" 
+                                        id="message" 
+                                        name="message" 
+                                        placeholder="Tell us how we can help..." 
+                                        rows="5"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input 
+                                            class="h-4 w-4 rounded border-gray-300 text-primary-start focus:ring-primary-start bg-gray-100" 
+                                            id="consent" 
+                                            name="consent" 
+                                            type="checkbox"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label class="font-medium text-text-secondary" for="consent">
+                                            I agree to the <a class="text-primary-start hover:underline" href="#">Privacy Policy</a>.
+                                        </label>
+                                        <p class="text-text-secondary-end">By checking this box, you consent to us processing your information.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button 
+                                        class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-start" 
+                                        type="submit"
+                                    >
+                                        <span class="truncate">Send Message</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="lg:col-span-2 space-y-12">
+                            <div>
+                                <h3 class="text-xl font-bold mb-6 text-text-primary">Other Ways to Connect</h3>
+                                <div class="space-y-6">
+                                    <!-- Email -->
+                                    <div class="flex items-start gap-4">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-primary-start/10 text-primary-start rounded-lg flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-2xl">mail</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Email</h4>
+                                            <p class="text-text-secondary text-sm">General inquiries & support</p>
+                                            <a class="text-primary-start font-medium hover:underline" href="mailto:contact@akula.com">contact@akula.com</a>
+                                        </div>
+                                    </div>
+                                    <!-- Phone -->
+                                    <div class="flex items-start gap-4">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-primary-start/10 text-primary-start rounded-lg flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-2xl">call</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Phone</h4>
+                                            <p class="text-text-secondary text-sm">Mon-Fri, 9am - 5pm EST</p>
+                                            <a class="text-primary-start font-medium hover:underline" href="tel:+1-555-123-4567">+1 (555) 123-4567</a>
+                                        </div>
+                                    </div>
+                                    <!-- Office -->
+                                    <div class="flex items-start gap-4">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-primary-start/10 text-primary-start rounded-lg flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-2xl">location_on</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Office</h4>
+                                            <p class="text-text-secondary text-sm">456 Cyber Drive, Suite 100<br/>Innovation City, USA 90210</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Map -->
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-text-primary">Our Location</h3>
+                                <div class="aspect-video w-full overflow-hidden rounded-xl border border-gray-200">
+                                    <iframe 
+                                        allowfullscreen="" 
+                                        height="100%" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade" 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.719692482345!2d-118.40157038478438!3d34.05151598060647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d60a15ed%3A0x501b12b3c2a6b2ef!2sBeverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2s!4v1678886463567!5m2!1sen!2s" 
+                                        style="border:0;" 
+                                        width="100%"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+
+            <!-- Footer - Matching index.html -->
+            <footer class="w-full flex justify-center border-t border-solid border-gray-200 mt-12 md:mt-20">
+                <div class="max-w-[960px] flex-1 px-4 sm:px-10 py-10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                        <a class="flex items-center gap-3" href="index.html">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                                <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                                    <path d="m8.5 10.5 3-2.5 4 2"></path>
+                                    <path d="m15.5 10.5-3 2.5-4-2"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                                <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                            </div>
+                        </a>
+                        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
+                            <div class="flex gap-6 text-sm">
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="internships.html">Internships</a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="aboutus.html">About</a>
+                            </div>
+                            <div class="flex gap-4">
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center text-gray-500 text-sm mt-8 border-t border-solid border-gray-200 pt-8">
                         © 2024 Akula Cybersecurity. All rights reserved.
                     </div>
-<div class="flex items-center gap-6">
-<a class="text-text-gray-start hover:text-primary-orange-start transition-colors" href="/">
-<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
-</a>
-<a class="text-text-gray-start hover:text-primary-orange-start transition-colors" href="/">
-<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
-</a>
-<a class="text-text-gray-start hover:text-primary-orange-start transition-colors" href="/">
-<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.206v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.47 1.344h2.94v8.59H3.535v-8.59zM17.668 1H6.332C3.935 1 2 2.932 2 5.332v13.336C2 21.068 3.935 23 6.332 23h11.336C20.065 23 22 21.068 22 18.668V5.332C22 2.932 20.065 1 17.668 1z" fill-rule="evenodd"></path></svg>
-</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
+                </div>
+            </footer>
 
-</body></html>
+        </div>
+    </div>
+</body>
+</html>
