@@ -1,0 +1,40 @@
+# Akula Cybersecurity Website URL Rewriting
+# Enable rewrite engine
+RewriteEngine On
+
+# Redirect index.html to root
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [NC,L,R=301]
+
+# Clean URL routing
+RewriteRule ^$ index.html [L]
+RewriteRule ^about/?$ aboutus.html [L]
+RewriteRule ^contact/?$ contactus.html [L]
+RewriteRule ^internships/?$ internships.html [L]
+RewriteRule ^services/?$ servicePage.html [L]
+
+# Prevent direct access to .html files with 404 (optional)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\?\s] [NC]
+RewriteRule ^ /%1? [R=301,L]
+
+# Enable directory browsing protection
+Options -Indexes
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Cache control
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
