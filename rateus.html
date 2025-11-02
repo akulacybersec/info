@@ -1,116 +1,640 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rate Us - Akula Cybersecurity</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-<script id="tailwind-config">
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "primary-start": "#F58220",
-        "primary-end": "#FF9F43",
-        "text-primary": "#2D3748",
-        "text-secondary": "#7A7A7A",
-      },
-      fontFamily: {
-        "display": ["Inter", "sans-serif"]
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Rate Us - Akula Cybersecurity</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-start": "#F58220",
+              "primary-end": "#FF9F43",
+              "text-primary": "#2D3748",
+              "text-secondary": "#7A7A7A",
+              "text-secondary-end": "#9C9C9C",
+              "background-light": "#FFFFFF",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
       }
-    }
-  }
-}
-</script>
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .star {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .star:hover {
+            transform: scale(1.1);
+        }
+        .star.filled {
+            color: #F59E0B;
+        }
+        .star.empty {
+            color: #D1D5DB;
+        }
+    </style>
 </head>
-<body class="font-display bg-white text-text-primary">
-<header class="sticky top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-white/80 px-6 py-3 backdrop-blur-sm">
-  <a href="/" class="flex items-center gap-3">
-    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
-      <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-      </svg>
+<body class="font-display bg-background-light text-text-primary">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
+                <a class="flex items-center gap-3" href="index.html">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                        <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                            <path d="m8.5 10.5 3-2.5 4 2"></path>
+                            <path d="m15.5 10.5-3 2.5-4-2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                        <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="index.html">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Internships</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
+                    </div>
+                        <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">Download Brochure</span>
+                        </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-text-primary p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-16">
+                    
+                    <section class="text-center pt-8">
+                        <h1 class="text-4xl sm:text-5xl font-black leading-tight tracking-tighter text-text-primary">Rate Your Experience</h1>
+                        <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg font-normal text-text-secondary">
+                            Your feedback helps us improve our services and deliver better cybersecurity solutions. Share your thoughts with us!
+                        </p>
+                    </section>
+
+                    <section class="max-w-3xl mx-auto w-full">
+                        <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                            <form id="ratingForm" class="space-y-8" novalidate>
+                                <div class="text-center">
+                                    <label class="block text-lg font-bold pb-4 text-text-primary">Overall Rating <span class="text-red-500">*</span></label>
+                                    <div class="flex justify-center gap-2 mb-2">
+                                        <span class="material-symbols-outlined star empty text-5xl" data-rating="1">star</span>
+                                        <span class="material-symbols-outlined star empty text-5xl" data-rating="2">star</span>
+                                        <span class="material-symbols-outlined star empty text-5xl" data-rating="3">star</span>
+                                        <span class="material-symbols-outlined star empty text-5xl" data-rating="4">star</span>
+                                        <span class="material-symbols-outlined star empty text-5xl" data-rating="5">star</span>
+                                    </div>
+                                    <p id="ratingText" class="text-text-secondary text-sm">Click to rate</p>
+                                    <p id="ratingError" class="text-red-500 text-sm mt-1 hidden">Please select a star rating</p>
+                                    <input type="hidden" id="rating" name="rating" value="0" required>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium pb-2 text-text-primary" for="name">Your Name <span class="text-red-500">*</span></label>
+                                        <input 
+                                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
+                                            id="name" 
+                                            name="name" 
+                                            placeholder="John Doe" 
+                                            type="text"
+                                            required
+                                        />
+                                        <p id="nameError" class="text-red-500 text-sm mt-1 hidden">Please enter your name</p>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium pb-2 text-text-primary" for="email">Email Address <span class="text-red-500">*</span></label>
+                                        <input 
+                                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
+                                            id="email" 
+                                            name="email" 
+                                            placeholder="john@example.com" 
+                                            type="email"
+                                            required
+                                        />
+                                        <p id="emailError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid email address</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium pb-2 text-text-primary" for="review">Your Review <span class="text-text-secondary text-xs">(Optional)</span></label>
+                                    <textarea 
+                                        class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start min-h-36 placeholder:text-text-secondary p-4 text-base font-normal leading-normal" 
+                                        id="review" 
+                                        name="review" 
+                                        placeholder="Tell us about your experience with Akula Cybersecurity..." 
+                                        rows="5"
+                                    ></textarea>
+                                </div>
+
+                                <div>
+                                    <button 
+                                        class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-start disabled:opacity-50 disabled:cursor-not-allowed" 
+                                        type="submit"
+                                        id="submitBtn"
+                                    >
+                                        <span class="truncate">Submit Rating</span>
+                                    </button>
+                                </div>
+
+                                <div id="successMessage" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center">
+                                    <span class="material-symbols-outlined text-green-600 text-2xl mb-2">check_circle</span>
+                                    <p class="font-semibold">Thank you for your feedback!</p>
+                                    <p class="text-sm">Your rating has been submitted successfully.</p>
+                                </div>
+
+                                <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center">
+                                    <span class="material-symbols-outlined text-red-600 text-2xl mb-2">error</span>
+                                    <p class="font-semibold">Something went wrong!</p>
+                                    <p class="text-sm">Please try again later.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <section class="max-w-5xl mx-auto w-full">
+                        <h2 class="text-3xl font-bold text-text-primary text-center mb-8">Recent Reviews</h2>
+                        
+                        <div class="relative">
+                            <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110 hidden md:block">
+                                <span class="material-symbols-outlined text-text-primary">chevron_left</span>
+                            </button>
+                            <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110 hidden md:block">
+                                <span class="material-symbols-outlined text-text-primary">chevron_right</span>
+                            </button>
+
+                            <div id="reviewsCarousel" class="overflow-hidden">
+                                <div id="reviewsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-transform duration-700 ease-in-out">
+                                    <div class="col-span-full text-center py-8">
+                                        <span class="material-symbols-outlined text-text-secondary text-4xl mb-2 animate-spin">refresh</span>
+                                        <p class="text-text-secondary">Loading reviews...</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="carouselDots" class="flex justify-center gap-2 mt-6 md:hidden">
+                                </div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+
+            <footer class="w-full flex justify-center border-t border-solid border-gray-200 mt-12 md:mt-20">
+                <div class="max-w-[960px] flex-1 px-4 sm:px-10 py-10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                        <a class="flex items-center gap-3" href="index.html">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                                <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                                    <path d="m8.5 10.5 3-2.5 4 2"></path>
+                                    <path d="m15.5 10.5-3 2.5-4-2"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                                <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                            </div>
+                        </a>
+                        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
+                            <div class="flex gap-6 text-sm">
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="internships.html">Internships</a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="aboutus.html">About</a>
+                            </div>
+                            <div class="flex gap-4">
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center text-gray-500 text-sm mt-8 border-t border-solid border-gray-200 pt-8">
+                        © 2024 Akula Cybersecurity. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+
+        </div>
     </div>
-    <div>
-      <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black text-transparent uppercase">AKULA</span>
-      <span class="block text-xs font-semibold tracking-widest text-gray-500">CYBERSEC SOLUTION</span>
-    </div>
-  </a>
-</header>
 
-<main class="flex justify-center items-center min-h-screen px-4">
-  <div class="bg-gray-50 rounded-xl shadow-lg p-8 w-full max-w-md">
-    <h1 class="text-2xl font-bold text-center mb-4">Rate Our Services</h1>
-    <p class="text-center text-text-secondary mb-6">We value your feedback. Please leave your rating and review below.</p>
+    <script>
+        // Replace with your Google Apps Script Web App URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYlBhszlFsd8XDxc5qxY-cW-XkQepXvMF5qVjUFrInC1nk-VdKXWuu8hKbgD-mG5kL/exec';
 
-    <!-- Rating Stars -->
-    <div class="flex justify-center mb-6" id="stars">
-      <span class="star text-4xl cursor-pointer text-gray-300" data-value="1">★</span>
-      <span class="star text-4xl cursor-pointer text-gray-300" data-value="2">★</span>
-      <span class="star text-4xl cursor-pointer text-gray-300" data-value="3">★</span>
-      <span class="star text-4xl cursor-pointer text-gray-300" data-value="4">★</span>
-      <span class="star text-4xl cursor-pointer text-gray-300" data-value="5">★</span>
-    </div>
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+        const ratingText = document.getElementById('ratingText');
+        const form = document.getElementById('ratingForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        // Carousel elements
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const reviewsContainer = document.getElementById('reviewsContainer');
+        const carouselDots = document.getElementById('carouselDots');
+        
+        const ratingLabels = {
+            0: 'Click to rate',
+            1: 'Poor',
+            2: 'Fair',
+            3: 'Good',
+            4: 'Very Good',
+            5: 'Excellent'
+        };
 
-    <form id="feedbackForm" class="space-y-4">
-      <input type="hidden" id="rating" name="rating">
+        // Carousel state
+        let currentIndex = 0;
+        let allReviews = [];
+        const reviewsPerPage = 4;
+        let autoSlideInterval;
 
-      <div>
-        <label class="block text-sm font-medium mb-1" for="name">Name</label>
-        <input id="name" name="name" type="text" required class="w-full rounded-lg border-gray-300 focus:ring-primary-start focus:border-primary-start">
-      </div>
+        // Star rating functionality
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                ratingInput.value = rating;
+                ratingText.textContent = ratingLabels[rating];
+                document.getElementById('ratingError').classList.add('hidden');
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.classList.remove('empty');
+                        s.classList.add('filled');
+                    } else {
+                        s.classList.remove('filled');
+                        s.classList.add('empty');
+                    }
+                });
+            });
 
-      <div>
-        <label class="block text-sm font-medium mb-1" for="email">Email</label>
-        <input id="email" name="email" type="email" required class="w-full rounded-lg border-gray-300 focus:ring-primary-start focus:border-primary-start">
-      </div>
+            star.addEventListener('mouseenter', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.style.color = '#F59E0B';
+                    } else {
+                        s.style.color = '#D1D5DB';
+                    }
+                });
+            });
+        });
 
-      <div>
-        <label class="block text-sm font-medium mb-1" for="review">Review</label>
-        <textarea id="review" name="review" rows="4" required class="w-full rounded-lg border-gray-300 focus:ring-primary-start focus:border-primary-start"></textarea>
-      </div>
+        document.querySelector('.flex.justify-center.gap-2').addEventListener('mouseleave', function() {
+            const currentRating = parseInt(ratingInput.value);
+            stars.forEach((s, index) => {
+                if (index < currentRating) {
+                    s.style.color = '#F59E0B';
+                } else {
+                    s.style.color = '#D1D5DB';
+                }
+            });
+        });
 
-      <button type="submit" class="w-full bg-gradient-to-r from-primary-start to-primary-end text-white font-bold py-2 rounded-lg hover:opacity-90 transition-opacity">
-        Submit Feedback
-      </button>
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Clear all previous errors
+            document.getElementById('nameError').classList.add('hidden');
+            document.getElementById('emailError').classList.add('hidden');
+            document.getElementById('ratingError').classList.add('hidden');
+            
+            // Validate required fields
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const rating = parseInt(ratingInput.value);
+            
+            let hasError = false;
+            
+            if (!name) {
+                document.getElementById('nameError').classList.remove('hidden');
+                hasError = true;
+            }
+            
+            if (!email) {
+                document.getElementById('emailError').textContent = 'Please enter your email address';
+                document.getElementById('emailError').classList.remove('hidden');
+                hasError = true;
+            } else {
+                // Basic email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                    document.getElementById('emailError').classList.remove('hidden');
+                    hasError = true;
+                }
+            }
+            
+            if (rating === 0) {
+                document.getElementById('ratingError').classList.remove('hidden');
+                hasError = true;
+            }
+            
+            if (hasError) {
+                // Scroll to first error
+                const firstError = document.querySelector('.text-red-500:not(.hidden)');
+                if (firstError) {
+                    firstError.closest('div').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="truncate">Submitting...</span>';
+            
+            // Hide previous messages
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+            
+            // Prepare form data
+            const formData = new FormData(form);
+            
+            // Send to Google Apps Script
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    successMessage.classList.remove('hidden');
+                    form.reset();
+                    stars.forEach(s => {
+                        s.classList.remove('filled');
+                        s.classList.add('empty');
+                    });
+                    ratingInput.value = 0;
+                    ratingText.textContent = 'Click to rate';
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Reload reviews
+                    setTimeout(() => {
+                        loadReviews();
+                    }, 1000);
+                } else {
+                    errorMessage.classList.remove('hidden');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                errorMessage.classList.remove('hidden');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span class="truncate">Submit Rating</span>';
+            });
+        });
 
-      <p id="responseMessage" class="text-center mt-3 text-sm text-gray-600"></p>
-    </form>
-  </div>
-</main>
+        // Add input listeners to clear errors on typing
+        document.getElementById('name').addEventListener('input', function() {
+            if (this.value.trim()) {
+                document.getElementById('nameError').classList.add('hidden');
+            }
+        });
+        
+        document.getElementById('email').addEventListener('input', function() {
+            if (this.value.trim()) {
+                document.getElementById('emailError').classList.add('hidden');
+            }
+        });
 
-<script>
-  // Handle star rating UI
-  const stars = document.querySelectorAll('.star');
-  const ratingInput = document.getElementById('rating');
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const value = star.getAttribute('data-value');
-      ratingInput.value = value;
-      stars.forEach(s => s.classList.remove('text-yellow-400'));
-      for (let i = 0; i < value; i++) {
-        stars[i].classList.add('text-yellow-400');
-      }
-    });
-  });
+        // Carousel functions
+        function initCarousel() {
+            // Add event listeners to navigation buttons
+            prevBtn.addEventListener('click', () => navigateCarousel(-1));
+            nextBtn.addEventListener('click', () => navigateCarousel(1));
 
-  // Submit feedback to Google Sheets (via Apps Script Web App)
-  document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyYlBhszlFsd8XDxc5qxY-cW-XkQepXvMF5qVjUFrInC1nk-VdKXWuu8hKbgD-mG5kL/exec';
-    const formData = new FormData(this);
+            // Pause auto-slide on hover
+            const carouselContainer = document.querySelector('.relative');
+            carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+            carouselContainer.addEventListener('mouseleave', startAutoSlide);
+        }
 
-    document.getElementById('responseMessage').textContent = 'Submitting...';
-    const response = await fetch(scriptURL, { method: 'POST', body: formData });
-    if (response.ok) {
-      this.reset();
-      document.getElementById('responseMessage').textContent = '✅ Thank you! Your feedback has been recorded.';
-      stars.forEach(s => s.classList.remove('text-yellow-400'));
-    } else {
-      document.getElementById('responseMessage').textContent = '❌ Failed to submit. Please try again.';
-    }
-  });
-</script>
+        function navigateCarousel(direction) {
+            if (allReviews.length <= reviewsPerPage) return;
+
+            currentIndex += direction * reviewsPerPage;
+            
+            if (currentIndex >= allReviews.length) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = Math.floor((allReviews.length - 1) / reviewsPerPage) * reviewsPerPage;
+            }
+
+            renderCarousel();
+            updateCarouselDots();
+            resetAutoSlide();
+        }
+
+        function renderCarousel() {
+            reviewsContainer.innerHTML = '';
+            
+            if (allReviews.length === 0) {
+                reviewsContainer.innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <span class="material-symbols-outlined text-text-secondary text-4xl mb-2">rate_review</span>
+                        <p class="text-text-secondary">No reviews yet. Be the first to share your experience!</p>
+                    </div>
+                `;
+                // Hide arrows and dots if no reviews
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.add('hidden');
+                carouselDots.innerHTML = '';
+                return;
+            }
+
+            const startIndex = currentIndex;
+            const endIndex = Math.min(startIndex + reviewsPerPage, allReviews.length);
+            const pageReviews = allReviews.slice(startIndex, endIndex);
+
+            pageReviews.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-700 ease-in-out transform hover:scale-105';
+                
+                // Handle potential missing rating
+                const rating = parseInt(review.rating) || 0;
+                const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+                
+                // Handle optional review text
+                const reviewText = review.review ? `<p class="text-text-secondary text-sm mb-4 italic">"${review.review}"</p>` : '';
+                
+                // Handle missing name/email
+                const name = review.name || 'Anonymous';
+                const email = review.email || '';
+                const initial = name.charAt(0).toUpperCase();
+
+                reviewCard.innerHTML = `
+                    <div class="flex gap-1 mb-3 text-yellow-500 text-xl">
+                        ${stars}
+                    </div>
+                    ${reviewText}
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-start to-primary-end flex items-center justify-center text-white font-bold text-sm">
+                            ${initial}
+                        </div>
+                        <div>
+                            <div class="font-bold text-text-primary">${name}</div>
+                            ${email ? `<div class="text-xs text-text-secondary">${email}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+                reviewsContainer.appendChild(reviewCard);
+            });
+
+            // Show/hide navigation arrows based on number of reviews
+            if (allReviews.length > reviewsPerPage) {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+            } else {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.add('hidden');
+            }
+        }
+
+        function createCarouselDots() {
+            carouselDots.innerHTML = '';
+            if (allReviews.length <= reviewsPerPage) return;
+
+            const totalPages = Math.ceil(allReviews.length / reviewsPerPage);
+            
+            for (let i = 0; i < totalPages; i++) {
+                const dot = document.createElement('button');
+                dot.className = `w-3 h-3 rounded-full transition-all duration-200 ${
+                    i === Math.floor(currentIndex / reviewsPerPage) 
+                        ? 'bg-primary-start' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                }`;
+                dot.addEventListener('click', () => {
+                    currentIndex = i * reviewsPerPage;
+                    renderCarousel();
+                    updateCarouselDots();
+                    resetAutoSlide();
+                });
+                carouselDots.appendChild(dot);
+            }
+        }
+
+        function updateCarouselDots() {
+            const dots = carouselDots.querySelectorAll('button');
+            const activePage = Math.floor(currentIndex / reviewsPerPage);
+            
+            dots.forEach((dot, index) => {
+                if (index === activePage) {
+                    dot.className = 'w-3 h-3 rounded-full transition-all duration-200 bg-primary-start';
+                } else {
+                    dot.className = 'w-3 h-3 rounded-full transition-all duration-200 bg-gray-300 hover:bg-gray-400';
+                }
+            });
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide(); // Clear existing interval first
+            if (allReviews.length > reviewsPerPage) {
+                autoSlideInterval = setInterval(() => {
+                    navigateCarousel(1);
+                }, 4000);
+            }
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+        }
+
+        function resetAutoSlide() {
+            stopAutoSlide();
+            startAutoSlide();
+        }
+
+        // Function to load and display reviews (MERGED)
+        function loadReviews() {
+            // Show loading state
+            reviewsContainer.innerHTML = `
+                <div class="col-span-full text-center py-8">
+                    <span class="material-symbols-outlined text-text-secondary text-4xl mb-2 animate-spin">refresh</span>
+                    <p class="text-text-secondary">Loading reviews...</p>
+                </div>
+            `;
+            
+            // Fetch reviews from Google Apps Script
+            fetch(SCRIPT_URL + '?action=getReviews')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Fetched reviews:', data);
+                    
+                    // Ensure data.reviews is an array, even if it's empty
+                    allReviews = (data.reviews && Array.isArray(data.reviews)) ? data.reviews : [];
+                    
+                    // Reset index and render
+                    currentIndex = 0;
+                    renderCarousel(); // This function will handle the "no reviews" case
+                    createCarouselDots();
+                    updateCarouselDots();
+                    
+                    // Start the autoslide *after* reviews are loaded
+                    resetAutoSlide(); 
+                })
+                .catch(error => {
+                    console.error('Error loading reviews:', error);
+                    reviewsContainer.innerHTML = `
+                        <div class="col-span-full text-center py-8">
+                            <span class="material-symbols-outlined text-text-secondary text-4xl mb-2">error</span>
+                            <p class="text-text-secondary">Unable to load reviews. Please try again later.</p>
+                        </div>
+                    `;
+                    stopAutoSlide(); // Stop slider on error
+                });
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            initCarousel();
+            loadReviews();
+        });
+    </script>
 </body>
 </html>
