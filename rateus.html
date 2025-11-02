@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rate Us - Akula Cybersecurity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary-start": "#F58220",
+        "primary-end": "#FF9F43",
+        "text-primary": "#2D3748",
+        "text-secondary": "#7A7A7A",
+      },
+      fontFamily: {
+        "display": ["Inter", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="font-display bg-white text-text-primary">
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-white/80 px-6 py-3 backdrop-blur-sm">
+  <a href="/" class="flex items-center gap-3">
+    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+      <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+    </div>
+    <div>
+      <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black text-transparent uppercase">AKULA</span>
+      <span class="block text-xs font-semibold tracking-widest text-gray-500">CYBERSEC SOLUTION</span>
+    </div>
+  </a>
+</header>
+
+<main class="flex justify-center items-center min-h-screen px-4">
+  <div class="bg-gray-50 rounded-xl shadow-lg p-8 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center mb-4">Rate Our Services</h1>
+    <p class="text-center text-text-secondary mb-6">We value your feedback. Please leave your rating and review below.</p>
+
+    <!-- Rating Stars -->
+    <div class="flex justify-center mb-6" id="stars">
+      <span class="star text-4xl cursor-pointer text-gray-300" data-value="1">★</span>
+      <span class="star text-4xl cursor-pointer text-gray-300" data-value="2">★</span>
+      <span class="star text-4xl cursor-pointer text-gray-300" data-value="3">★</span>
+      <span class="star text-4xl cursor-pointer text-gray-300" data-value="4">★</span>
+      <span class="star text-4xl cursor-pointer text-gray-300" data-value="5">★</span>
+    </div>
+
+    <form id="feedbackForm" class="space-y-4">
+      <input type="hidden" id="rating" name="rating">
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="name">Name</label>
+        <input id="name" name="name" type="text" required class="w-full rounded-lg border-gray-300 focus:ring-primary-start focus:border-primary-start">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="email">Email</label>
+        <input id="email" name="email" type="email" required class="w-full rounded-lg border-gray-300 focus:ring-primary-start focus:border-primary-start">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="review">Review</label>
+        <textarea id="review" name="review" rows="4" required class="w-full rounded-lg border-gray-300 focus:ring-primary-start focus:border-primary-start"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-primary-start to-primary-end text-white font-bold py-2 rounded-lg hover:opacity-90 transition-opacity">
+        Submit Feedback
+      </button>
+
+      <p id="responseMessage" class="text-center mt-3 text-sm text-gray-600"></p>
+    </form>
+  </div>
+</main>
+
+<script>
+  // Handle star rating UI
+  const stars = document.querySelectorAll('.star');
+  const ratingInput = document.getElementById('rating');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const value = star.getAttribute('data-value');
+      ratingInput.value = value;
+      stars.forEach(s => s.classList.remove('text-yellow-400'));
+      for (let i = 0; i < value; i++) {
+        stars[i].classList.add('text-yellow-400');
+      }
+    });
+  });
+
+  // Submit feedback to Google Sheets (via Apps Script Web App)
+  document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyYlBhszlFsd8XDxc5qxY-cW-XkQepXvMF5qVjUFrInC1nk-VdKXWuu8hKbgD-mG5kL/exec';
+    const formData = new FormData(this);
+
+    document.getElementById('responseMessage').textContent = 'Submitting...';
+    const response = await fetch(scriptURL, { method: 'POST', body: formData });
+    if (response.ok) {
+      this.reset();
+      document.getElementById('responseMessage').textContent = '✅ Thank you! Your feedback has been recorded.';
+      stars.forEach(s => s.classList.remove('text-yellow-400'));
+    } else {
+      document.getElementById('responseMessage').textContent = '❌ Failed to submit. Please try again.';
+    }
+  });
+</script>
+</body>
+</html>
