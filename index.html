@@ -1,239 +1,524 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Akula Cybersec Solutions</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='%23F58220' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'></path><g stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' fill='none'><path d='M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14'></path><path d='m8.5 10.5 3-2.5 4 2'></path><path d='m15.5 10.5-3 2.5-4-2'></path></g></svg>">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary-start": "#F58220",
-              "primary-end": "#FF9F43",
-              "text-primary": "#2D3748",
-              "text-secondary": "#7A7A7A",
-              "text-secondary-end": "#9C9C9C",
-              "background-light": "#FFFFFF",
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Akula Cybersec Solutions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='%23F58220' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'></path><g stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' fill='none'><path d='M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14'></path><path d='m8.5 10.5 3-2.5 4 2'></path><path d='m15.5 10.5-3 2.5-4-2'></path></g></svg>">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-start": "#F58220",
+                        "primary-end": "#FF9F43",
+                        "text-primary": "#2D3748",
+                        "text-secondary": "#7A7A7A",
+                        "text-secondary-end": "#9C9C9C",
+                        "background-light": "#FFFFFF",
+                        "gray-bg-light": "#F8F8F8", /* Added for subtle card backgrounds */
+                        "corporate-card-bg": "#FFF7ED", /* Added for the corporate training card */
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
             },
-            fontFamily: {
-              "display": ["Inter", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+        
+        /* Style for filled stars */
+        .material-symbols-outlined.filled {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
         }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
-    <a class="flex items-center gap-3" href="/">
-        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
-            <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
-                <path d="m8.5 10.5 3-2.5 4 2"></path>
-                <path d="m15.5 10.5-3 2.5-4-2"></path>
-            </svg>
-        </div>
-        <div class="flex flex-col">
-            <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
-            <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
-        </div>
-    </a>
-    <div class="hidden md:flex flex-1 justify-end gap-8">
-        <div class="flex items-center gap-9">
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="">Home</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Vanguard</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
-        </div>
-        <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-            <span class="truncate">Download Brochure</span>
-        </a>
-    </div>
-    
-    <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-text-primary p-2">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    </div>
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
+                <a class="flex items-center gap-3" href="/">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                        <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                            <path d="m8.5 10.5 3-2.5 4 2"></path>
+                            <path d="m15.5 10.5-3 2.5-4-2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                        <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Vanguard</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
+                    </div>
+                    <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <span class="truncate">Download Brochure</span>
+                    </a>
+                </div>
 
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
-        <div class="flex flex-col items-center gap-4 px-4 py-6">
-            <a class="text-text-primary text-sm font-medium leading-normal" href="">Home</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="servicePage.html">Services</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="internships.html">Vanguard</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="aboutus.html">About</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="contactus.html">Contact</a>
-            <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-                <span class="truncate">Download Brochure</span>
-            </a>
-        </div>
-    </div>
-</header>
-<main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
-<div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
-<section>
-<div class="@container">
-<div class="@[480px]:p-0">
-<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" data-alt="Abstract blue and dark digital network background" style='background-image: linear-gradient(rgba(20, 20, 30, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIQi-qvJ2yYeHSvaa2RmqYVxZ1d2gqaCSc3yWqT0FH8A0BfYXijvt3Xd6P0J21Iy52PMhtBNyRhRWmdWPHBj9siBzuC9qW8x6cXmVZS4rAsYnb4ZRT1jqgi0K7o31dQ-3dfyd16EQ6cOc-Oo6WkKDdMLVHJOcumc9WrGF-kvBkv0dGEeJ-G9_DWnZBzpC-VyxLoFGAiNGRmxfSs9CAGAjOQ9vr-6qVY7bG9cC57-GmEFsHOJDkdfI7heh6EpD7-MykfHNT8osvaqzU");'>
-<div class="flex flex-col gap-4">
-<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-text-primary p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
+                    <div class="flex flex-col items-center gap-4 px-4 py-6">
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="servicePage.html">Services</a>
+                        <a class="text-text-primary text-sm font-normal leading-normal" href="internships.html">Vanguard</a>
+                        <a class="text-text-primary text-sm font-normal leading-normal" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-normal leading-normal" href="contactus.html">Contact</a>
+                        <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">Download Brochure</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
+                    
+                    <!-- Hero Section --><section>
+                        <div class="@container">
+                            <div class="@[480px]:p-0">
+                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" data-alt="Abstract blue and dark digital network background" style='background-image: linear-gradient(rgba(20, 20, 30, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIQi-qvJ2yYeHSvaa2RmqYVxZ1d2gqaCSc3yWqT0FH8A0BfYXijvt3Xd6P0J21Iy52PMhtBNyRhRWmdWPHBj9siBzuC9qW8x6cXmVZS4rAsYnb4ZRT1jqgi0K7o31dQ-3dfyd16EQ6cOc-Oo6WkKDdMLVHJOcumc9WrGF-kvBkv0dGEeJ-G9_DWnZBzpC-VyxLoFGAiNGRmxfSs9CAGAjOQ9vr-6qVY7bG9cC57-GmEFsHOJDkdfI7heh6EpD7-MykfHNT8osvaqzU");'>
+                                    <div class="flex flex-col gap-4">
+                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
                                             Securing the Future with AI-Driven Cybersecurity
                                         </h1>
-<p class="text-gray-300 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">
+                                        <p class="text-gray-300 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">
                                             Protecting your digital assets through intelligent, next-generation solutions and cutting-edge AI.
                                         </p>
-</div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
-<span class="truncate">Discover Our Services</span>
-</button>
-</div>
-</div>
-</div>
-</section>
-<section id="services">
-<h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Services</h2>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
-<div class="text-primary-start">
-<span class="material-symbols-outlined" style="font-size: 32px;">shield</span>
-</div>
-<div class="flex flex-col gap-1">
-<h3 class="text-text-primary text-base font-bold leading-tight">AI Threat Intelligence</h3>
-<p class="text-text-secondary text-sm font-normal leading-normal">Proactively identify and neutralize threats with our advanced AI-powered detection systems.</p>
-</div>
-</div>
-<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
-<div class="text-primary-start">
-<span class="material-symbols-outlined" style="font-size: 32px;">code</span>
-</div>
-<div class="flex flex-col gap-1">
-<h3 class="text-text-primary text-base font-bold leading-tight">Secure Software Development</h3>
-<p class="text-text-secondary text-sm font-normal leading-normal">We build security into the core of your applications from the ground up, ensuring robust protection.</p>
-</div>
-</div>
-<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
-<div class="text-primary-start">
-<span class="material-symbols-outlined" style="font-size: 32px;">bug_report</span>
-</div>
-<div class="flex flex-col gap-1">
-<h3 class="text-text-primary text-base font-bold leading-tight">Vulnerability Assessment</h3>
-<p class="text-text-secondary text-sm font-normal leading-normal">Our experts conduct comprehensive penetration testing to uncover and remediate vulnerabilities.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="grid md:grid-cols-2 gap-8 md:gap-12 items-center p-4" id="about">
-<div class="flex flex-col gap-4">
-<h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em]">WHY AKULA?</h2>
-<div class="space-y-4">
-<p class="text-text-secondary">We are a young team with enormous love for Cyber Security who dares to think big and isn't afraid to be different.</p>
-<p class="text-text-secondary">Organizations and peoples are often in darker side when it comes to actual cyber security. This is often due to lack of knowledge and tools expertise in the field. Most importantly: we believe that every organization should be secured and every person should have knowledge on Cyber Security. Knowledge has power to turn your day into a great one.</p>
-<p class="text-text-secondary font-semibold">Our Mission:</p>
-<p class="text-text-secondary">Akula Cybersec Solutions aims to cover this gap by providing valuable service to companies in a cost effective manner so that client can concentrate on their work and profits instead of cyber threats and also Akula Cybersec Training unit aims to provide training to enthusiast who are eager to learn cybersecurity.</p>
-</div>
-<ul class="space-y-3 mt-4">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-start mt-1">check_circle</span>
-<span class="text-text-secondary">Cost-effective cybersecurity solutions for every organization</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-start mt-1">check_circle</span>
-<span class="text-text-secondary">Comprehensive training programs for cybersecurity enthusiasts</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-start mt-1">check_circle</span>
-<span class="text-text-secondary">AI-powered security systems and custom development services</span>
-</li>
-</ul>
-</div>
-<div>
-<img class="rounded-lg w-full h-auto object-cover" data-alt="A diverse team of professionals collaborating in a modern office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx5SGB_or3qx49n0ilF0KnQAEF2GvBtFhRMOXgl6fDvk3AqOuzk-ws9wDGgc_1tr8oSm7_uJBQZik_U9v9f-xSsKXuttAWkBSrE9eGFIsGVRUDsR34Kbb5p01DGTUT_jcGv9e6XJ9IAAlO3SUK_I3a9CYOtuJTnLtjJUE3DzD0tZFuxfI_Nqm-GHhdUvPYqOrO3f9Zyhz4q0TvdVz64_6eKYFd5yjHKAvYh9ogBsKrn-5IY1WU-0Xcn01X5EP4bSEVEOaHCS_UErKP"/>
-</div>
-</section>
-<section id="internships">
-<div class="@container bg-gray-100 rounded-lg">
-<div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
-<div class="flex flex-col gap-2 text-center">
-<h2 class="text-text-primary tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
-                                        Shape the Future of Cybersecurity
-                                    </h2>
-<p class="text-text-secondary text-base font-normal leading-normal max-w-[720px] mx-auto">
-                                        Gain hands-on experience and mentorship from industry leaders by joining our innovative internship program.
-                                    </p>
-</div>
-<div class="flex flex-1 justify-center">
-<div class="flex justify-center">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow hover:opacity-90 transition-opacity">
-<span class="truncate">Join Our Internship Program</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<footer class="w-full flex justify-center border-t border-solid border-gray-200 mt-12 md:mt-20" id="contact">
-<div class="max-w-[960px] flex-1 px-4 sm:px-10 py-10">
-<div class="flex flex-col md:flex-row justify-between items-center gap-8">
-<a class="flex items-center gap-3" href="/">
-<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
-<svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-<path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
-<path d="m8.5 10.5 3-2.5 4 2"></path>
-<path d="m15.5 10.5-3 2.5-4-2"></path>
-</svg>
-</div>
-<div class="flex flex-col">
-<span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
-<span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
-</div>
-</a>
-<div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
-<div class="flex gap-6 text-sm">
-<a class="text-gray-500 hover:text-primary-start transition-colors" href="/services">Services</a>
-<a class="text-gray-500 hover:text-primary-start transition-colors" href="/internships">Vanguard</a>
-<a class="text-gray-500 hover:text-primary-start transition-colors" href="/about">About</a>
-</div>
-<div class="flex gap-4">
-<a class="text-gray-500 hover:text-primary-start transition-colors" href="/">
-<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
-</a>
-<a class="text-gray-500 hover:text-primary-start transition-colors" href="/">
-<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
-</a>
-</div>
-</div>
-</div>
-<div class="text-center text-gray-500 text-sm mt-8 border-t border-solid border-gray-200 pt-8">
-                        © 2024 Akula Cybersecurity. All rights reserved.
+                                    </div>
+                                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                        <span class="truncate">Discover Our Services</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- === UPDATED STATS BAR (from image) === --><section id="hero-stats" class="relative -mt-10 mb-4 px-4 sm:px-0"> <!-- Adjusted margins and padding --><div class="bg-background-light border border-gray-200 rounded-lg p-6 shadow-lg"> <!-- Card-like styling --><div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center divide-y divide-gray-200 md:divide-y-0 md:divide-x">
+                                
+                                <!-- Stat 1 --><div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">2,500+</span> <!-- Smaller font size --><span class="text-sm md:text-base text-text-secondary mt-2">Students Trained</span>
+                                </div>
+                                
+                                <!-- Stat 2 --><div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">94%</span> <!-- Smaller font size --><span class="text-sm md:text-base text-text-secondary mt-2">Placement Rate</span>
+                                </div>
+                                
+                                <!-- Stat 3 --><div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">150+</span> <!-- Smaller font size --><span class="text-sm md:text-base text-text-secondary mt-2">Industry Partners</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- === END UPDATED STATS BAR === --><!-- === NEW "Choose Your Learning Path" SECTION === --><section id="learning-paths" class="py-8">
+                        <div class="flex flex-col gap-4 text-center mb-8 px-4">
+                            <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
+                                Choose Your Learning Path
+                            </h2>
+                            <p class="text-text-secondary text-base font-normal leading-normal max-w-2xl mx-auto">
+                                Whether you're starting fresh, switching careers, or upskilling your team, we have the perfect cybersecurity journey for you.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+                            <!-- Card 1: New to Cybersecurity --><div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-text-primary text-xl font-semibold leading-tight">New to Cybersecurity</h3>
+                                    <span class="material-symbols-outlined text-primary-start text-3xl">school</span>
+                                </div>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">
+                                    Perfect for recent graduates and career changers. Start with fundamentals and build expertise through hands-on projects.
+                                </p>
+                                <ul class="space-y-2 text-sm text-text-secondary">
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Foundation courses included
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Mentorship program
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Job placement support
+                                    </li>
+                                </ul>
+                                <a href="#" class="text-primary-start text-sm font-bold leading-normal mt-auto hover:underline flex items-center gap-1">
+                                    Start Your Journey
+                                    <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+                                </a>
+                            </div>
+
+                            <!-- Card 2: IT Professional --><div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-text-primary text-xl font-semibold leading-tight">IT Professional</h3>
+                                    <span class="material-symbols-outlined text-primary-start text-3xl">lock</span>
+                                </div>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">
+                                    Advance your IT career with specialized cybersecurity skills. Perfect for system admins and network professionals.
+                                </p>
+                                <ul class="space-y-2 text-sm text-text-secondary">
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Advanced specialization tracks
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Industry certifications
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Flexible scheduling
+                                    </li>
+                                </ul>
+                                <a href="#" class="text-primary-start text-sm font-bold leading-normal mt-auto hover:underline flex items-center gap-1">
+                                    Advance Your Career
+                                    <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+                                </a>
+                            </div>
+
+                            <!-- Card 3: Corporate Training --><div class="flex flex-col gap-5 rounded-lg border border-primary-start bg-corporate-card-bg p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-text-primary text-xl font-semibold leading-tight">Corporate Training</h3>
+                                    <span class="material-symbols-outlined text-primary-start text-3xl">verified</span>
+                                </div>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">
+                                    Comprehensive security awareness and skill development programs tailored for your organization's specific needs.
+                                </p>
+                                <ul class="space-y-2 text-sm text-text-secondary">
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Custom curriculum design
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>On-site or remote delivery
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-500 text-base">check</span>Progress tracking &amp; reporting
+                                    </li>
+                                </ul>
+                                <a href="#" class="text-primary-start text-sm font-bold leading-normal mt-auto hover:underline flex items-center gap-1">
+                                    Get Enterprise Quote
+                                    <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- === END NEW "Choose Your Learning Path" SECTION === --><!-- === NEW "Proven Results That Speak" SECTION === --><section id="proven-results" class="py-12 bg-gray-50">
+                        <div class="text-center mb-10 px-4">
+                            <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
+                                Proven Results That Speak
+                            </h2>
+                            <p class="text-text-secondary text-base font-normal leading-normal max-w-2xl mx-auto mt-4">
+                                Our track record demonstrates the effectiveness of our comprehensive cybersecurity education approach.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-4 max-w-[960px] mx-auto">
+                            <!-- Result Card 1 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                                <span class="text-4xl md:text-5xl font-bold text-primary-start">2,847</span>
+                                <span class="text-base text-text-primary font-medium">Students Trained</span>
+                                <span class="text-sm text-green-600">+23% this year</span>
+                            </div>
+                            <!-- Result Card 2 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                                <span class="text-4xl md:text-5xl font-bold text-primary-start">94.2%</span>
+                                <span class="text-base text-text-primary font-medium">Placement Rate</span>
+                                <span class="text-sm text-text-secondary">Industry leading</span>
+                            </div>
+                            <!-- Result Card 3 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                                <span class="text-4xl md:text-5xl font-bold text-primary-start">167</span>
+                                <span class="text-base text-text-primary font-medium">Industry Partners</span>
+                                <span class="text-sm text-text-secondary">Global network</span>
+                            </div>
+                            <!-- Result Card 4 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                                <span class="text-4xl md:text-5xl font-bold text-primary-start">4.9/5</span>
+                                <span class="text-base text-text-primary font-medium">Student Satisfaction</span>
+                                <span class="text-sm text-text-secondary">Consistently high</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- === END NEW "Proven Results That Speak" SECTION === --><!-- Services Section --><section id="services">
+                        <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Services</h2>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">shield</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">AI Threat Intelligence</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Proactively identify and neutralize threats with our advanced AI-powered detection systems.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">code</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Secure Software Development</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">We build security into the core of your applications from the ground up, ensuring robust protection.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">bug_report</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Vulnerability Assessment</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Our experts conduct comprehensive penetration testing to uncover and remediate vulnerabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- === NEW "Success Stories" SECTION === -->
+                    <section id="success-stories" class="py-12">
+                        <div class="flex flex-col gap-4 text-center mb-10 px-4">
+                            <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
+                                Success Stories
+                            </h2>
+                            <p class="text-text-secondary text-base font-normal leading-normal max-w-3xl mx-auto">
+                                Hear from our alumni who have transformed their careers through Akula CyberSec's comprehensive training programs.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+                            
+                            <!-- Testimonial 1 -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm">
+                                <div class="flex items-center gap-4">
+                                    <img class="w-14 h-14 rounded-full object-cover" src="https://placehold.co/100x100/F58220/FFFFFF?text=MC" alt="Portrait of Marcus Chen">
+                                    <div>
+                                        <h4 class="text-text-primary text-base font-bold">Marcus Chen</h4>
+                                        <p class="text-text-secondary text-sm">Cybersecurity Analyst at TechCorp</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">
+                                    "The hands-on approach at Akula CyberSec was exactly what I needed. Within 6 months, I transitioned from a help desk role to a cybersecurity analyst position with a 40% salary increase."
+                                </p>
+                                <div class="flex text-primary-start mt-auto">
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm">
+                                <div class="flex items-center gap-4">
+                                    <img class="w-14 h-14 rounded-full object-cover" src="https://placehold.co/100x100/2D3748/FFFFFF?text=SR" alt="Portrait of Sarah Rodriguez">
+                                    <div>
+                                        <h4 class="text-text-primary text-base font-bold">Sarah Rodriguez</h4>
+                                        <p class="text-text-secondary text-sm">Security Engineer at CyberDefense Inc</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">
+                                    "The internship program connected me directly with industry professionals. The mentorship and real-world projects gave me the confidence to excel in my current role."
+                                </p>
+                                <div class="flex text-primary-start mt-auto">
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm">
+                                <div class="flex items-center gap-4">
+                                    <img class="w-14 h-14 rounded-full object-cover" src="https://placehold.co/100x100/7A7A7A/FFFFFF?text=DK" alt="Portrait of David Kim">
+                                    <div>
+                                        <h4 class="text-text-primary text-base font-bold">David Kim</h4>
+                                        <p class="text-text-secondary text-sm">CISO at SecureNet Solutions</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">
+                                    "Akula CyberSec's corporate training transformed our entire security posture. The customized curriculum addressed our specific industry challenges perfectly."
+                                </p>
+                                <div class="flex text-primary-start mt-auto">
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                    <span class="material-symbols-outlined filled text-lg">star</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- === END "Success Stories" SECTION === -->
+
+                </div>
+            </main>
+            
+            <!-- === NEW "Ready to Transform" CTA SECTION === -->
+            <section id="cta-final" class="w-full py-16 md:py-20 bg-gradient-to-r from-primary-start to-primary-end">
+                <div class="max-w-[960px] mx-auto flex flex-col items-center gap-6 text-center px-4 sm:px-10">
+                    <h2 class="text-white text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
+                        Ready to Transform Your Career?
+                    </h2>
+                    <p class="text-gray-100 text-base font-normal leading-normal max-w-2xl">
+                        Join thousands of professionals who have successfully transitioned into cybersecurity careers with Akula CyberSec's proven training methodology.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                        <a href="servicePage.html" class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 transition-colors shadow-sm">
+                            <span class="truncate">Explore Courses</span>
+                        </a>
+                        <a href="contactus.html" class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 border border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white hover:text-primary-start transition-colors shadow-sm">
+                            <span class="truncate">Schedule Consultation</span>
+                        </a>
                     </div>
-</div>
-</footer>
-</div>
-</div>
+                </div>
+            </section>
+            <!-- === END "Ready to Transform" CTA SECTION === -->
+             <!-- Footer (Full-width) --><footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
+                <div class="max-w-[1500px] flex-1 px-4 sm:px-10 py-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-12">
+                        
+                        <!-- Column 1: Brand and Description -->
+                        <div class="flex flex-col gap-4">
+                            <a class="flex items-center gap-3" href="index.html">
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                                    <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                                        <path d="m8.5 10.5 3-2.5 4 2"></path>
+                                        <path d="m15.5 10.5-3 2.5-4-2"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                                    <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                                </div>
+                            </a>
+                            <p class="text-text-secondary text-sm leading-relaxed">
+                                Transforming ambitious individuals into elite cybersecurity professionals through immersive, practical learning experiences and industry connections.
+                            </p>
+                        </div>
+
+                        <!-- Column 2: Quick Links -->
+                        <div>
+                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links</h3>
+                            <ul class="space-y-3">
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="servicePage.html">Training Programs</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="internships.html">Internship Portal</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="aboutus.html">About Us</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="#">Student Reviews</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="contactus.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Contact Info -->
+                        <div>
+                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">location_on</span>
+                                    <span class="text-text-secondary text-sm">123 Cyber Street, Tech City, TC 12345</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">call</span>
+                                    <a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="tel:+15551234567">+1 (555) 123-4567</a>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">mail</span>
+                                    <a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="mailto:info@akulacybersec.co">info@akulacybersec.co</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Bottom Bar: Copyright and Socials -->
+                    <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left text-gray-500 text-sm mt-12 border-t border-solid border-gray-200 pt-8 gap-4">
+                        <span>© 2024 Akula Cybersecurity. All rights reserved.</span>
+                        <div class="flex gap-4">
+                            <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const cybersecTab = document.getElementById('tab-cybersec');
+            const aiTab = document.getElementById('tab-ai');
+            const cybersecContent = document.getElementById('content-cybersec');
+            const aiContent = document.getElementById('content-ai');
+            
+            const activeClasses = ['tab-active'];
+            const inactiveClasses = ['tab-inactive'];
+            const activePClasses = ['bg-gradient-to-r', 'from-primary-start', 'to-primary-end', 'bg-clip-text', 'text-transparent'];
+
+            if (tab === 'cybersec') {
+                // Update tabs
+                cybersecTab.classList.add(...activeClasses);
+                cybersecTab.classList.remove(...inactiveClasses);
+                cybersecTab.querySelector('p').classList.add(...activePClasses);
+                
+                aiTab.classList.add(...inactiveClasses);
+                aiTab.classList.remove(...activeClasses);
+                aiTab.querySelector('p').classList.remove(...activePClasses);
+
+                // Update content
+                cybersecContent.classList.remove('hidden');
+                aiContent.classList.add('hidden');
+            } else if (tab === 'ai') {
+                // Update tabs
+                aiTab.classList.add(...activeClasses);
+                aiTab.classList.remove(...inactiveClasses);
+                aiTab.querySelector('p').classList.add(...activePClasses);
+                
+                cybersecTab.classList.add(...inactiveClasses);
+                cybersecTab.classList.remove(...activeClasses);
+                cybersecTab.querySelector('p').classList.remove(...activePClasses);
+
+                // Update content
+                aiContent.classList.remove('hidden');
+                cybersecContent.classList.add('hidden');
+            }
+        }
+    </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const menuButton = document.getElementById('mobile-menu-button');

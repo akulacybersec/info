@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Akula Cybersec Solutions</title>
+    <title>Akula Cybersec Solutions - Services</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='%23F58220' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'></path><g stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' fill='none'><path d='M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14'></path><path d='m8.5 10.5 3-2.5 4 2'></path><path d='m15.5 10.5-3 2.5-4-2'></path></g></svg>">
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -22,6 +22,15 @@
               "text-secondary": "#7A7A7A",
               "text-secondary-end": "#9C9C9C",
               "background-light": "#FFFFFF",
+              "gray-bg-light": "#F8F8F8",
+              /* Added icon colors */
+              "blue-600": "#2563EB",
+              "blue-100": "#DBEAFE",
+              "green-600": "#16A34A",
+              "green-100": "#DCFCE7",
+              "indigo-600": "#4F46E5",
+              "indigo-100": "#E0E7FF",
+              "orange-100": "#FFF7ED",
             },
             fontFamily: {
               "display": ["Inter", "sans-serif"]
@@ -39,14 +48,34 @@
             'GRAD' 0,
             'opsz' 24
         }
+        
+        /* Active tab style */
+        .tab-active {
+            border-bottom-color: #F58220; /* primary-start */
+            color: #F58220; /* primary-start */
+        }
+        .tab-active p {
+             background-image: linear-gradient(to right, #F58220, #FF9F43); /* from-primary-start to-primary-end */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Inactive tab style */
+        .tab-inactive {
+            border-bottom-color: transparent;
+            color: #7A7A7A; /* text-secondary */
+        }
+        .tab-inactive:hover {
+            color: #2D3748; /* text-primary */
+        }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
-            <!-- Header -->
-            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
-    <a class="flex items-center gap-3" href="/">
+            <!-- Header --><header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
+    <a class="flex items-center gap-3" href="index.html">
         <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
             <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -63,8 +92,7 @@
     <div class="hidden md:flex flex-1 justify-end gap-8">
         <div class="flex items-center gap-9">
             <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="index.html">Home</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="">Services</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Vanguard</a>
+            <a class="text-primary-start text-sm font-bold leading-normal" href="servicePage.html">Services</a> <!-- Active Link --><a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Vanguard</a>
             <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
             <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
         </div>
@@ -82,8 +110,7 @@
     <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
         <div class="flex flex-col items-center gap-4 px-4 py-6">
             <a class="text-text-primary text-sm font-medium leading-normal" href="index.html">Home</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="">Services</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="internships.html">Vanguard</a>
+            <a class="text-primary-start text-sm font-bold leading-normal" href="servicePage.html">Services</a> <!-- Active Link --><a class="text-text-primary text-sm font-medium leading-normal" href="internships.html">Vanguard</a>
             <a class="text-text-primary text-sm font-medium leading-normal" href="aboutus.html">About</a>
             <a class="text-text-primary text-sm font-medium leading-normal" href="contactus.html">Contact</a>
             <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
@@ -93,9 +120,9 @@
     </div>
 </header>
 
-            <!-- Main Content -->
-            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
-                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-16">
+            <!-- Main Content: Centered -->
+            <main class="flex-1 flex justify-center pt-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-16 px-4 sm:px-10 md:px-0">
                     
                     <!-- Hero Section -->
                     <section>
@@ -109,22 +136,44 @@
                                         <p class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
                                             Akula builds custom, intelligent security solutions to protect your digital assets with cutting-edge technology.
                                         </p>
-                                        <button class="flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                        <a href="contactus.html" class="flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
                                             <span class="truncate">Schedule a Consultation</span>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
+                    <!-- Stats Section -->
+                    <section class="bg-gray-bg-light py-10 px-4 sm:px-10 -mt-8 rounded-lg shadow-lg relative z-10 border border-gray-200">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[960px] mx-auto text-center divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+                            <div class="flex flex-col items-center justify-center pt-4 sm:pt-0">
+                                <p class="text-primary-start text-4xl font-black leading-tight">25+</p>
+                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Training Programs</p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center pt-4 sm:pt-0">
+                                <p class="text-primary-start text-4xl font-black leading-tight">500+</p>
+                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Hours of Content</p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center pt-4 sm:pt-0">
+                                <p class="text-primary-start text-4xl font-black leading-tight">15+</p>
+                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Industry Certifications</p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center pt-4 sm:pt-0">
+                                <p class="text-primary-start text-4xl font-black leading-tight">24/7</p>
+                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Learning Support</p>
+                            </div>
+                        </div>
+                    </section>
+                    
                     <!-- Services Tabs -->
                     <section>
                         <div class="flex border-b border-gray-200 px-4 gap-8 overflow-x-auto">
-                            <button onclick="switchTab('cybersec')" id="tab-cybersec" class="flex flex-col items-center justify-center border-b-[3px] border-b-primary-start pb-[13px] pt-4 whitespace-nowrap">
-                                <p class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent text-sm font-bold leading-normal tracking-[0.015em]">Cybersecurity Development</p>
+                            <button onclick="switchTab('cybersec')" id="tab-cybersec" class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4 whitespace-nowrap tab-active">
+                                <p class="text-sm font-bold leading-normal tracking-[0.015em]">Cybersecurity Development</p>
                             </button>
-                            <button onclick="switchTab('ai')" id="tab-ai" class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 hover:text-text-primary pb-[13px] pt-4 whitespace-nowrap">
+                            <button onclick="switchTab('ai')" id="tab-ai" class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4 whitespace-nowrap tab-inactive">
                                 <p class="text-sm font-bold leading-normal tracking-[0.015em]">AI-Powered Solutions</p>
                             </button>
                         </div>
@@ -206,73 +255,301 @@
                         </div>
                     </section>
 
-                    <!-- CTA Section -->
-                    <section class="bg-gray-100 rounded-lg">
-                        <div class="@container">
-                            <div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
-                                <div class="flex flex-col gap-2 text-center">
-                                    <h2 class="text-text-primary tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
-                                        Ready to Secure Your <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">Future</span>?
-                                    </h2>
-                                    <p class="text-text-secondary text-base font-normal leading-normal max-w-[720px] mx-auto">
-                                        Reach out to our experts for a consultation and discover how we can enhance your security posture.
-                                    </p>
+                    <!-- Career Development Center Section -->
+                    <section id="career-development" class="py-12 md:py-16">
+                        <div class="flex flex-col gap-4 text-center mb-10 px-4">
+                            <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
+                                Career Development Center
+                            </h2>
+                            <p class="text-text-secondary text-base font-normal leading-normal max-w-3xl mx-auto">
+                                Comprehensive career support services to help you transition into cybersecurity and advance your professional journey.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+                            
+                            <!-- Card 1: Resume Builder -->
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                                <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-orange-100">
+                                    <span class="material-symbols-outlined text-primary-start text-4xl">description</span>
                                 </div>
-                                <div class="flex flex-1 justify-center">
-                                    <div class="flex justify-center">
-                                        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow hover:opacity-90 transition-opacity">
-                                            <span class="truncate">Schedule a Consultation</span>
-                                        </button>
-                                    </div>
-                                </div>
+                                <h3 class="text-text-primary text-xl font-bold leading-tight">Resume Builder</h3>
+                                <p class="text-text-secondary text-sm font-normal leading-normal min-h-[60px]">
+                                    Create professional cybersecurity resumes with industry-specific templates and expert guidance.
+                                </p>
+                                <a href="#" class="flex w-full min-w-[84px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-auto">
+                                    <span class="truncate">Build Resume</span>
+                                </a>
                             </div>
+                    
+                            <!-- Card 2: Interview Simulator -->
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                                <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-blue-100">
+                                    <span class="material-symbols-outlined text-blue-600 text-4xl">videocam</span>
+                                </div>
+                                <h3 class="text-text-primary text-xl font-bold leading-tight">Interview Simulator</h3>
+                                <p class="text-text-secondary text-sm font-normal leading-normal min-h-[60px]">
+                                    Practice with AI-powered mock interviews tailored to cybersecurity roles and companies.
+                                </p>
+                                <a href="#" class="flex w-full min-w-[84px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-auto">
+                                    <span class="truncate">Start Practice</span>
+                                </a>
+                            </div>
+                    
+                            <!-- Card 3: Industry Network -->
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                                <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-green-100">
+                                    <span class="material-symbols-outlined text-green-600 text-4xl">groups</span>
+                                </div>
+                                <h3 class="text-text-primary text-xl font-bold leading-tight">Industry Network</h3>
+                                <p class="text-text-secondary text-sm font-normal leading-normal min-h-[60px]">
+                                    Connect with cybersecurity professionals, mentors, and hiring managers in our exclusive network.
+                                </p>
+                                <a href="#" class="flex w-full min-w-[84px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-auto">
+                                    <span class="truncate">Join Network</span>
+                                </a>
+                            </div>
+                    
+                            <!-- Card 4: Placement Support -->
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                                <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-indigo-100">
+                                    <span class="material-symbols-outlined text-indigo-600 text-4xl">verified_user</span>
+                                </div>
+                                <h3 class="text-text-primary text-xl font-bold leading-tight">Placement Support</h3>
+                                <p class="text-text-secondary text-sm font-normal leading-normal min-h-[60px]">
+                                    Dedicated placement assistance with job matching, salary negotiation, and career guidance.
+                                </p>
+                                <a href="#" class="flex w-full min-w-[84px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-auto">
+                                    <span class="truncate">Get Support</span>
+                                </a>
+                            </div>
+                    
                         </div>
                     </section>
+
+                    <!-- Learning Plan Section -->
+                    <section id="learning-plans" class="py-12 md:py-16">
+                        <div class="flex flex-col gap-4 text-center mb-10 px-4">
+                            <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
+                                Choose Your Learning Plan
+                            </h2>
+                            <p class="text-text-secondary text-base font-normal leading-normal max-w-3xl mx-auto">
+                                Flexible pricing options designed to fit your budget and learning goals. All plans include lifetime access to course materials.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-4 items-start">
+
+                            <!-- Plan 1: Foundation -->
+                            <div class="flex flex-col gap-6 rounded-lg border border-gray-200 bg-background-light p-8 shadow-sm h-full">
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-text-primary text-2xl font-bold leading-tight">Foundation</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Perfect for beginners starting their cybersecurity journey</p>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-text-primary text-5xl font-black">$899</span>
+                                    <span class="text-text-secondary text-sm">One-time payment</span>
+                                </div>
+                                <ul class="flex flex-col gap-3 text-sm text-text-secondary">
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        5 Foundation courses
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Basic skill assessments
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Community forum access
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Certificate of completion
+                                    </li>
+                                </ul>
+                                <a href="#" class="flex w-full min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-auto">
+                                    <span class="truncate">Get Started</span>
+                                </a>
+                            </div>
+
+                            <!-- Plan 2: Professional (Most Popular) -->
+                            <div class="flex flex-col gap-6 rounded-lg border-2 border-primary-start bg-background-light p-8 shadow-2xl h-full relative -my-4">
+                                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-start text-white text-xs font-bold uppercase px-4 py-1 rounded-full">
+                                    Most Popular
+                                </div>
+                                <div class="flex flex-col gap-2 pt-4">
+                                    <h3 class="text-text-primary text-2xl font-bold leading-tight">Professional</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Comprehensive training with mentorship and career support</p>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-text-primary text-5xl font-black">$1,599</span>
+                                    <span class="text-text-secondary text-sm">One-time payment</span>
+                                </div>
+                                <ul class="flex flex-col gap-3 text-sm text-text-secondary">
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        15 courses (all levels)
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Personal mentor assignment
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Career development tools
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Internship placement support
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Industry certifications
+                                    </li>
+                                </ul>
+                                <a href="#" class="flex w-full min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-auto">
+                                    <span class="truncate">Start Professional</span>
+                                </a>
+                            </div>
+
+                            <!-- Plan 3: Enterprise -->
+                            <div class="flex flex-col gap-6 rounded-lg border border-gray-200 bg-background-light p-8 shadow-sm h-full">
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-text-primary text-2xl font-bold leading-tight">Enterprise</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Custom solutions for teams and organizations</p>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-text-primary text-5xl font-black">Custom</span>
+                                    <span class="text-text-secondary text-sm">Contact for pricing</span>
+                                </div>
+                                <ul class="flex flex-col gap-3 text-sm text-text-secondary">
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Custom curriculum design
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        On-site training delivery
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Dedicated account manager
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        Progress tracking & reporting
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                        24/7 priority support
+                                    </li>
+                                </ul>
+                                <a href="contactus.html" class="flex w-full min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-background-light border border-gray-300 text-text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 transition-colors mt-auto">
+                                    <span class="truncate">Contact Sales</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </section>
+
 
                 </div>
             </main>
 
-            <!-- Footer -->
-            <footer class="w-full flex justify-center border-t border-solid border-gray-200 mt-12 md:mt-20">
-                <div class="max-w-[960px] flex-1 px-4 sm:px-10 py-10">
-                    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                        <a class="flex items-center gap-3" href="index.html">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
-                                <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
-                                    <path d="m8.5 10.5 3-2.5 4 2"></path>
-                                    <path d="m15.5 10.5-3 2.5-4-2"></path>
-                                </svg>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
-                                <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
-                            </div>
+            <!-- FINAL CTA Section (Full-width) -->
+            <section class="bg-gradient-to-r from-primary-start to-primary-end py-16 md:py-20 w-full">
+                <div class="max-w-[960px] mx-auto flex flex-col items-center gap-6 px-4 text-center">
+                    <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
+                        Ready to Start Your Cybersecurity Journey?
+                    </h2>
+                    <p class="text-white/90 text-base font-normal leading-normal max-w-2xl">
+                        Join thousands of professionals who have successfully transformed their careers with Akula CyberSec's proven training programs and expert mentorship.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                        <a href="contactus.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">Schedule Consultation</span>
                         </a>
-                        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
-                            <div class="flex gap-6 text-sm">
-                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
-                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="internships.html">Vanguard</a>
-                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="aboutus.html">About</a>
-                            </div>
-                            <div class="flex gap-4">
-                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
-                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+                        <a href="internships.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent border-2 border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-colors">
+                            <span class="truncate">Explore Internships</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer (Full-width) --><footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
+                <div class="max-w-[1500px] flex-1 px-4 sm:px-10 py-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-12">
+                        
+                        <!-- Column 1: Brand and Description -->
+                        <div class="flex flex-col gap-4">
+                            <a class="flex items-center gap-3" href="index.html">
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                                    <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                                        <path d="m8.5 10.5 3-2.5 4 2"></path>
+                                        <path d="m15.5 10.5-3 2.5-4-2"></path>
                                     </svg>
-                                </a>
-                                <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
-                                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                                    </svg>
-                                </a>
-                            </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                                    <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                                </div>
+                            </a>
+                            <p class="text-text-secondary text-sm leading-relaxed">
+                                Transforming ambitious individuals into elite cybersecurity professionals through immersive, practical learning experiences and industry connections.
+                            </p>
+                        </div>
+
+                        <!-- Column 2: Quick Links -->
+                        <div>
+                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links</h3>
+                            <ul class="space-y-3">
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="servicePage.html">Training Programs</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="internships.html">Internship Portal</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="aboutus.html">About Us</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="#">Student Reviews</a></li>
+                                <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="contactus.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Contact Info -->
+                        <div>
+                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">location_on</span>
+                                    <span class="text-text-secondary text-sm">123 Cyber Street, Tech City, TC 12345</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">call</span>
+                                    <a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="tel:+15551234567">+1 (555) 123-4567</a>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">mail</span>
+                                    <a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="mailto:info@akulacybersec.co">info@akulacybersec.co</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Bottom Bar: Copyright and Socials -->
+                    <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left text-gray-500 text-sm mt-12 border-t border-solid border-gray-200 pt-8 gap-4">
+                        <span>© 2024 Akula Cybersecurity. All rights reserved.</span>
+                        <div class="flex gap-4">
+                            <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
-                    <div class="text-center text-gray-500 text-sm mt-8 border-t border-solid border-gray-200 pt-8">
-                        © 2024 Akula Cybersecurity. All rights reserved.
-                    </div>
+
                 </div>
             </footer>
 
@@ -285,29 +562,33 @@
             const aiTab = document.getElementById('tab-ai');
             const cybersecContent = document.getElementById('content-cybersec');
             const aiContent = document.getElementById('content-ai');
+            
+            const activeClasses = ['tab-active'];
+            const inactiveClasses = ['tab-inactive'];
+            const activePClasses = ['bg-gradient-to-r', 'from-primary-start', 'to-primary-end', 'bg-clip-text', 'text-transparent'];
 
             if (tab === 'cybersec') {
                 // Update tabs
-                cybersecTab.classList.remove('border-b-transparent', 'text-gray-500');
-                cybersecTab.classList.add('border-b-primary-start');
-                cybersecTab.querySelector('p').classList.add('bg-gradient-to-r', 'from-primary-start', 'to-primary-end', 'bg-clip-text', 'text-transparent');
+                cybersecTab.classList.add(...activeClasses);
+                cybersecTab.classList.remove(...inactiveClasses);
+                cybersecTab.querySelector('p').classList.add(...activePClasses);
                 
-                aiTab.classList.remove('border-b-primary-start');
-                aiTab.classList.add('border-b-transparent', 'text-gray-500');
-                aiTab.querySelector('p').classList.remove('bg-gradient-to-r', 'from-primary-start', 'to-primary-end', 'bg-clip-text', 'text-transparent');
+                aiTab.classList.add(...inactiveClasses);
+                aiTab.classList.remove(...activeClasses);
+                aiTab.querySelector('p').classList.remove(...activePClasses);
 
                 // Update content
                 cybersecContent.classList.remove('hidden');
                 aiContent.classList.add('hidden');
             } else if (tab === 'ai') {
                 // Update tabs
-                aiTab.classList.remove('border-b-transparent', 'text-gray-500');
-                aiTab.classList.add('border-b-primary-start');
-                aiTab.querySelector('p').classList.add('bg-gradient-to-r', 'from-primary-start', 'to-primary-end', 'bg-clip-text', 'text-transparent');
+                aiTab.classList.add(...activeClasses);
+                aiTab.classList.remove(...inactiveClasses);
+                aiTab.querySelector('p').classList.add(...activePClasses);
                 
-                cybersecTab.classList.remove('border-b-primary-start');
-                cybersecTab.classList.add('border-b-transparent', 'text-gray-500');
-                cybersecTab.querySelector('p').classList.remove('bg-gradient-to-r', 'from-primary-start', 'to-primary-end', 'bg-clip-text', 'text-transparent');
+                cybersecTab.classList.add(...inactiveClasses);
+                cybersecTab.classList.remove(...activeClasses);
+                cybersecTab.querySelector('p').classList.remove(...activePClasses);
 
                 // Update content
                 aiContent.classList.remove('hidden');
