@@ -50,6 +50,42 @@
                 'GRAD' 0,
                 'opsz' 24
         }
+
+        /* === Animation Keyframes for Hero Load === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply animations with delays */
+        .animate-fadeInUp-h1 {
+            /* 'backwards' fill mode applies 'from' state before animation starts */
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+        .animate-fadeInUp-p {
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+        .animate-fadeInUp-button {
+            animation: fadeInUp 0.8s ease-out 0.9s backwards;
+        }
+
+        /* === NEW: Scroll-triggered Animation Classes === */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform; /* Performance optimization */
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
@@ -72,13 +108,15 @@
                 </a>
                 <div class="hidden md:flex flex-1 justify-end gap-8">
                     <div class="flex items-center gap-9">
-                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="">Home</a>
-                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
-                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Vanguard</a>
-                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
-                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
+                        <!-- === Added hover animations to nav links === -->
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="servicePage.html">Services</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="internships.html">Vanguard</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="contactus.html">Contact</a>
                     </div>
-                    <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                    <!-- === Added hover animation to nav button === -->
+                    <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
                         <span class="truncate">Download Brochure</span>
                     </a>
                 </div>
@@ -89,7 +127,8 @@
                     </button>
                 </div>
 
-                <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
                     <div class="flex flex-col items-center gap-4 px-4 py-6">
                         <a class="text-text-primary text-sm font-medium leading-normal" href="">Home</a>
                         <a class="text-text-primary text-sm font-medium leading-normal" href="servicePage.html">Services</a>
@@ -106,19 +145,21 @@
             <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
                     
-                    <!-- Hero Section --><section>
+                    <!-- Hero Section -->
+                    <section>
                         <div class="@container">
                             <div class="@[480px]:p-0">
-                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" data-alt="Abstract blue and dark digital network background" style='background-image: linear-gradient(rgba(20, 20, 30, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIQi-qvJ2yYeHSvaa2RmqYVxZ1d2gqaCSc3yWqT0FH8A0BfYXijvt3Xd6P0J21Iy52PMhtBNyRhRWmdWPHBj9siBzuC9qW8x6cXmVZS4rAsYnb4ZRT1jqgi0K7o31dQ-3dfyd16EQ6cOc-Oo6WkKDdMLVHJOcumc9WrGF-kvBkv0dGEeJ-G9_DWnZBzpC-VyxLoFGAiNGRmxfSs9CAGAjOQ9vr-6qVY7bG9cC57-GmEFsHOJDkdfI7heh6EpD7-MykfHNT8osvaqzU");'>
+                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" data-alt="Abstract blue and dark digital network background" style='background-image: linear-gradient(rgba(245, 130, 32, 0.8) 0%, rgba(45, 55, 72, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIQi-qvJ2yYeHSvaa2RmqYVxZ1d2gqaCSc3yWqT0FH8A0BfYXijvt3Xd6P0J21Iy52PMhtBNyRhRWmdWPHBj9siBzuC9qW8x6cXmVZS4rAsYnb4ZRT1jqgi0K7o31dQ-3dfyd16EQ6cOc-Oo6WkKDdMLVHJOcumc9WrGF-kvBkv0dGEeJ-G9_DWnZBzpC-VyxLoFGAiNGRmxfSs9CAGAjOQ9vr-6qVY7bG9cC57-GmEFsHOJDkdfI7heh6EpD7-MykfHNT8osvaqzU");'>
+                                    <!-- === Added animation classes to Hero content === -->
                                     <div class="flex flex-col gap-4">
-                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] animate-fadeInUp-h1">
                                             Securing the Future with AI-Driven Cybersecurity
                                         </h1>
-                                        <p class="text-gray-300 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">
+                                        <p class="text-gray-300 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto animate-fadeInUp-p">
                                             Protecting your digital assets through intelligent, next-generation solutions and cutting-edge AI.
                                         </p>
                                     </div>
-                                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-transform duration-300 hover:-translate-y-0.5 animate-fadeInUp-button">
                                         <span class="truncate">Discover Our Services</span>
                                     </button>
                                 </div>
@@ -126,23 +167,38 @@
                         </div>
                     </section>
                     
-                    <!-- === UPDATED STATS BAR (from image) === --><section id="hero-stats" class="relative -mt-10 mb-4 px-4 sm:px-0"> <!-- Adjusted margins and padding --><div class="bg-background-light border border-gray-200 rounded-lg p-6 shadow-lg"> <!-- Card-like styling --><div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center divide-y divide-gray-200 md:divide-y-0 md:divide-x">
+                    <!-- === UPDATED STATS BAR (from image) === -->
+                    <!-- === Added scroll-animate class === -->
+                    <section id="hero-stats" class="relative -mt-10 mb-4 px-4 sm:px-0 scroll-animate"> <!-- Adjusted margins and padding -->
+                        <!-- === Added hover animation to Stats Bar === -->
+                        <div class="bg-background-light border border-gray-200 rounded-lg p-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1"> <!-- Card-like styling -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center divide-y divide-gray-200 md:divide-y-0 md:divide-x">
                                 
-                                <!-- Stat 1 --><div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">2,500+</span> <!-- Smaller font size --><span class="text-sm md:text-base text-text-secondary mt-2">Students Trained</span>
+                                <!-- Stat 1 -->
+                                <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">2,500+</span> <!-- Smaller font size -->
+                                    <span class="text-sm md:text-base text-text-secondary mt-2">Students Trained</span>
                                 </div>
                                 
-                                <!-- Stat 2 --><div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">94%</span> <!-- Smaller font size --><span class="text-sm md:text-base text-text-secondary mt-2">Placement Rate</span>
+                                <!-- Stat 2 -->
+                                <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">94%</span> <!-- Smaller font size -->
+                                    <span class="text-sm md:text-base text-text-secondary mt-2">Placement Rate</span>
                                 </div>
                                 
-                                <!-- Stat 3 --><div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">150+</span> <!-- Smaller font size --><span class="text-sm md:text-base text-text-secondary mt-2">Industry Partners</span>
+                                <!-- Stat 3 -->
+                                <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">150+</span> <!-- Smaller font size -->
+                                    <span class="text-sm md:text-base text-text-secondary mt-2">Industry Partners</span>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <!-- === END UPDATED STATS BAR === --><!-- === NEW "Choose Your Learning Path" SECTION === --><section id="learning-paths" class="py-8">
+                    <!-- === END UPDATED STATS BAR === -->
+
+                    <!-- === NEW "Choose Your Learning Path" SECTION === -->
+                    <!-- === Added scroll-animate class === -->
+                    <section id="learning-paths" class="py-8 scroll-animate">
                         <div class="flex flex-col gap-4 text-center mb-8 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                                 Choose Your Learning Path
@@ -153,7 +209,8 @@
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
-                            <!-- Card 1: New to Cybersecurity --><div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6">
+                            <!-- === Added hover animation to Card 1 === -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-text-primary text-xl font-semibold leading-tight">New to Cybersecurity</h3>
                                     <span class="material-symbols-outlined text-primary-start text-3xl">school</span>
@@ -178,7 +235,8 @@
                                 </a>
                             </div>
 
-                            <!-- Card 2: IT Professional --><div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6">
+                            <!-- === Added hover animation to Card 2 === -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-text-primary text-xl font-semibold leading-tight">IT Professional</h3>
                                     <span class="material-symbols-outlined text-primary-start text-3xl">lock</span>
@@ -203,7 +261,8 @@
                                 </a>
                             </div>
 
-                            <!-- Card 3: Corporate Training --><div class="flex flex-col gap-5 rounded-lg border border-primary-start bg-corporate-card-bg p-6">
+                            <!-- === Added hover animation to Card 3 === -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-primary-start bg-corporate-card-bg p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-text-primary text-xl font-semibold leading-tight">Corporate Training</h3>
                                     <span class="material-symbols-outlined text-primary-start text-3xl">verified</span>
@@ -229,7 +288,11 @@
                             </div>
                         </div>
                     </section>
-                    <!-- === END NEW "Choose Your Learning Path" SECTION === --><!-- === NEW "Proven Results That Speak" SECTION === --><section id="proven-results" class="py-12 bg-gray-50">
+                    <!-- === END NEW "Choose Your Learning Path" SECTION === -->
+
+                    <!-- === NEW "Proven Results That Speak" SECTION === -->
+                    <!-- === Added scroll-animate class === -->
+                    <section id="proven-results" class="py-12 bg-gray-50 scroll-animate">
                         <div class="text-center mb-10 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                                 Proven Results That Speak
@@ -240,32 +303,41 @@
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-4 max-w-[960px] mx-auto">
-                            <!-- Result Card 1 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                            <!-- Result Card 1 -->
+                            <div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
                                 <span class="text-4xl md:text-5xl font-bold text-primary-start">2,847</span>
                                 <span class="text-base text-text-primary font-medium">Students Trained</span>
                                 <span class="text-sm text-green-600">+23% this year</span>
                             </div>
-                            <!-- Result Card 2 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                            <!-- Result Card 2 -->
+                            <div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
                                 <span class="text-4xl md:text-5xl font-bold text-primary-start">94.2%</span>
                                 <span class="text-base text-text-primary font-medium">Placement Rate</span>
                                 <span class="text-sm text-text-secondary">Industry leading</span>
                             </div>
-                            <!-- Result Card 3 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                            <!-- Result Card 3 -->
+                            <div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
                                 <span class="text-4xl md:text-5xl font-bold text-primary-start">167</span>
                                 <span class="text-base text-text-primary font-medium">Industry Partners</span>
                                 <span class="text-sm text-text-secondary">Global network</span>
                             </div>
-                            <!-- Result Card 4 --><div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm">
+                            <!-- Result Card 4 -->
+                            <div class="flex flex-col gap-2 rounded-lg border border-gray-200 bg-background-light p-6 text-center shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
                                 <span class="text-4xl md:text-5xl font-bold text-primary-start">4.9/5</span>
                                 <span class="text-base text-text-primary font-medium">Student Satisfaction</span>
                                 <span class="text-sm text-text-secondary">Consistently high</span>
                             </div>
                         </div>
                     </section>
-                    <!-- === END NEW "Proven Results That Speak" SECTION === --><!-- Services Section --><section id="services">
+                    <!-- === END NEW "Proven Results That Speak" SECTION === -->
+
+                    <!-- Services Section -->
+                    <!-- === Added scroll-animate class === -->
+                    <section id="services" class="scroll-animate">
                         <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Services</h2>
                         <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
+                            <!-- === Added hover animation to Service Card 1 === -->
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="text-primary-start">
                                     <span class="material-symbols-outlined" style="font-size: 32px;">shield</span>
                                 </div>
@@ -274,7 +346,8 @@
                                     <p class="text-text-secondary text-sm font-normal leading-normal">Proactively identify and neutralize threats with our advanced AI-powered detection systems.</p>
                                 </div>
                             </div>
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
+                            <!-- === Added hover animation to Service Card 2 === -->
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="text-primary-start">
                                     <span class="material-symbols-outlined" style="font-size: 32px;">code</span>
                                 </div>
@@ -283,7 +356,8 @@
                                     <p class="text-text-secondary text-sm font-normal leading-normal">We build security into the core of your applications from the ground up, ensuring robust protection.</p>
                                 </div>
                             </div>
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col">
+                            <!-- === Added hover animation to Service Card 3 === -->
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="text-primary-start">
                                     <span class="material-symbols-outlined" style="font-size: 32px;">bug_report</span>
                                 </div>
@@ -296,7 +370,8 @@
                     </section>
                     
                     <!-- === NEW "Success Stories" SECTION === -->
-                    <section id="success-stories" class="py-12">
+                    <!-- === Added scroll-animate class === -->
+                    <section id="success-stories" class="py-12 scroll-animate">
                         <div class="flex flex-col gap-4 text-center mb-10 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                                 Success Stories
@@ -308,8 +383,8 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
                             
-                            <!-- Testimonial 1 -->
-                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm">
+                            <!-- === Added hover animation to Testimonial 1 === -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center gap-4">
                                     <img class="w-14 h-14 rounded-full object-cover" src="https://placehold.co/100x100/F58220/FFFFFF?text=MC" alt="Portrait of Marcus Chen">
                                     <div>
@@ -329,8 +404,8 @@
                                 </div>
                             </div>
 
-                            <!-- Testimonial 2 -->
-                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm">
+                            <!-- === Added hover animation to Testimonial 2 === -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center gap-4">
                                     <img class="w-14 h-14 rounded-full object-cover" src="https://placehold.co/100x100/2D3748/FFFFFF?text=SR" alt="Portrait of Sarah Rodriguez">
                                     <div>
@@ -350,8 +425,8 @@
                                 </div>
                             </div>
 
-                            <!-- Testimonial 3 -->
-                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm">
+                            <!-- === Added hover animation to Testimonial 3 === -->
+                            <div class="flex flex-col gap-5 rounded-lg border border-gray-200 bg-gray-bg-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center gap-4">
                                     <img class="w-14 h-14 rounded-full object-cover" src="https://placehold.co/100x100/7A7A7A/FFFFFF?text=DK" alt="Portrait of David Kim">
                                     <div>
@@ -379,7 +454,8 @@
             </main>
             
             <!-- === NEW "Ready to Transform" CTA SECTION === -->
-            <section id="cta-final" class="w-full py-16 md:py-20 bg-gradient-to-r from-primary-start to-primary-end">
+            <!-- === Added scroll-animate class === -->
+            <section id="cta-final" class="w-full py-16 md:py-20 bg-gradient-to-r from-primary-start to-primary-end scroll-animate">
                 <div class="max-w-[960px] mx-auto flex flex-col items-center gap-6 text-center px-4 sm:px-10">
                     <h2 class="text-white text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                         Ready to Transform Your Career?
@@ -388,17 +464,20 @@
                         Join thousands of professionals who have successfully transitioned into cybersecurity careers with Akula CyberSec's proven training methodology.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                        <a href="servicePage.html" class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 transition-colors shadow-sm">
+                        <!-- === Added hover animations to CTA buttons === -->
+                        <a href="servicePage.html" class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg shadow-sm">
                             <span class="truncate">Explore Courses</span>
                         </a>
-                        <a href="contactus.html" class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 border border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white hover:text-primary-start transition-colors shadow-sm">
+                        <a href="contactus.html" class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 border border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white hover:text-primary-start transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg shadow-sm">
                             <span class="truncate">Schedule Consultation</span>
                         </a>
                     </div>
                 </div>
             </section>
             <!-- === END "Ready to Transform" CTA SECTION === -->
-             <!-- Footer (Full-width) --><footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
+            
+             <!-- Footer (Full-width) -->
+            <footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
                 <div class="max-w-[1500px] flex-1 px-4 sm:px-10 py-10">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-12">
                         
@@ -529,6 +608,31 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // === NEW: Scroll Animation Script ===
+        const observerOptions = {
+            root: null, // use the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Select all elements with the 'scroll-animate' class
+        const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
+        });
+        // === End Scroll Animation Script ===
     });
 </script>
 </body>

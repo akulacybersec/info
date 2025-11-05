@@ -69,74 +69,117 @@
         .tab-inactive:hover {
             color: #2D3748; /* text-primary */
         }
+
+        /* === Animation Keyframes for Hero Load === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply animations with delays */
+        .animate-fadeInUp-h1 {
+            /* 'backwards' fill mode applies 'from' state before animation starts */
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+        .animate-fadeInUp-p {
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+        .animate-fadeInUp-button {
+            animation: fadeInUp 0.8s ease-out 0.9s backwards;
+        }
+
+        /* === NEW: Scroll-triggered Animation Classes === */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform; /* Performance optimization */
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
-            <!-- Header --><header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
-    <a class="flex items-center gap-3" href="index.html">
-        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
-            <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
-                <path d="m8.5 10.5 3-2.5 4 2"></path>
-                <path d="m15.5 10.5-3 2.5-4-2"></path>
-            </svg>
-        </div>
-        <div class="flex flex-col">
-            <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
-            <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
-        </div>
-    </a>
-    <div class="hidden md:flex flex-1 justify-end gap-8">
-        <div class="flex items-center gap-9">
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="index.html">Home</a>
-            <a class="text-primary-start text-sm font-bold leading-normal" href="servicePage.html">Services</a> <!-- Active Link --><a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="internships.html">Vanguard</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
-        </div>
-        <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-            <span class="truncate">Download Brochure</span>
-        </a>
-    </div>
-    
-    <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-text-primary p-2">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    </div>
+            <!-- Header -->
+            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
+                <a class="flex items-center gap-3" href="index.html">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                        <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                            <path d="m8.5 10.5 3-2.5 4 2"></path>
+                            <path d="m15.5 10.5-3 2.5-4-2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                        <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="index.html">Home</a>
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="servicePage.html">Services</a> <!-- Active Link -->
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="internships.html">Vanguard</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="contactus.html">Contact</a>
+                    </div>
+                    <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <span class="truncate">Download Brochure</span>
+                    </a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-text-primary p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
 
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
-        <div class="flex flex-col items-center gap-4 px-4 py-6">
-            <a class="text-text-primary text-sm font-medium leading-normal" href="index.html">Home</a>
-            <a class="text-primary-start text-sm font-bold leading-normal" href="servicePage.html">Services</a> <!-- Active Link --><a class="text-text-primary text-sm font-medium leading-normal" href="internships.html">Vanguard</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="aboutus.html">About</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="contactus.html">Contact</a>
-            <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-                <span class="truncate">Download Brochure</span>
-            </a>
-        </div>
-    </div>
-</header>
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
+                    <div class="flex flex-col items-center gap-4 px-4 py-6">
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="index.html">Home</a>
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="servicePage.html">Services</a> <!-- Active Link -->
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="internships.html">Vanguard</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="contactus.html">Contact</a>
+                        <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">Download Brochure</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
 
             <!-- Main Content: Centered -->
-            <main class="flex-1 flex justify-center pt-5">
-                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-16 px-4 sm:px-10 md:px-0">
-                    
+            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
+                                
                     <!-- Hero Section -->
                     <section>
                         <div class="@container">
                             <div class="@[480px]:p-0">
-                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10" style='background-image: linear-gradient(rgba(26, 32, 44, 0.4) 0%, rgba(26, 32, 44, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAeJqyMY3s48Pjt0Rbf1W4gjWjIh72vjb0nNv4P3VsklRq4EjTf1NkPRbSL28C_LWC9W1jVYD4QeWrSn_g1x76ExrQYspxB6XKFuXci7pYVFH88gb2B5p_EOoVNMKzm5bvnGpXgFRwsTM2P_OwugJQiVbzbGTN8eMAJEt0xkW7M2XKIS0M_fNkmUOdLek99jv4OQdWjSmOBqtu6LJlhRzPSrt3psdUW59A38CSxPShMNeuNRiXGMz-QrB4lxfYzT7gGBCUKGTIJ3F2t");'>
-                                    <div class="flex flex-col gap-4 max-w-2xl">
-                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                <!-- === UPDATED ALIGNMENT TO MATCH INDEX.HTML (CENTERED) === -->
+                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" style='background-image: linear-gradient(rgba(245, 130, 32, 0.8) 0%, rgba(45, 55, 72, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAeJqyMY3s48Pjt0Rbf1W4gjWjIh72vjb0nNv4P3VsklRq4EjTf1NkPRbSL28C_LWC9W1jVYD4QeWrSn_g1x76ExrQYspxB6XKFuXci7pYVFH88gb2B5p_EOoVNMKzm5bvnGpXgFRwsTM2P_OwugJQiVbzbGTN8eMAJEt0xkW7M2XKIS0M_fNkmUOdLek99jv4OQdWjSmOBqtu6LJlhRzPSrt3psdUW59A38CSxPShMNeuNRiXGMz-QrB4lxfYzT7gGBCUKGTIJ3F2t");'>
+                                    <div class="flex flex-col gap-4"> <!-- Removed max-w-2xl from this div -->
+                                        <!-- === ADDED ANIMATIONS === -->
+                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] animate-fadeInUp-h1">
                                             Next-Generation Cybersecurity, Powered by AI
                                         </h1>
-                                        <p class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                        <!-- === ADDED max-w-2xl and mx-auto === -->
+                                        <p class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal animate-fadeInUp-p max-w-2xl mx-auto">
                                             Akula builds custom, intelligent security solutions to protect your digital assets with cutting-edge technology.
                                         </p>
-                                        <a href="contactus.html" class="flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                        <!-- === ADDED mx-auto and updated max-w to 480px === -->
+                                        <a href="contactus.html" class="flex min-w-[84px] max-w-[480px] mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-transform duration-300 hover:-translate-y-0.5 animate-fadeInUp-button">
                                             <span class="truncate">Schedule a Consultation</span>
                                         </a>
                                     </div>
@@ -146,7 +189,8 @@
                     </section>
 
                     <!-- Stats Section -->
-                    <section class="bg-gray-bg-light py-10 px-4 sm:px-10 -mt-8 rounded-lg shadow-lg relative z-10 border border-gray-200">
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section class="bg-gray-bg-light py-10 px-4 sm:px-10 -mt-8 rounded-lg shadow-lg relative z-10 border border-gray-200 scroll-animate transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[960px] mx-auto text-center divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
                             <div class="flex flex-col items-center justify-center pt-4 sm:pt-0">
                                 <p class="text-primary-start text-4xl font-black leading-tight">25+</p>
@@ -168,22 +212,39 @@
                     </section>
                     
                     <!-- Services Tabs -->
-                    <section>
-                        <div class="flex border-b border-gray-200 px-4 gap-8 overflow-x-auto">
-                            <button onclick="switchTab('cybersec')" id="tab-cybersec" class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4 whitespace-nowrap tab-active">
-                                <p class="text-sm font-bold leading-normal tracking-[0.015em]">Cybersecurity Development</p>
-                            </button>
-                            <button onclick="switchTab('ai')" id="tab-ai" class="flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4 whitespace-nowrap tab-inactive">
-                                <p class="text-sm font-bold leading-normal tracking-[0.015em]">AI-Powered Solutions</p>
-                            </button>
-                        </div>
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section class="scroll-animate">
+                    <div class="flex border-b border-gray-200 px-4 gap-6 overflow-x-auto">
+                        <button
+                        onclick="switchTab('cybersec')"
+                        id="tab-cybersec"
+                        class="flex flex-col items-center justify-center border-b-[2px] pb-2 pt-3 whitespace-nowrap tab-active"
+                        >
+                        <p class="text-xs font-semibold leading-normal tracking-[0.01em]">
+                            Cybersecurity Development
+                        </p>
+                        </button>
+                        <button
+                        onclick="switchTab('ai')"
+                        id="tab-ai"
+                        class="flex flex-col items-center justify-center border-b-[2px] pb-2 pt-3 whitespace-nowrap tab-inactive"
+                        >
+                        <p class="text-xs font-semibold leading-normal tracking-[0.01em]">
+                            AI-Powered Solutions
+                        </p>
+                        </button>
+                    </div>
                     </section>
 
+
+
                     <!-- Cybersecurity Development Services -->
-                    <section id="content-cybersec">
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section id="content-cybersec" class="scroll-animate">
                         <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6">Cybersecurity Development Services</h2>
                         <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <!-- Note: Kept existing hover effects, added card lift -->
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">shield</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Penetration Testing Tools</h3>
@@ -191,7 +252,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">developer_mode</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Secure Software Development</h3>
@@ -199,7 +260,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">lock</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Custom Security Protocols</h3>
@@ -207,7 +268,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">monitoring</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Vulnerability Dashboards</h3>
@@ -218,10 +279,11 @@
                     </section>
 
                     <!-- AI-Powered Solutions -->
-                    <section id="content-ai" class="hidden">
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section id="content-ai" class="hidden scroll-animate">
                         <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6">AI-Powered Solutions</h2>
                         <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">hub</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">AI-Driven Threat Intelligence</h3>
@@ -229,7 +291,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">radar</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Behavioral Anomaly Detection</h3>
@@ -237,7 +299,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">phishing</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Automated Phishing Analysis</h3>
@@ -245,7 +307,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer">
+                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">description</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">NLP for Log Analysis</h3>
@@ -256,7 +318,8 @@
                     </section>
 
                     <!-- Career Development Center Section -->
-                    <section id="career-development" class="py-12 md:py-16">
+                    <!-- === ADDED SCROLL ANIMATION & HOVER EFFECTS === -->
+                    <section id="career-development" class="py-12 md:py-16 scroll-animate">
                         <div class="flex flex-col gap-4 text-center mb-10 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                                 Career Development Center
@@ -268,7 +331,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
                             
                             <!-- Card 1: Resume Builder -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-orange-100">
                                     <span class="material-symbols-outlined text-primary-start text-4xl">description</span>
                                 </div>
@@ -280,9 +343,9 @@
                                     <span class="truncate">Build Resume</span>
                                 </a>
                             </div>
-                    
+                        
                             <!-- Card 2: Interview Simulator -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-blue-100">
                                     <span class="material-symbols-outlined text-blue-600 text-4xl">videocam</span>
                                 </div>
@@ -294,9 +357,9 @@
                                     <span class="truncate">Start Practice</span>
                                 </a>
                             </div>
-                    
+                        
                             <!-- Card 3: Industry Network -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-green-100">
                                     <span class="material-symbols-outlined text-green-600 text-4xl">groups</span>
                                 </div>
@@ -308,9 +371,9 @@
                                     <span class="truncate">Join Network</span>
                                 </a>
                             </div>
-                    
+                        
                             <!-- Card 4: Placement Support -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center">
+                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-indigo-100">
                                     <span class="material-symbols-outlined text-indigo-600 text-4xl">verified_user</span>
                                 </div>
@@ -322,12 +385,13 @@
                                     <span class="truncate">Get Support</span>
                                 </a>
                             </div>
-                    
+                        
                         </div>
                     </section>
 
                     <!-- Learning Plan Section -->
-                    <section id="learning-plans" class="py-12 md:py-16">
+                    <!-- === ADDED SCROLL ANIMATION & HOVER EFFECTS === -->
+                    <section id="learning-plans" class="py-12 md:py-16 scroll-animate">
                         <div class="flex flex-col gap-4 text-center mb-10 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                                 Choose Your Learning Plan
@@ -339,7 +403,7 @@
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-4 items-start">
 
                             <!-- Plan 1: Foundation -->
-                            <div class="flex flex-col gap-6 rounded-lg border border-gray-200 bg-background-light p-8 shadow-sm h-full">
+                            <div class="flex flex-col gap-6 rounded-lg border border-gray-200 bg-background-light p-8 shadow-sm h-full transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex flex-col gap-2">
                                     <h3 class="text-text-primary text-2xl font-bold leading-tight">Foundation</h3>
                                     <p class="text-text-secondary text-sm font-normal leading-normal">Perfect for beginners starting their cybersecurity journey</p>
@@ -372,7 +436,7 @@
                             </div>
 
                             <!-- Plan 2: Professional (Most Popular) -->
-                            <div class="flex flex-col gap-6 rounded-lg border-2 border-primary-start bg-background-light p-8 shadow-2xl h-full relative -my-4">
+                            <div class="flex flex-col gap-6 rounded-lg border-2 border-primary-start bg-background-light p-8 shadow-2xl h-full relative -my-4 transition-all duration-300 ease-in-out hover:scale-[1.03]">
                                 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-start text-white text-xs font-bold uppercase px-4 py-1 rounded-full">
                                     Most Popular
                                 </div>
@@ -412,7 +476,7 @@
                             </div>
 
                             <!-- Plan 3: Enterprise -->
-                            <div class="flex flex-col gap-6 rounded-lg border border-gray-200 bg-background-light p-8 shadow-sm h-full">
+                            <div class="flex flex-col gap-6 rounded-lg border border-gray-200 bg-background-light p-8 shadow-sm h-full transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex flex-col gap-2">
                                     <h3 class="text-text-primary text-2xl font-bold leading-tight">Enterprise</h3>
                                     <p class="text-text-secondary text-sm font-normal leading-normal">Custom solutions for teams and organizations</p>
@@ -456,7 +520,8 @@
             </main>
 
             <!-- FINAL CTA Section (Full-width) -->
-            <section class="bg-gradient-to-r from-primary-start to-primary-end py-16 md:py-20 w-full">
+            <!-- === ADDED SCROLL ANIMATION & HOVER EFFECTS === -->
+            <section class="bg-gradient-to-r from-primary-start to-primary-end py-16 md:py-20 w-full scroll-animate">
                 <div class="max-w-[960px] mx-auto flex flex-col items-center gap-6 px-4 text-center">
                     <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
                         Ready to Start Your Cybersecurity Journey?
@@ -465,17 +530,18 @@
                         Join thousands of professionals who have successfully transformed their careers with Akula CyberSec's proven training programs and expert mentorship.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                        <a href="contactus.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <a href="contactus.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
                             <span class="truncate">Schedule Consultation</span>
                         </a>
-                        <a href="internships.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent border-2 border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-colors">
+                        <a href="internships.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent border-2 border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
                             <span class="truncate">Explore Internships</span>
                         </a>
                     </div>
                 </div>
             </section>
 
-            <!-- Footer (Full-width) --><footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
+            <!-- Footer (Full-width) -->
+            <footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
                 <div class="max-w-[1500px] flex-1 px-4 sm:px-10 py-10">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-12">
                         
@@ -606,6 +672,31 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // === NEW: Scroll Animation Script ===
+        const observerOptions = {
+            root: null, // use the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Select all elements with the 'scroll-animate' class
+        const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
+        });
+        // === End Scroll Animation Script ===
     });
 </script>
 </body>

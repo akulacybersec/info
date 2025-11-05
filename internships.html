@@ -3,13 +3,19 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Akula Cybersec Solutions</title>
+    <!-- === UPDATED TITLE === -->
+    <title>Akula Cybersec Solutions - Vanguard Program</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='%23F58220' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'></path><g stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' fill='none'><path d='M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14'></path><path d='m8.5 10.5 3-2.5 4 2'></path><path d='m15.5 10.5-3 2.5-4-2'></path></g></svg>">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    
+    <!-- === ADDED ALPINE.JS SCRIPTS (for tabs and FAQ) === -->
+    <script src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -22,6 +28,9 @@
               "text-secondary": "#7A7A7A",
               "text-secondary-end": "#9C9C9C",
               "background-light": "#FFFFFF",
+              /* === ADDED MISSING COLORS === */
+              "gray-bg-light": "#F8F8F8", 
+              "corporate-card-bg": "#FFF7ED", 
             },
             fontFamily: {
               "display": ["Inter", "sans-serif"]
@@ -40,6 +49,45 @@
             'opsz' 24
         }
         [x-cloak] { display: none !important; }
+
+        /* === ADDED ANIMATION CSS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp-h1 {
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+        .animate-fadeInUp-p {
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+        .animate-fadeInUp-button {
+            animation: fadeInUp 0.8s ease-out 0.9s backwards;
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Style for filled stars (from index.html) */
+        .material-symbols-outlined.filled {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
@@ -47,52 +95,53 @@
         <div class="layout-container flex h-full grow flex-col">
             <!-- Header - Matching index.html -->
             <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
-    <a class="flex items-center gap-3" href="/">
-        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
-            <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
-                <path d="m8.5 10.5 3-2.5 4 2"></path>
-                <path d="m15.5 10.5-3 2.5-4-2"></path>
-            </svg>
-        </div>
-        <div class="flex flex-col">
-            <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
-            <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
-        </div>
-    </a>
-    <div class="hidden md:flex flex-1 justify-end gap-8">
-        <div class="flex items-center gap-9">
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="index.html">Home</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="servicePage.html">Services</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="">Vanguard</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="aboutus.html">About</a>
-            <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-colors" href="contactus.html">Contact</a>
-        </div>
-        <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-            <span class="truncate">Download Brochure</span>
-        </a>
-    </div>
-    
-    <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-text-primary p-2">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    </div>
+                <a class="flex items-center gap-3" href="index.html">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                        <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 12v-2m4 4.5V13m-8 1.5V13m4 2.5V14"></path>
+                            <path d="m8.5 10.5 3-2.5 4 2"></path>
+                            <path d="m15.5 10.5-3 2.5-4-2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
+                        <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <!-- === ADDED HOVER ANIMATIONS & FIXED ACTIVE LINK === -->
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="index.html">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="servicePage.html">Services</a>
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="internships.html">Vanguard</a> <!-- Active Link -->
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="contactus.html">Contact</a>
+                    </div>
+                    <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <span class="truncate">Download Brochure</span>
+                    </a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-text-primary p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
 
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
-        <div class="flex flex-col items-center gap-4 px-4 py-6">
-            <a class="text-text-primary text-sm font-medium leading-normal" href="index.html">Home</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="servicePage.html">Services</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="">Vanguard</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="aboutus.html">About</a>
-            <a class="text-text-primary text-sm font-medium leading-normal" href="contactus.html">Contact</a>
-            <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-                <span class="truncate">Download Brochure</span>
-            </a>
-        </div>
-    </div>
-</header>
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
+                    <div class="flex flex-col items-center gap-4 px-4 py-6">
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="index.html">Home</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="servicePage.html">Services</a>
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="internships.html">Vanguard</a> <!-- Active Link -->
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="aboutus.html">About</a>
+                        <a class="text-text-primary text-sm font-medium leading-normal" href="contactus.html">Contact</a>
+                        <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">Download Brochure</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
 
             <!-- Main Content -->
             <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
@@ -102,15 +151,16 @@
                     <section>
                         <div class="@container">
                             <div class="@[480px]:p-0">
-                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10" style='background-image: linear-gradient(rgba(16, 25, 34, 0.3) 0%, rgba(16, 25, 34, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgOgC9g_LaVOtrA80ftIJQtOh1z50_uBCaehak4AJTXPRn3RyCLWGBMneezsRjEhYjAnFn3ZtqZg7sZJsHIQ7fB22yVRnpPW2BG05Fm07uQNTeyFAkc33evfARO44MiXi9k7zKTrhmu0JzcgwqpFvUoJUfXjPR75lI4EuLL9a1B320zzuWvisSNT0lSWgvaEw-E2maUiJEhyAZcWpd4z8nFnA6CiVeSvAKoiQ7nySMHHHBeHtAdQYZhbjryucDk-1kYd-YP9PCHzg0");'>
-                                    <div class="flex flex-col gap-4 max-w-2xl">
-                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                <!-- === UPDATED: Centered layout, new gradient, and animations === -->
+                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" style='background-image: linear-gradient(rgba(245, 130, 32, 0.8) 0%, rgba(45, 55, 72, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgOgC9g_LaVOtrA80ftIJQtOh1z50_uBCaehak4AJTXPRn3RyCLWGBMneezsRjEhYjAnFn3ZtqZg7sZJsHIQ7fB22yVRnpPW2BG05Fm07uQNTeyFAkc33evfARO44MiXi9k7zKTrhmu0JzcgwqpFvUoJUfXjPR75lI4EuLL9a1B320zzuWvisSNT0lSWgvaEw-E2maUiJEhyAZcWpd4z8nFnA6CiVeSvAKoiQ7nySMHHHBeHtAdQYZhbjryucDk-1kYd-YP9PCHzg0");'>
+                                    <div class="flex flex-col gap-4">
+                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] animate-fadeInUp-h1">
                                             Shape the Future of Cybersecurity with AI
                                         </h1>
-                                        <p class="text-gray-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                        <p class="text-gray-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto animate-fadeInUp-p">
                                             Gain hands-on experience and expert mentorship by joining the Akula internship program, where you'll work on cutting-edge AI projects.
                                         </p>
-                                        <button class="flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                        <button class="flex min-w-[84px] max-w-[480px] mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-transform duration-300 hover:-translate-y-0.5 animate-fadeInUp-button">
                                             <span class="truncate">Apply Now</span>
                                         </button>
                                     </div>
@@ -118,26 +168,28 @@
                             </div>
                         </div>
                     </section>
-                    <section>
-    <!-- Statistics Section --><div class=" left-1/2 -translate-x-1 w-[calc(100%-2rem)] @[480px]:w-[calc(100%-5rem)] bg-white/0 backdrop-blur-md rounded-lg p-4 grid grid-cols-3 gap-5 text-center border border-white/30 shadow-lg">
-                                        <div>
-                                            <p class="text-primary-start text-3xl font-bold">89%</p>
-                                            <p class="text-black text-sm">Placement Rate</p>
-                                        </div>
-                                        <div class="border-x border-white/30 px-4">
-                                            <p class="text-primary-start text-3xl font-bold">450+</p>
-                                            <p class="text-black text-sm">Active Mentors</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-primary-start text-3xl font-bold">1,200+</p>
-                                            <p class="text-black text-sm">Projects Completed</p>
-                                        </div>
-                                    </div>
-                </section>
-
-                
+                    
+                    <!-- === REBUILT STATS SECTION: Corrected layout, styling, and added animations === -->
+                    <section class="bg-gray-bg-light py-10 px-4 sm:px-10 -mt-8 rounded-lg shadow-lg relative z-10 border border-gray-200 scroll-animate transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[960px] mx-auto text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                            <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                <p class="text-primary-start text-4xl font-black leading-tight">89%</p>
+                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Placement Rate</p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                <p class="text-primary-start text-4xl font-black leading-tight">450+</p>
+                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Active Mentors</p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
+                                <p class="text-primary-start text-4xl font-black leading-tight">1,200+</p>
+                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Projects Completed</p>
+                            </div>
+                        </div>
+                    </section>
+                    
                     <!-- Program Details Section with Tabs -->
-                    <section x-data="{ activeTab: 'curriculum' }">
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section x-data="{ activeTab: 'curriculum' }" class="scroll-animate">
                         <h2 class="text-text-primary text-3xl sm:text-4xl font-bold leading-tight tracking-[-0.015em] mb-8 text-center">
                             Program <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">Details</span>
                         </h2>
@@ -264,7 +316,8 @@
                     </section>
 
                     <!-- How to Apply Section -->
-                    <section>
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section class="scroll-animate">
                         <h2 class="text-text-primary text-3xl sm:text-4xl font-bold leading-tight tracking-[-0.015em] mb-12 text-center">
                             How to <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">Apply</span>
                         </h2>
@@ -292,13 +345,16 @@
                             </div>
                         </div>
                         <div class="text-center mt-12">
-                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-base font-bold leading-normal tracking-[0.015em] mx-auto hover:opacity-90 transition-opacity">
+                            <!-- === ADDED HOVER ANIMATION === -->
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-base font-bold leading-normal tracking-[0.015em] mx-auto hover:opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
                                 <span class="truncate">Apply Now</span>
                             </button>
                         </div>
                     </section>
- <!-- Connect with Industry Mentors Section -->
-                    <section id="mentors" class="py-12 md:py-16">
+                    
+                    <!-- Connect with Industry Mentors Section -->
+                    <!-- === ADDED SCROLL ANIMATION & HOVER EFFECTS === -->
+                    <section id="mentors" class="py-12 md:py-16 scroll-animate">
                         <div class="flex flex-col gap-4 text-center mb-10 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                                 Connect with Industry Mentors
@@ -309,17 +365,18 @@
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <!-- Mentor Card 1 -->
-                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm">
+                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex flex-col items-center text-center">
                                     <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/100x100/F58220/FFFFFF?text=DC" alt="David Chen">
                                     <h3 class="text-text-primary text-xl font-bold">David Chen</h3>
                                     <p class="text-text-secondary text-sm">CISO at Fortune 500 Company</p>
                                     <div class="flex items-center gap-1 mt-2">
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star_half</span>
+                                        <!-- === FIXED STARS (using .filled class) === -->
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star_half</span>
                                         <span class="text-text-secondary text-xs ml-1">(4.9)</span>
                                     </div>
                                 </div>
@@ -346,17 +403,17 @@
                                 </a>
                             </div>
                             <!-- Mentor Card 2 -->
-                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm">
+                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex flex-col items-center text-center">
                                     <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/100x100/4F46E5/FFFFFF?text=SM" alt="Sarah Martinez">
                                     <h3 class="text-text-primary text-xl font-bold">Sarah Martinez</h3>
                                     <p class="text-text-secondary text-sm">Senior Penetration Tester</p>
                                     <div class="flex items-center gap-1 mt-2">
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star_half</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star_half</span>
                                         <span class="text-text-secondary text-xs ml-1">(4.8)</span>
                                     </div>
                                 </div>
@@ -383,17 +440,17 @@
                                 </a>
                             </div>
                             <!-- Mentor Card 3 -->
-                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm">
+                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex flex-col items-center text-center">
                                     <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/100x100/2D3748/FFFFFF?text=MJ" alt="Marcus Johnson">
                                     <h3 class="text-text-primary text-xl font-bold">Marcus Johnson</h3>
                                     <p class="text-text-secondary text-sm">SOC Manager & DFIR Specialist</p>
                                     <div class="flex items-center gap-1 mt-2">
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
-                                        <span class="material-symbols-outlined text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
+                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
                                         <span class="text-text-secondary text-xs ml-1">(5.0)</span>
                                     </div>
                                 </div>
@@ -423,7 +480,8 @@
                     </section>
 
                     <!-- FAQ Section -->
-                    <section x-data="{ open: 1 }">
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section x-data="{ open: 1 }" class="scroll-animate">
                         <h2 class="text-text-primary text-3xl sm:text-4xl font-bold leading-tight tracking-[-0.015em] mb-12 text-center">
                             Frequently Asked <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">Questions</span>
                         </h2>
@@ -471,7 +529,8 @@
             </main>
 
             <!-- FINAL CTA Section (Full-width) -->
-            <section class="bg-gradient-to-r from-primary-start to-primary-end py-16 md:py-20 w-full">
+            <!-- === ADDED SCROLL ANIMATION & HOVER EFFECTS === -->
+            <section class="bg-gradient-to-r from-primary-start to-primary-end py-16 md:py-20 w-full scroll-animate">
                 <div class="max-w-[960px] mx-auto flex flex-col items-center gap-6 px-4 text-center">
                     <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
                         Ready to Start Your Cybersecurity Journey?
@@ -480,17 +539,18 @@
                         Join thousands of professionals who have successfully transformed their careers with Akula CyberSec's proven training programs and expert mentorship.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                        <a href="contactus.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <a href="contactus.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
                             <span class="truncate">Schedule Consultation</span>
                         </a>
-                        <a href="internships.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent border-2 border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-colors">
+                        <a href="internships.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent border-2 border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
                             <span class="truncate">Explore Internships</span>
                         </a>
                     </div>
                 </div>
             </section>
 
-            <!-- Footer (Full-width) --><footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
+            <!-- Footer (Full-width) -->
+            <footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
                 <div class="max-w-[1500px] flex-1 px-4 sm:px-10 py-10">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-12">
                         
@@ -571,48 +631,11 @@
         </div>
     </div>
 
-    <script>
-        function switchTab(tab) {
-            const cybersecTab = document.getElementById('tab-cybersec');
-            const aiTab = document.getElementById('tab-ai');
-            const cybersecContent = document.getElementById('content-cybersec');
-            const aiContent = document.getElementById('content-ai');
-            
-            const activeClasses = ['tab-active'];
-            const inactiveClasses = ['tab-inactive'];
-            const activePClasses = ['bg-gradient-to-r', 'from-primary-start', 'to-primary-end', 'bg-clip-text', 'text-transparent'];
-
-            if (tab === 'cybersec') {
-                // Update tabs
-                cybersecTab.classList.add(...activeClasses);
-                cybersecTab.classList.remove(...inactiveClasses);
-                cybersecTab.querySelector('p').classList.add(...activePClasses);
-                
-                aiTab.classList.add(...inactiveClasses);
-                aiTab.classList.remove(...activeClasses);
-                aiTab.querySelector('p').classList.remove(...activePClasses);
-
-                // Update content
-                cybersecContent.classList.remove('hidden');
-                aiContent.classList.add('hidden');
-            } else if (tab === 'ai') {
-                // Update tabs
-                aiTab.classList.add(...activeClasses);
-                aiTab.classList.remove(...inactiveClasses);
-                aiTab.querySelector('p').classList.add(...activePClasses);
-                
-                cybersecTab.classList.add(...inactiveClasses);
-                cybersecTab.classList.remove(...activeClasses);
-                cybersecTab.querySelector('p').classList.remove(...activePClasses);
-
-                // Update content
-                aiContent.classList.remove('hidden');
-                cybersecContent.classList.add('hidden');
-            }
-        }
-    </script>
+<!-- === REMOVED BROKEN switchTab SCRIPT === -->
+<!-- === COMBINED & ADDED SCROLL ANIMATION SCRIPT === -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Menu Toggle
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -621,6 +644,30 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // Scroll Animation Script
+        const observerOptions = {
+            root: null, // use the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Select all elements with the 'scroll-animate' class
+        const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
+        });
     });
 </script>
 </body>
