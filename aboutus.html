@@ -93,6 +93,69 @@
             transform: translateY(0);
         }
         [x-cloak] { display: none !important; }
+        .hero-visual {
+            position: relative;
+            isolation: isolate;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at 20% 20%, rgba(245, 130, 32, 0.22), transparent 60%),
+                        radial-gradient(circle at 80% 60%, rgba(255, 159, 67, 0.28), transparent 55%);
+            z-index: 0;
+        }
+        .hero-visual > * {
+            position: relative;
+            z-index: 1;
+        }
+        .section-panel {
+            position: relative;
+            isolation: isolate;
+        }
+        .section-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(245, 130, 32, 0.08), rgba(255, 159, 67, 0.04));
+            z-index: -1;
+        }
+        .gradient-divider {
+            width: 4rem;
+            height: 0.25rem;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, #F58220, #FF9F43);
+        }
+        .icon-ring {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 1.25rem;
+            background: linear-gradient(135deg, rgba(245, 130, 32, 0.12), rgba(255, 159, 67, 0.16));
+            color: #F58220;
+        }
+        .principle-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .principle-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(245, 130, 32, 0.08), rgba(255, 159, 67, 0.08));
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .principle-card:hover::before {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
@@ -148,7 +211,7 @@
                     <div class="max-w-[1200px] mx-auto">
                         <div class="@[480px]:p-0">
                             <div class="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-br from-white via-primary-start/5 to-primary-end/10 shadow-[0_25px_80px_rgba(45,55,72,0.12)]">
-                                <div class="grid gap-10 md:grid-cols-[1.15fr,0.85fr] items-center px-6 py-12 md:px-16 md:py-16">
+                                <!-- <div class="grid gap-10 md:grid-cols-[1.15fr,0.85fr] items-center px-6 py-12 md:px-16 md:py-16">
                                     <div class="flex flex-col gap-6 ">
                                         <p class="uppercase text-xs font-semibold tracking-[0.4em] text-primary-start">there is space remove this</p>
                                         <h1 class="text-text-primary text-4xl leading-tight font-black tracking-[-0.03em] md:text-5xl animate-fadeInUp-h1">
@@ -158,6 +221,14 @@
                                             We thrive to create the safest digital future by unifying advanced defenses comprehensive managed services, enabling our partners to anticipate, prevent, and neutralize every threat and empower the next generation of cybersecurity professionals with the knowledge, skills, and ethical values needed to protect the digital world and build a safer, more secure future.
                                         </p>
                                    </div>
+
+                                    <div class="relative hidden md:flex justify-center">
+                                        <div class="hero-visual flex h-full w-full max-w-sm items-center justify-center rounded-[28px] border border-white/60 bg-white/50 p-10 shadow-[0_20px_60px_rgba(45,55,72,0.14)]">
+                                            <div class="relative flex h-48 w-48 items-center justify-center rounded-full border border-white/60 bg-gradient-to-br from-primary-start/15 to-primary-end/30 shadow-inner">
+                                                <img src="logo.svg" alt="Akula Cybersec shield logo" class="h-28 w-28 object-contain drop-shadow-lg" loading="lazy" />
+                                            </div>
+                                        </div>
+                                    </div> -->
 
                                     <!-- <div class="grid grid-cols-2 gap-4">
                                         <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
@@ -177,13 +248,24 @@
                                             <p class="text-sm text-text-secondary">Learner satisfaction rating</p>
                                         </div>
                                     </div> -->
-                                </div>
+                                <!-- </div> -->
 
                                 <div class="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-primary-start/30 blur-[130px]"></div>
                                 <div class="pointer-events-none absolute -left-14 bottom-0 h-56 w-56 rounded-full bg-primary-end/30 blur-[140px]"></div>
+                            <div class="max-w-[1200px] w-full flex flex-col gap-4 text-left px-6 md:px-16 py-10">
+                                <div class="gradient-divider mb-3 self-start"></div>
+                                <h2 class="text-4xl font-extrabold text-text-primary tracking-[-0.02em]">Vision</h2>
+                                <p class="text-base md:text-lg text-text-secondary leading-relaxed max-w-8xl text-justify mx-auto">
+                                    We thrive to create the safest digital future by unifying advanced defenses comprehensive managed services, enabling our partners to anticipate, prevent, and neutralize every threat and empower the next generation of cybersecurity professionals with the knowledge, skills, and ethical values needed to protect the digital world and build a safer, more secure future.
+                                </p>
+
                             </div>
+                            </div>
+                            
                         </div>
+                        
                     </div>
+                    
                 </section>
 
                 <div class="w-full px-4 sm:px-10 md:px-20 lg:px-32 flex justify-center mt-4">
@@ -191,14 +273,14 @@
 
                     <!-- START: NEW Mission & Vision Section -->
                     <!-- === ADDED SCROLL & HOVER ANIMATIONS === -->
-                    <section class="w-full flex justify-center py-12 px-4 sm:px-10 bg-gray-50 mt-0 -mb-8 rounded-lg border border-gray-200">
-                        <div class="max-w-[1200px] flex flex-col items-center text-center">
-                            <h2 class="text-4xl font-extrabold text-text-primary mb-4">Mission</h2>
-                            <p class="text-lg text-text-secondary max-w-2xl mb-12">
+                    <section class="section-panel scroll-animate w-full flex justify-center py-12 px-4 sm:px-10 bg-gray-50 mt-0 -mb-8 rounded-[32px] border border-gray-200 shadow-[0_20px_70px_rgba(45,55,72,0.08)]">
+                        <div class="max-w-[1200px] w-full flex flex-col gap-4 text-left px-4 md:px-12">
+                            <div class="gradient-divider mb-3 self-start"></div>
+                            <h2 class="text-4xl font-extrabold text-text-primary tracking-[-0.02em]">Mission</h2>
+                            <p class="text-base md:text-lg text-text-secondary leading-relaxed max-w-8xl text-justify mx-auto">
                                 Our mission is to empower cybersecurity professionals with hands-on training that bridges the gap between academia and industry. We aim to equip students with practical expertise in network defense, ethical hacking, and digital forensics while promoting innovation, research, and continuous learning. Through partnerships, mentorship, and certification-aligned programs, we strive to develop skilled professionals capable of safeguarding global digital ecosystems. While providing our partners with 24/7 intelligence-driven security solutions—spanning Managed Detection & Response, proactive threat management, and scalable security operations design—to ensure unwavering digital resilience against current and emerging threats.
                             </p>
-                            
-                            
+
                         </div>
                     </section>
                     <!-- END: NEW Mission & Vision Section -->
@@ -206,51 +288,52 @@
 
                     <!-- === ADDED SCROLL & HOVER ANIMATIONS === -->
                     <section class="scroll-animate">
-                        <h2 class="text-text-primary text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 text-center">Our Core Principles</h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
-                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined text-4xl">emoji_objects</span>
+                        <div class="gradient-divider mx-auto mb-4"></div>
+                        <h2 class="text-text-primary text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-1 text-center">Our Core Principles</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+                            <div class="principle-card flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="icon-ring">
+                                    <span class="material-symbols-outlined text-3xl">emoji_objects</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-lg font-bold leading-tight">Excellence in Education</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Delivering high-quality, industry-relevant cybersecurity training that blends theory with hands-on practice to prepare students for real-world challenges.</p>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal text-justify mx-auto">Delivering high-quality, industry-relevant cybersecurity training that blends theory with hands-on practice to prepare students for real-world challenges.</p>
                                 </div>
                             </div>
-                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined text-4xl">verified_user</span>
+                            <div class="principle-card flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="icon-ring">
+                                    <span class="material-symbols-outlined text-3xl">verified_user</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-lg font-bold leading-tight">Innovation and Continuous Learning</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Encouraging curiosity, research, and innovation while staying updated with evolving technologies, threats, and security solutions.</p>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal text-justify mx-auto">Encouraging curiosity, research, and innovation while staying updated with evolving technologies, threats, and security solutions.</p>
                                 </div>
                             </div>
-                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined text-4xl">verified_user</span>
+                            <div class="principle-card flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="icon-ring">
+                                    <span class="material-symbols-outlined text-3xl">verified_user</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-lg font-bold leading-tight">Integrity and Ethics</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Promoting responsible and ethical behavior in all aspects of cybersecurity learning and practice, ensuring students uphold trust and professionalism in the digital space — while our commitment to ethical practices and transparency strengthens the trust we build with clients and partners.</p>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal text-justify mx-auto">Promoting responsible and ethical behavior in all aspects of cybersecurity learning and practice, ensuring students uphold trust and professionalism in the digital space — while our commitment to ethical practices and transparency strengthens the trust we build with clients and partners.</p>
                                 </div>
                             </div>
-                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined text-4xl">groups</span>
+                            <div class="principle-card flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="icon-ring">
+                                    <span class="material-symbols-outlined text-3xl">groups</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-lg font-bold leading-tight">Collaboration and Industry Readiness</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">The best solutions are born from diverse minds working together toward a common goal, and by building strong partnerships with industry leaders and fostering teamwork, we ensure students gain practical exposure and become job-ready cybersecurity professionals.</p>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal text-justify mx-auto">The best solutions are born from diverse minds working together toward a common goal, and by building strong partnerships with industry leaders and fostering teamwork, we ensure students gain practical exposure and become job-ready cybersecurity professionals.</p>
                                 </div>
                             </div>
-                            <div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined text-4xl">workspace_premium</span>
+                            <div class="principle-card flex flex-1 flex-col gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="icon-ring">
+                                    <span class="material-symbols-outlined text-3xl">workspace_premium</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-lg font-bold leading-tight">Excellence</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">We strive for the highest standards in everything we do, from development to client support.</p>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal text-justify mx-auto">We strive for the highest standards in everything we do, from development to client support.</p>
                                 </div>
                             </div>
                         </div>
@@ -353,68 +436,70 @@
             <!-- FINAL CTA Section (Full-width) -->
             <!-- === ADDED SCROLL & HOVER ANIMATIONS === -->
             <section class="bg-gradient-to-r from-primary-start to-primary-end py-16 md:py-20 w-full scroll-animate">
-                <div class="max-w-[1200px] mx-auto flex flex-col items-center gap-6 px-4 text-center">
-                    <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
-                        Experience our cutting-edge, real-world cybersecurity learning environment.
-                    </h2>
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full">
-                             
-                                <!-- Right Column: Features List -->
-                                <div class="flex flex-col gap-6 text-left">
+                <div class="max-w-[1200px] mx-auto w-full px-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-[0.9fr,1.1fr] gap-12 items-start">
+                        <div class="flex flex-col gap-4 text-left">
+                            <h2 class="text-white text-4xl font-black leading-tight mt-12 tracking-[-0.033em] md:text-4xl">
+                                Experience our cutting-edge, real-world cybersecurity learning environment.
+                            </h2>
+                        </div>
+
+                        <!-- Right Column: Features List -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left w-full">
                                                           <!-- Feature 1 -->
-                                    <div class="flex items-start gap-4">
+                                    <div class="flex items-start gap-4 h-full">
                                         <div class="flex-shrink-0 bg-primary-start/10 p-3 rounded-full">
-                                            <span class="material-symbols-outlined text-primary-start text-3xl">settings_ethernet</span>
+                                            <span class="material-symbols-outlined text-white text-5xl">settings_ethernet</span>
                                         </div>
                                         <div>
                                             <h3 class="text-lg font-bold text-text-primary mb-1 text-white">Cyber Range Laboratory</h3>
-                                            <p class="text-text-secondary text-sm">
+                                            <p class="text-text-secondary text-md text-justify mx-auto">
                                                 Isolated network environment for hands-on penetration testing and incident response training.
                                             </p>
                                         </div>
                                     </div>
 
                                     <!-- Feature 2 -->
-                                    <div class="flex items-start gap-4">
+                                    <div class="flex items-start gap-4 h-full">
                                         <div class="flex-shrink-0 bg-blue-600/10 p-3 rounded-full">
                                             <span class="material-symbols-outlined text-blue-600 text-3xl">security</span>
                                         </div>
                                         <div>
                                             <h3 class="text-lg font-bold text-text-primary mb-1 text-white">Security Operations Center</h3>
-                                            <p class="text-text-secondary text-sm">
+                                            <p class="text-text-secondary text-sm text-justify mx-auto">
                                                 Real-time monitoring setup with SIEM tools and threat intelligence platforms.
                                             </p>
                                         </div>
                                     </div>
 
                                     <!-- Feature 3 -->
-                                    <div class="flex items-start gap-4">
+                                    <div class="flex items-start gap-4 h-full">
                                         <div class="flex-shrink-0 bg-green-600/10 p-3 rounded-full">
                                             <span class="material-symbols-outlined text-green-600 text-3xl">groups</span>
                                         </div>
                                         <div>
                                             <h3 class="text-lg font-bold text-text-primary mb-1 text-white">Collaborative Learning Spaces</h3>
-                                            <p class="text-text-secondary text-sm">
+                                            <p class="text-text-secondary text-sm text-justify mx-auto">
                                                 Modern classrooms equipped with interactive displays and team-based learning setups.
                                             </p>
                                         </div>
                                     </div>
 
                                     <!-- Feature 4 -->
-                                    <div class="flex items-start gap-4">
+                                    <div class="flex items-start gap-4 h-full">
                                         <div class="flex-shrink-0 bg-indigo-600/10 p-3 rounded-full">
                                             <span class="material-symbols-outlined text-indigo-600 text-3xl">find_in_page</span>
                                         </div>
                                         <div>
                                             <h3 class="text-lg font-bold text-text-primary mb-1 text-white">Digital Forensics Lab</h3>
-                                            <p class="text-text-secondary text-sm">
+                                            <p class="text-text-secondary text-sm text-justify mx-auto">
                                                 Specialized equipment for malware analysis, mobile forensics, and evidence recovery.
                                             </p>
                                         </div>
                                     </div>
 
-                                </div>
-                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             
@@ -443,8 +528,8 @@
                         </div>
 
                         <!-- Column 2: Quick Links -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links :</h3>
                             <!-- === UPDATED FOOTER LINKS === -->
                             <ul class="space-y-3">
                                 <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="index.html">Home</a></li>
@@ -456,8 +541,8 @@
                         </div>
 
                         <!-- Column 3: Contact Info -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info :</h3>
                             <!-- === UPDATED CONTACT INFO === -->
                             <ul class="space-y-4">
                                 

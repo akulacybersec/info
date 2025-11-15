@@ -105,6 +105,102 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* === UI Refinements === */
+        .tab-wrapper {
+            border-radius: 9999px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 25px 60px rgba(45, 55, 72, 0.12);
+            backdrop-filter: blur(8px);
+        }
+        .tab-button {
+            border-radius: 9999px;
+            border: 1px solid transparent;
+            padding: 0.85rem 1.75rem;
+            transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .tab-button.tab-inactive {
+            color: #7A7A7A;
+        }
+        .tab-button.tab-inactive:hover {
+            color: #2D3748;
+            border-color: rgba(245, 130, 32, 0.25);
+        }
+        .tab-button.tab-active {
+            background-image: linear-gradient(120deg, rgba(245, 130, 32, 0.18), rgba(255, 159, 67, 0.3));
+            box-shadow: 0 20px 45px rgba(245, 130, 32, 0.3);
+            color: #F58220;
+        }
+        .tab-button:focus-visible {
+            outline: 3px solid rgba(245, 130, 32, 0.35);
+            outline-offset: 2px;
+        }
+        .service-card,
+        .playbook-card,
+        .career-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.25rem;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 247, 237, 0.6));
+            box-shadow: 0 25px 50px rgba(45, 55, 72, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .playbook-card,
+        .career-card {
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(244, 247, 254, 0.9));
+        }
+        .service-card::after,
+        .playbook-card::after,
+        .career-card::after {
+            content: "";
+            position: absolute;
+            inset: 1px;
+            border-radius: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+        }
+        .service-card:hover,
+        .playbook-card:hover,
+        .career-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(245, 130, 32, 0.35);
+            box-shadow: 0 35px 70px rgba(245, 130, 32, 0.25);
+        }
+        .service-card .material-symbols-outlined,
+        .playbook-card .material-symbols-outlined {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 3.25rem;
+            width: 3.25rem;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, 0.06);
+            font-size: 1.85rem;
+        }
+        .tech-chip {
+            position: relative;
+            border-radius: 9999px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 15px 35px rgba(45, 55, 72, 0.12);
+        }
+        .tech-chip::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+        }
+        .reg-card {
+            border-radius: 1.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 15px 35px rgba(15, 23, 42, 0.08);
+            background: radial-gradient(circle at top, rgba(245, 130, 32, 0.15), transparent 55%),
+                        rgba(255, 255, 255, 0.95);
+        }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
@@ -182,22 +278,22 @@
                                         </div>
                                     </div>
 
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
-                                            <p class="text-3xl font-black text-primary-start">Threat & Vulnerability Management</p>
-                                            <p class="text-sm text-text-secondary">Identify risks before attackers do with continuous assessment and proactive defense. / yr</p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="rounded-3xl bg-white/90 backdrop-blur border border-white/70 p-6 flex flex-col gap-3 h-full shadow-sm">
+                                            <p class="text-2xl font-black text-text-primary leading-tight">Threat & Vulnerability Management</p>
+                                            <p class="text-sm text-text-secondary leading-relaxed">Identify risks before attackers do with continuous assessment and proactive defense. / yr</p>
                                         </div>
-                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
-                                            <p class="text-3xl font-black text-primary-start">Managed Detection & Response (MDR)</p>
-                                            <p class="text-sm text-text-secondary">Detect, respond, and defend — 24/7 protection powered by real-time intelligence.</p>
+                                        <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/70 p-6 flex flex-col gap-3 h-full shadow-sm">
+                                            <p class="text-2xl font-black text-text-primary leading-tight">Managed Detection & Response (MDR)</p>
+                                            <p class="text-sm text-text-secondary leading-relaxed">Detect, respond, and defend — 24/7 protection powered by real-time intelligence.</p>
                                         </div>
-                                         <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
-                                            <p class="text-3xl font-black text-primary-start">Security Implementation Service</p>
-                                            <p class="text-sm text-text-secondary">Deploy the right security solutions seamlessly and strengthen your cyber posture.</p>
+                                         <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/70 p-6 flex flex-col gap-3 h-full shadow-sm">
+                                            <p class="text-2xl font-black text-text-primary leading-tight">Security Implementation Service</p>
+                                            <p class="text-sm text-text-secondary leading-relaxed">Deploy the right security solutions seamlessly and strengthen your cyber posture.</p>
                                         </div>
-                                        <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
-                                            <p class="text-3xl font-black text-primary-start">Security Operations Design</p>
-                                            <p class="text-sm text-text-secondary">Build smarter, scalable SOC frameworks that enable faster detection and response.</p>
+                                        <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/70 p-6 flex flex-col gap-3 h-full shadow-sm">
+                                            <p class="text-2xl font-black text-text-primary leading-tight">Security Operations Design</p>
+                                            <p class="text-sm text-text-secondary leading-relaxed">Build smarter, scalable SOC frameworks that enable faster detection and response.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -210,17 +306,17 @@
                 </section>
 
                 <div class="w-full px-4 sm:px-10 md:px-20 lg:px-32 flex justify-center mt-4">
-                    <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
+                    <div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1 gap-12 md:gap-20">
                                   
                     
                     
                     <!-- Services Tabs (Placeholder content, as requested) -->
                     <section class="scroll-animate">
-                    <div class="flex border-b border-gray-200 px-4 gap-6 overflow-x-auto">
+                    <div class="tab-wrapper flex items-center gap-4 overflow-x-auto px-4 py-3 sm:px-6">
                         <button
                         onclick="switchTab('cybersec')"
                         id="tab-cybersec"
-                        class="flex flex-col items-center justify-center border-b-[2px] pb-2 pt-3 whitespace-nowrap tab-active"
+                        class="tab-button tab-active flex flex-col items-center justify-center whitespace-nowrap"
                         >
                         <p class="text-xs font-semibold leading-normal tracking-[0.01em]">
                             Cybersecurity Development
@@ -229,10 +325,10 @@
                         <button
                         onclick="switchTab('ai')"
                         id="tab-ai"
-                        class="flex flex-col items-center justify-center border-b-[2px] pb-2 pt-3 whitespace-nowrap tab-inactive"
+                        class="tab-button tab-inactive flex flex-col items-center justify-center whitespace-nowrap"
                         >
                         <p class="text-xs font-semibold leading-normal tracking-[0.01em]">
-                            AI-Powered Solutions
+                            Software Solutions
                         </p>
                         </button>
                     </div>
@@ -244,7 +340,14 @@
                     <section id="content-cybersec" class="scroll-animate">
                         <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6">Our Corporate Cybersecurity Services</h2>
                         <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                             <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <span class="material-symbols-outlined text-primary-start text-4xl">hub</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">AI-Driven Threat Intelligence</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Proactively identify threats with machine learning analysis.</p>
+                                </div>
+                            </div>
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">shield</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Penetration Testing Tools</h3>
@@ -252,7 +355,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">developer_mode</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Secure Software Development</h3>
@@ -260,7 +363,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">lock</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Custom Security Protocols</h3>
@@ -268,7 +371,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
                                 <span class="material-symbols-outlined text-primary-start text-4xl">monitoring</span>
                                 <div class="flex flex-col gap-1">
                                     <h3 class="text-text-primary text-base font-bold leading-tight">Vulnerability Dashboards</h3>
@@ -280,41 +383,49 @@
 
                     <!-- AI-Powered Solutions (Placeholder content) -->
                     <section id="content-ai" class="hidden scroll-animate">
-                        <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6">AI-Powered Solutions</h2>
+                        <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6">Software Solutions</h2>
+
                         <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
+
+                            <!-- Software Development -->
                             <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
-                                <span class="material-symbols-outlined text-primary-start text-4xl">hub</span>
+                                <span class="material-symbols-outlined text-primary-start text-4xl">developer_mode</span>
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">AI-Driven Threat Intelligence</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Proactively identify threats with machine learning analysis.</p>
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Software Development</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Custom-built applications, web platforms, and scalable software solutions.</p>
                                 </div>
                             </div>
 
+                            <!-- AI-Based Project Development -->
                             <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
-                                <span class="material-symbols-outlined text-primary-start text-4xl">radar</span>
+                                <span class="material-symbols-outlined text-primary-start text-4xl">smart_toy</span>
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">Behavioral Anomaly Detection</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Detect insider threats and zero-day attacks in real-time.</p>
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">AI Project Development</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">AI/ML model creation, automation tools, and intelligent system integration.</p>
                                 </div>
                             </div>
 
+                            <!-- Python & Application Testing -->
                             <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
-                                <span class="material-symbols-outlined text-primary-start text-4xl">phishing</span>
+                                <span class="material-symbols-outlined text-primary-start text-4xl">rule</span>
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">Automated Phishing Analysis</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Instantly analyze and neutralize malicious email campaigns.</p>
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Software Testing</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Automated testing, debugging, performance tuning, and QA validation.</p>
                                 </div>
                             </div>
 
+                            <!-- Optional: Add a general 'Project Consulting' card -->
                             <div class="flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
-                                <span class="material-symbols-outlined text-primary-start text-4xl">description</span>
+                                <span class="material-symbols-outlined text-primary-start text-4xl">support_agent</span>
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">NLP for Log Analysis</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Uncover hidden threats in massive log files with NLP.</p>
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Project Consulting</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Guidance, architecture planning, and support for technical projects.</p>
                                 </div>
                             </div>
+
                         </div>
                     </section>
+
                     
                     <section class="scroll-animate bg-gray-bg-light border border-gray-200 rounded-3xl p-10">
                         <div class="grid md:grid-cols-2 gap-10 items-center">
@@ -322,39 +433,39 @@
                                 <p class="uppercase text-xs font-semibold tracking-[0.4em] text-primary-start">Technology Stack</p>
                                 <h3 class="text-2xl font-black text-text-primary">Best-of-breed tooling orchestrated as one fabric</h3>
                                 <div class="flex flex-wrap gap-3">
-                                    <span class="px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">Splunk</span>
-                                    <span class="px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">Microsoft Sentinel</span>
-                                    <span class="px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">CrowdStrike</span>
-                                    <span class="px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">AWS & Azure</span>
-                                    <span class="px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">ServiceNow SecOps</span>
-                                    <span class="px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">Kubernetes Guardrails</span>
+                                    <span class="tech-chip px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">Splunk</span>
+                                    <span class="tech-chip px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">Microsoft Sentinel</span>
+                                    <span class="tech-chip px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">CrowdStrike</span>
+                                    <span class="tech-chip px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">AWS & Azure</span>
+                                    <span class="tech-chip px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">ServiceNow SecOps</span>
+                                    <span class="tech-chip px-4 py-2 rounded-full bg-white text-sm font-semibold text-text-primary border border-gray-200">Kubernetes Guardrails</span>
                                 </div>
                             </div>
                             <div class="space-y-5">
                                 <p class="uppercase text-xs font-semibold tracking-[0.4em] text-text-secondary">Regulatory Coverage</p>
                                 <h3 class="text-xl font-bold text-text-primary">Proof packs delivered for multi-region obligations</h3>
                                 <div class="grid grid-cols-2 gap-3">
-                                    <div class="h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
+                                    <div class="reg-card h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
                                         <span class="text-lg font-black text-primary-start">ISO 27001</span>
                                         <span class="text-xs text-text-secondary">Control mapping</span>
                                     </div>
-                                    <div class="h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
+                                    <div class="reg-card h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
                                         <span class="text-lg font-black text-primary-start">PCI-DSS</span>
                                         <span class="text-xs text-text-secondary">Tokenized journeys</span>
                                     </div>
-                                    <div class="h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
+                                    <div class="reg-card h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
                                         <span class="text-lg font-black text-primary-start">GDPR</span>
                                         <span class="text-xs text-text-secondary">Data lifecycle</span>
                                     </div>
-                                    <div class="h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
+                                    <div class="reg-card h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
                                         <span class="text-lg font-black text-primary-start">SOC 2</span>
                                         <span class="text-xs text-text-secondary">Type II ready</span>
                                     </div>
-                                    <div class="h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
+                                    <div class="reg-card h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
                                         <span class="text-lg font-black text-primary-start">RBI</span>
                                         <span class="text-xs text-text-secondary">Banking controls</span>
                                     </div>
-                                    <div class="h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
+                                    <div class="reg-card h-24 rounded-2xl border border-gray-200 bg-white flex flex-col items-center justify-center text-center px-4">
                                         <span class="text-lg font-black text-primary-start">CERT-In</span>
                                         <span class="text-xs text-text-secondary">Reporting cadence</span>
                                     </div>
@@ -371,28 +482,28 @@
                                 <p class="text-text-secondary text-sm md:text-base mt-3 max-w-3xl mx-auto">Every engagement blends automation, expert oversight, and compliance choreography so decision-makers gain instant clarity.</p>
                             </div>
                             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                <div class="playbook-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
                                     <div class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-primary-start text-3xl">shield_person</span>
                                         <h3 class="text-lg font-bold text-text-primary">Attack Surface</h3>
                                     </div>
                                     <p class="text-sm text-text-secondary"></p></p>
                                 </div>
-                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                <div class="playbook-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
                                     <div class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-primary-start text-3xl">timeline</span>
                                         <h3 class="text-lg font-bold text-text-primary">Managed Response Spine</h3>
                                     </div>
                                     <p class="text-sm text-text-secondary">24/7 SOC analysts, threat intel, and AI playbooks sync with client tooling to deliver five-minute containment SLAs.</p>
                                 </div>
-                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                <div class="playbook-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
                                     <div class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-primary-start text-3xl">library_books</span>
                                         <h3 class="text-lg font-bold text-text-primary">Compliance Command Center</h3>
                                     </div>
                                     <p class="text-sm text-text-secondary">Cross-standard automation maps ISO, PCI, GDPR, and RBI checkpoints, giving leadership live dashboards for audits.</p>
                                 </div>
-                                 <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                 <div class="playbook-card flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
                                     <div class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-primary-start text-3xl">shield_person</span>
                                         <h3 class="text-lg font-bold text-text-primary">Attack Surface</h3>
@@ -431,7 +542,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
                             
                             <!-- Card 1: Resume Builder -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                            <div class="career-card flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-orange-100">
                                     <span class="material-symbols-outlined text-primary-start text-4xl">description</span>
                                 </div>
@@ -445,7 +556,7 @@
                             </div>
                         
                             <!-- Card 2: Industry Network -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                            <div class="career-card flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-blue-100">
                                     <span class="material-symbols-outlined text-blue-600 text-4xl">groups</span>
                                 </div>
@@ -459,7 +570,7 @@
                             </div>
                         
                             <!-- Card 3: Certification Assistance -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                            <div class="career-card flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-green-100">
                                     <span class="material-symbols-outlined text-green-600 text-4xl">workspace_premium</span>
                                 </div>
@@ -473,7 +584,7 @@
                             </div>
                         
                             <!-- Card 4: Placement Support -->
-                            <div class="flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                            <div class="career-card flex flex-col items-center gap-4 rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                                 <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-indigo-100">
                                     <span class="material-symbols-outlined text-indigo-600 text-4xl">work</span>
                                 </div>
@@ -652,8 +763,8 @@
                         </div>
 
                         <!-- Column 2: Quick Links -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links :</h3>
                             <!-- === UPDATED FOOTER LINKS === -->
                             <ul class="space-y-3">
                                 <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="index.html">Home</a></li>
@@ -665,8 +776,8 @@
                         </div>
 
                         <!-- Column 3: Contact Info -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info :</h3>
                             <!-- === UPDATED CONTACT INFO === -->
                             <ul class="space-y-4">
                                 
