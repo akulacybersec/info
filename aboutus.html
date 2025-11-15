@@ -147,30 +147,63 @@
                 </div>
             </header>
 
-            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
-                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
-                    
-                    <section>
-                        <div class="@container">
-                            <div class="@[480px]:p-0">
-                                <!-- === UPDATED HERO GRADIENT & ADDED ANIMATIONS === -->
-                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-6 py-10" style='background-image: linear-gradient(rgba(245, 130, 32, 0.8) 0%, rgba(45, 55, 72, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-9qhewNVgP2hV1B1ri6cc38lB7cykcJmWr_zTw-yoE5CQA3xF4KbDP55YZjkk1XVaCtO03yerFdVbrjJqz-2eEZKUfBTo7kE5rphtCL_kqY-_iWxBKf3ZsE_k3qDfRNasWbWABs4GKCfGP1deI5GbsOjftKbLBsi0KcHDzMWlraWi0rZH-KfAkjBmXBquddaqHdVeHsozxHwEww3wmm9VnAc5AcY2Ysn06DHojuDIaV1YHHu6s86ZRPNKLaWTXapgVQuqAEN-jizX");'>
-                                    <div class="flex flex-col gap-4 text-center max-w-3xl">
-                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] animate-fadeInUp-h1">
+            <main class="flex-1 w-full flex flex-col gap-10 py-5">
+                <section class="w-full px-4 sm:px-10 md:px-20 lg:px-32">
+                    <div class="max-w-[1200px] mx-auto">
+                        <div class="@[480px]:p-0">
+                            <div class="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-br from-white via-primary-start/5 to-primary-end/10 shadow-[0_25px_80px_rgba(45,55,72,0.12)]">
+                                <div class="grid gap-10 md:grid-cols-[1.15fr,0.85fr] items-center px-6 py-12 md:px-16 md:py-16">
+                                    <div class="flex flex-col gap-6 text-left">
+                                        <p class="uppercase text-xs font-semibold tracking-[0.4em] text-primary-start">About Akula</p>
+                                        <h1 class="text-text-primary text-4xl leading-tight font-black tracking-[-0.03em] md:text-5xl animate-fadeInUp-h1">
                                             Our Vision: A Secure Digital Future
                                         </h1>
-                                        <p class="text-gray-300 text-base font-normal leading-relaxed @[480px]:text-lg @[480px]:font-normal @[480px]:leading-relaxed animate-fadeInUp-p">
-                                            Akula Cybersecurity is at the forefront of developing next-generation security solutions, powered by artificial intelligence to protect the digital world from evolving threats.
+                                        <p class="text-text-secondary text-base md:text-lg leading-relaxed animate-fadeInUp-p max-w-2xl">
+                                            We build resilient cybersecurity leaders by blending advanced AI-driven defenses with immersive training. Our mission is to empower professionals who can anticipate, prevent, and neutralize tomorrow's threats.
                                         </p>
+                                        <div class="flex flex-wrap gap-4">
+                                            <a href="internships.html" class="flex h-11 items-center justify-center rounded-full px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold tracking-wide shadow-lg transition hover:translate-y-[-2px]">
+                                                Explore Programs
+                                            </a>
+                                            <a href="contactus.html" class="flex h-11 items-center justify-center rounded-full px-6 border border-text-secondary/30 text-text-primary text-sm font-semibold tracking-wide bg-white/70 backdrop-blur">
+                                                Talk to Us
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">10+</p>
+                                            <p class="text-sm text-text-secondary">Years defending digital ecosystems</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">150+</p>
+                                            <p class="text-sm text-text-secondary">Global security partners & mentors</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-text-primary text-white p-6 flex flex-col gap-2 shadow-lg">
+                                            <p class="text-3xl font-black">94%</p>
+                                            <p class="text-sm text-white/80">Placement success across cohorts</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">4.9/5</p>
+                                            <p class="text-sm text-text-secondary">Learner satisfaction rating</p>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-primary-start/30 blur-[130px]"></div>
+                                <div class="pointer-events-none absolute -left-14 bottom-0 h-56 w-56 rounded-full bg-primary-end/30 blur-[140px]"></div>
                             </div>
                         </div>
-                    </section>
-                    
+                    </div>
+                </section>
+
+                <div class="w-full px-4 sm:px-10 md:px-20 lg:px-32 flex justify-center mt-4">
+                    <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
+
                     <!-- START: NEW Mission & Vision Section -->
                     <!-- === ADDED SCROLL & HOVER ANIMATIONS === -->
-                    <section class="w-full flex justify-center py-16 px-4 sm:px-10 bg-gray-50 -mt-16 -mb-8 rounded-lg border border-gray-200 scroll-animate">
+                    <section class="w-full flex justify-center py-12 px-4 sm:px-10 bg-gray-50 mt-0 -mb-8 rounded-lg border border-gray-200">
                         <div class="max-w-[960px] flex flex-col items-center text-center">
                             <h2 class="text-4xl font-extrabold text-text-primary mb-4">Our Mission & Vision</h2>
                             <p class="text-lg text-text-secondary max-w-2xl mb-12">
@@ -451,6 +484,7 @@
                             </div>
                         </div>
                     </section>
+                    </div>
                 </div>
 
             </main>

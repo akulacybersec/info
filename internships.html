@@ -144,45 +144,89 @@
             </header>
 
             <!-- Main Content -->
-            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
-                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-16">
-                    
-                    <!-- Hero Section -->
-                    <section>
-                        <div class="@container">
-                            <div class="@[480px]:p-0">
-                                <!-- === UPDATED: Content from files === -->
-                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" style='background-image: linear-gradient(rgba(245, 130, 32, 0.8) 0%, rgba(45, 55, 72, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgOgC9g_LaVOtrA80ftIJQtOh1z50_uBCaehak4AJTXPRn3RyCLWGBMneezsRjEhYjAnFn3ZtqZg7sZJsHIQ7fB22yVRnpPW2BG05Fm07uQNTeyFAkc33evfARO44MiXi9k7zKTrhmu0JzcgwqpFvUoJUfXjPR75lI4EuLL9a1B320zzuWvisSNT0lSWgvaEw-E2maUiJEhyAZcWpd4z8nFnA6CiVeSvAKoiQ7nySMHHHBeHtAdQYZhbjryucDk-1kYd-YP9PCHzg0");'>
-                                    <div class="flex flex-col gap-4">
-                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] animate-fadeInUp-h1">
+            <main class="flex-1 w-full flex flex-col gap-10 py-5">
+                <section class="w-full px-4 sm:px-10 md:px-20 lg:px-32">
+                    <div class="max-w-[1200px] mx-auto">
+                        <div class="@[480px]:p-0">
+                            <div class="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-br from-white via-primary-start/5 to-primary-end/10 shadow-[0_25px_80px_rgba(45,55,72,0.12)]">
+                                <div class="grid gap-10 md:grid-cols-[1.1fr,0.9fr] items-center px-6 py-12 md:px-16 md:py-16">
+                                    <div class="flex flex-col gap-6 text-center md:text-left">
+                                        <p class="uppercase text-xs font-semibold tracking-[0.4em] text-primary-start">Internship Advantage</p>
+                                        <h1 class="text-text-primary text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl animate-fadeInUp-h1">
                                             Empowering the Future Professionals in Cyber Security
                                         </h1>
-                                        <p class="text-gray-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto animate-fadeInUp-p">
-                                            Introducing the Akula Internship Advantage Program: A structured pathway to build skills, confidence, and career readiness.
+                                        <p class="text-text-secondary text-base leading-relaxed md:text-lg max-w-2xl mx-auto md:mx-0 animate-fadeInUp-p">
+                                            Introducing the Akula Internship Advantage Program: a structured pathway to build skills, confidence, and career readiness with real-world simulations.
                                         </p>
-                                        <a href="#program-details" class="flex min-w-[84px] max-w-[480px] mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-transform duration-300 hover:-translate-y-0.5 animate-fadeInUp-button">
-                                            <span class="truncate">View Programs</span>
-                                        </a>
+                                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                                            <a href="#program-details" class="flex h-11 items-center justify-center rounded-full px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold tracking-wide shadow-lg transition hover:translate-y-[-2px]">
+                                                View Programs
+                                            </a>
+                                            <a href="akula_brochure.pdf" download class="flex h-11 items-center justify-center rounded-full px-6 border border-text-secondary/30 text-text-primary text-sm font-semibold tracking-wide bg-white/80 backdrop-blur">
+                                                Download Brochure
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">12-Week</p>
+                                            <p class="text-sm text-text-secondary">Project-based immersions</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">180 hrs</p>
+                                            <p class="text-sm text-text-secondary">Live mentor time</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-text-primary text-white p-6 flex flex-col gap-2 shadow-lg">
+                                            <p class="text-3xl font-black">40+</p>
+                                            <p class="text-sm text-white/80">Breach response drills</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">8 Tracks</p>
+                                            <p class="text-sm text-text-secondary">Career pathways curated</p>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-primary-start/30 blur-[130px]"></div>
+                                <div class="pointer-events-none absolute -left-14 bottom-0 h-56 w-56 rounded-full bg-primary-end/30 blur-[140px]"></div>
                             </div>
                         </div>
-                    </section>
-                    
-                    <!-- === UPDATED STATS SECTION: Content from files === -->
-                    <section class="bg-gray-bg-light py-10 px-4 sm:px-10 -mt-8 rounded-lg shadow-lg relative z-10 border border-gray-200 scroll-animate transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[960px] mx-auto text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
-                            <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                <p class="text-primary-start text-4xl font-black leading-tight">2,500+</p>
-                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Students Trained</p>
+                    </div>
+                </section>
+
+                <div class="w-full px-4 sm:px-10 md:px-20 lg:px-32 flex justify-center mt-4">
+                    <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-16">
+
+                    <section class="bg-background-light border border-gray-200 rounded-2xl p-8 shadow-lg">
+                        <div class="flex flex-col gap-6 text-center">
+                            <div>
+                                <p class="uppercase text-xs font-semibold tracking-[0.4em] text-primary-start">Program Pillars</p>
+                                <h2 class="text-2xl md:text-3xl font-black text-text-primary mt-2">How We Build Job-Ready Defenders</h2>
+                                <p class="text-text-secondary text-sm md:text-base mt-3 max-w-3xl mx-auto">Each cohort advances through three disciplined streams that connect curriculum, real incidents, and placement readiness.</p>
                             </div>
-                            <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                <p class="text-primary-start text-4xl font-black leading-tight">94%</p>
-                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Placement Rate</p>
-                            </div>
-                            <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                <p class="text-primary-start text-4xl font-black leading-tight">150+</p>
-                                <p class="text-text-primary text-base font-normal leading-normal mt-2">Industry Partners</p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-primary-start text-3xl">lightbulb</span>
+                                        <h3 class="text-lg font-bold text-text-primary">Discovery Labs</h3>
+                                    </div>
+                                    <p class="text-sm text-text-secondary">Threat-modeling workshops with rotating roles ensure every learner understands attacker mindset and blue-team resilience.</p>
+                                </div>
+                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-primary-start text-3xl">hub</span>
+                                        <h3 class="text-lg font-bold text-text-primary">Live Incident Pods</h3>
+                                    </div>
+                                    <p class="text-sm text-text-secondary">Students rotate through SOC pods, triaging simulated alerts with Splunk, Azure Sentinel, and custom SIEM pipelines.</p>
+                                </div>
+                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-primary-start text-3xl">verified</span>
+                                        <h3 class="text-lg font-bold text-text-primary">Career Launch Studio</h3>
+                                    </div>
+                                    <p class="text-sm text-text-secondary">Placement strategists align resume packets, mock panel interviews, and employer showcases for every specialization.</p>
+                                </div>
                             </div>
                         </div>
                     </section>

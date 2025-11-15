@@ -140,46 +140,89 @@
                 </div>
             </header>
 
-            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
-                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
-                    
-                    <section>
-                        <div class="@container">
-                            <div class="@[480px]:p-0">
-                                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center px-4 py-10 @[480px]:px-10 text-center" data-alt="Abstract blue and dark digital network background" style='background-image: linear-gradient(rgba(245, 130, 32, 0.8) 0%, rgba(45, 55, 72, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIQi-qvJ2yYeHSvaa2RmqYVxZ1d2gqaCSc3yWqT0FH8A0BfYXijvt3Xd6P0J21Iy52PMhtBNyRhRWmdWPHBj9siBzuC9qW8x6cXmVZS4rAsYnb4ZRT1jqgi0K7o31dQ-3dfyd16EQ6cOc-Oo6WkKDdMLVHJOcumc9WrGF-kvBkv0dGEeJ-G9_DWnZBzpC-VyxLoFGAiNGRmxfSs9CAGAjOQ9vr-6qVY7bG9cC57-GmEFsHOJDkdfI7heh6EpD7-MykfHNT8osvaqzU");'>
-                                    <div class="flex flex-col gap-4">
-                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] animate-fadeInUp-h1">
+            <main class="flex-1 w-full flex flex-col gap-10 py-5">
+                <section class="w-full px-4 sm:px-10 md:px-20 lg:px-32">
+                    <div class="max-w-[1200px] mx-auto">
+                        <div class="@[480px]:p-0">
+                            <div class="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-br from-white via-primary-start/5 to-primary-end/10 shadow-[0_25px_80px_rgba(45,55,72,0.12)]" data-alt="Abstract blue and dark digital network background">
+                                <div class="grid gap-10 md:grid-cols-[1.1fr,0.9fr] items-center px-6 py-12 md:px-16 md:py-16">
+                                    <div class="flex flex-col gap-6 text-center md:text-left">
+                                        <h1 class="text-text-primary text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl animate-fadeInUp-h1">
                                             Empowering Professionals, Securing Digital Assets
                                         </h1>
-                                        <p class="text-gray-300 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto animate-fadeInUp-p">
+                                        <p class="text-text-secondary text-base leading-relaxed md:text-lg max-w-2xl mx-auto md:mx-0 animate-fadeInUp-p">
                                             From industry-leading cybersecurity services to hands-on internship courses, we bridge the gap between education and execution.
                                         </p>
+                                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                                            <a href="#program-overview" class="flex h-11 items-center justify-center rounded-full px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold tracking-wide shadow-lg transition hover:translate-y-[-2px]">
+                                                View Our Offerings
+                                            </a>
+                                            <a href="akula_brochure.pdf" download class="flex h-11 items-center justify-center rounded-full px-6 border border-text-secondary/30 text-text-primary text-sm font-semibold tracking-wide bg-white/80 backdrop-blur">
+                                                Download Brochure
+                                            </a>
+                                        </div>
                                     </div>
-                                    <a href="#program-overview" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-transform duration-300 hover:-translate-y-0.5 animate-fadeInUp-button">
-                                        <span class="truncate">View Our Offerings</span>
-                                    </a>
+
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">2,500+</p>
+                                            <p class="text-sm text-text-secondary">Students trained</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">94%</p>
+                                            <p class="text-sm text-text-secondary">Placement success</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-text-primary text-white p-6 flex flex-col gap-2 shadow-lg">
+                                            <p class="text-3xl font-black">150+</p>
+                                            <p class="text-sm text-white/80">Industry partners</p>
+                                        </div>
+                                        <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                            <p class="text-3xl font-black text-primary-start">50+</p>
+                                            <p class="text-sm text-text-secondary">Corporate engagements</p>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <div class="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-primary-start/30 blur-[130px]"></div>
+                                <div class="pointer-events-none absolute -left-14 bottom-0 h-56 w-56 rounded-full bg-primary-end/30 blur-[140px]"></div>
                             </div>
                         </div>
-                    </section>
-                    
-                    <section id="hero-stats" class="relative -mt-10 mb-4 px-4 sm:px-0 scroll-animate">
-                        <div class="bg-background-light border border-gray-200 rounded-lg p-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center divide-y divide-gray-200 md:divide-y-0 md:divide-x">
-                                
-                                <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">2,500+</span>
-                                    <span class="text-sm md:text-base text-text-secondary mt-2">Students Trained</span>
+                    </div>
+                </section>
+
+                <div class="w-full px-4 sm:px-10 md:px-20 lg:px-32 flex justify-center mt-4">
+                    <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 md:gap-20">
+
+                    <section class="relative mb-4 px-4 sm:px-0 scroll-animate">
+                        <div class="bg-background-light border border-gray-200 rounded-2xl p-8 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                            <div class="flex flex-col gap-6 text-center">
+                                <div>
+                                    <p class="uppercase text-xs font-semibold tracking-[0.4em] text-primary-start">Why Choose Akula</p>
+                                    <h2 class="text-2xl md:text-3xl font-black text-text-primary mt-2">Strategic Cybersecurity Growth for Teams & Talent</h2>
+                                    <p class="text-text-secondary text-sm md:text-base mt-3 max-w-3xl mx-auto">We combine real-world labs, corporate partnerships, and guided mentorship so learners and businesses build resilience together.</p>
                                 </div>
-                                
-                                <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">94%</span>
-                                    <span class="text-sm md:text-base text-text-secondary mt-2">Placement Rate</span>
-                                </div>
-                                
-                                <div class="flex flex-col items-center justify-center pt-4 md:pt-0">
-                                    <span class="text-3xl md:text-4xl font-bold text-primary-start">150+</span>
-                                    <span class="text-sm md:text-base text-text-secondary mt-2">Industry Partners</span>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                        <div class="flex items-center gap-3">
+                                            <span class="material-symbols-outlined text-primary-start text-3xl">lab_profile</span>
+                                            <h3 class="text-lg font-bold text-text-primary">Immersive Labs</h3>
+                                        </div>
+                                        <p class="text-sm text-text-secondary">Live cyber-range simulations and SOC war rooms replicate the environments your teams will defend.</p>
+                                    </div>
+                                    <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                        <div class="flex items-center gap-3">
+                                            <span class="material-symbols-outlined text-primary-start text-3xl">diversity_3</span>
+                                            <h3 class="text-lg font-bold text-text-primary">Mentor Collective</h3>
+                                        </div>
+                                        <p class="text-sm text-text-secondary">Industry CISOs, Red Team leads, and cloud architects guide every learner with tailored roadmaps.</p>
+                                    </div>
+                                    <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
+                                        <div class="flex items-center gap-3">
+                                            <span class="material-symbols-outlined text-primary-start text-3xl">workspace_premium</span>
+                                            <h3 class="text-lg font-bold text-text-primary">Outcome Blueprint</h3>
+                                        </div>
+                                        <p class="text-sm text-text-secondary">Structured playbooks align certification prep, competency benchmarks, and hiring pipelines.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
