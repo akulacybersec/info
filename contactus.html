@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <!-- === UPDATED TITLE === -->
     <title>Akula Cybersec Solutions - Contact Us</title>
     <link rel="icon" type="image/svg+xml" href="logo.svg" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -11,6 +10,8 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -23,7 +24,6 @@
               "text-secondary": "#7A7A7A",
               "text-secondary-end": "#9C9C9C",
               "background-light": "#FFFFFF",
-              /* === ADDED MISSING COLORS === */
               "gray-bg-light": "#F8F8F8", 
             },
             fontFamily: {
@@ -43,7 +43,6 @@
             'opsz' 24
         }
         
-        /* === ADDED ANIMATION CSS === */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -70,6 +69,49 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Toast notification styles */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            animation: slideIn 0.3s ease-out;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .toast.success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        .toast.error {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+        .toast.hiding {
+            animation: slideOut 0.3s ease-out forwards;
+        }
     </style>
 </head>
 <body class="font-display bg-background-light text-text-primary">
@@ -87,12 +129,11 @@
                 </a>
                 <div class="hidden md:flex flex-1 justify-end gap-8">
                     <div class="flex items-center gap-9">
-                        <!-- === UPDATED NAV LINKS & ACTIVE LINK === -->
                         <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="index.html">Home</a>
                         <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="internships.html">Internships</a>
                         <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="servicePage.html">Services</a>
                         <a class="text-text-primary text-sm font-medium leading-normal hover:text-primary-start transition-all duration-200 hover:-translate-y-0.5" href="aboutus.html">About</a>
-                        <a class="text-primary-start text-sm font-bold leading-normal" href="contactus.html">Contact</a> <!-- Active Link -->
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="contactus.html">Contact</a>
                     </div>
                     <a href="akula_brochure.pdf" download class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
                         <span class="truncate">Download Brochure</span>
@@ -107,12 +148,11 @@
 
                 <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background-light border-b border-gray-200 shadow-md">
                     <div class="flex flex-col items-center gap-4 px-4 py-6">
-                        <!-- === UPDATED MOBILE NAV LINKS === -->
                         <a class="text-text-primary text-sm font-medium leading-normal" href="index.html">Home</a>
                         <a class="text-text-primary text-sm font-medium leading-normal" href="internships.html">Internships</a>
                         <a class="text-text-primary text-sm font-medium leading-normal" href="servicePage.html">Services</a>
                         <a class="text-text-primary text-sm font-medium leading-normal" href="aboutus.html">About</a>
-                        <a class="text-primary-start text-sm font-bold leading-normal" href="contactus.html">Contact</a> <!-- Active Link -->
+                        <a class="text-primary-start text-sm font-bold leading-normal" href="contactus.html">Contact</a>
                         <a href="akula_brochure.pdf" download class="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
                             <span class="truncate">Download Brochure</span>
                         </a>
@@ -123,7 +163,6 @@
             <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 gap-12 md:gap-16">
                     
-                    <!-- === ADDED LOAD-IN ANIMATIONS === -->
                     <section class="text-center pt-8">
                         <h1 class="text-4xl sm:text-5xl font-black leading-tight tracking-tighter text-text-primary animate-fadeInUp-h1">Get in Touch</h1>
                         <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg font-normal text-text-secondary animate-fadeInUp-p">
@@ -131,29 +170,28 @@
                         </p>
                     </section>
 
-                    <!-- === ADDED SCROLL-IN ANIMATION & HOVER FOR BUTTON === -->
                     <section class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 scroll-animate">
                         <div class="lg:col-span-3 bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-                            <form action="#" method="POST" class="space-y-6">
+                            <form id="contact-form" class="space-y-6">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium pb-2 text-text-primary" for="full-name">Full Name</label>
                                         <input 
                                             class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
                                             id="full-name" 
-                                            name="full-name" 
+                                            name="full_name" 
                                             placeholder="Enter your full name" 
                                             type="text"
                                             required
                                         />
                                     </div>
                                     <div>
-                                        <label class="block text-sm font-medium pb-2 text-text-primary" for="company-email">Email</label>
+                                        <label class="block text-sm font-medium pb-2 text-text-primary" for="email">Email</label>
                                         <input 
                                             class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
-                                            id="company-email" 
-                                            name="company-email" 
-                                            placeholder="name@company.com" 
+                                            id="email" 
+                                            name="user_email" 
+                                            placeholder="Enter your email" 
                                             type="email"
                                             required
                                         />
@@ -164,8 +202,8 @@
                                     <input 
                                         class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start h-12 placeholder:text-text-secondary px-4 text-base font-normal leading-normal" 
                                         id="phone-number" 
-                                        name="phone-number" 
-                                        placeholder="(123) 456-7890" 
+                                        name="phone_number" 
+                                        placeholder="Enter your phone number" 
                                         type="tel"
                                     />
                                 </div>
@@ -175,7 +213,7 @@
                                         class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-primary focus:outline-0 focus:ring-2 focus:ring-primary-start border-gray-300 bg-white focus:border-primary-start min-h-36 placeholder:text-text-secondary p-4 text-base font-normal leading-normal" 
                                         id="message" 
                                         name="message" 
-                                        placeholder="Tell us how we can help..." 
+                                        placeholder="Enter your message here" 
                                         rows="5"
                                         required
                                     ></textarea>
@@ -199,10 +237,17 @@
                                 </div>
                                 <div>
                                     <button 
+                                        id="submit-btn"
                                         class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-start" 
                                         type="submit"
                                     >
-                                        <span class="truncate">Send Message</span>
+                                        <span id="btn-text" class="truncate">Send Message</span>
+                                        <span id="btn-loader" class="hidden">
+                                            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                        </span>
                                     </button>
                                 </div>
                             </form>
@@ -211,7 +256,6 @@
                         <div class="lg:col-span-2 space-y-12">
                             <div>
                                 <h3 class="text-xl font-bold mb-6 text-text-primary">Other Ways to Connect</h3>
-                                <!-- === CONTENT UPDATED WITH FILE DATA === -->
                                 <div class="space-y-6">
                                     <div class="flex items-start gap-4">
                                         <div class="flex-shrink-0 w-12 h-12 bg-primary-start/10 text-primary-start rounded-lg flex items-center justify-center">
@@ -220,7 +264,7 @@
                                         <div>
                                             <h4 class="font-semibold text-text-primary">Email</h4>
                                             <p class="text-text-secondary text-sm">General inquiries & support</p>
-                                            <a class="text-primary-start font-medium hover:underline" href="mailto:office@akulacybersec.info">office@akulacybersec.info</a>
+                                            <a class="text-primary-start font-medium hover:underline" href="mailto:office@akula.info">office@akula.info</a>
                                         </div>
                                     </div>
                                     <div class="flex items-start gap-4">
@@ -233,58 +277,18 @@
                                             <a class="text-primary-start font-medium hover:underline" href="rateus.html">Leave a Review</a>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
-
-                            <!-- <div>
-                                <h3 class="text-xl font-bold mb-4 text-text-primary">Our Location</h3>
-                                <div class="aspect-video w-full overflow-hidden rounded-xl border border-gray-200">
-                                    <iframe 
-                                        allowfullscreen="" 
-                                        height="100%" 
-                                        loading="lazy" 
-                                        referrerpolicy="no-referrer-when-downgrade" 
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.719692482345!2d-118.40157038478438!3d34.05151598060647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d60a15ed%3A0x501b12b3c2a6b2ef!2sBeverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2s!4v1678886463567!5m2!1sen!2s" 
-                                        style="border:0;" 
-                                        width="100%"
-                                    ></iframe>
-                                </div>
-                            </div> -->
                         </div>
                     </section>
 
                 </div>
             </main>
             
-            <!-- FINAL CTA Section (Full-width) -->
-            <!-- === ADDED SCROLL-IN ANIMATION & HOVER ANIMATIONS === -->
-            <!-- <section class="bg-gradient-to-r from-primary-start to-primary-end py-16 md:py-20 w-full scroll-animate">
-                <div class="max-w-[960px] mx-auto flex flex-col items-center gap-6 px-4 text-center">
-                    <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
-                        Ready to Start Your Cybersecurity Journey?
-                    </h2>
-                    <p class="text-white/90 text-base font-normal leading-normal max-w-2xl">
-                        Join thousands of professionals who have successfully transformed their careers with Akula CyberSec's proven training programs and expert mentorship.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                        <a href="contactus.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-background-light text-primary-start text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
-                            <span class="truncate">Schedule Consultation</span>
-                        </a>
-                        <a href="internships.html" class="flex min-w-[180px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent border-2 border-white text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
-                            <span class="truncate">Explore Internships</span>
-                        </a>
-                    </div>
-                </div>
-            </section> -->
-            
-            <!-- Footer (Full-width) -->
-            <!-- === ADDED bg-gray-bg-light === -->
            <footer class="w-full flex justify-center border-t border-solid border-gray-200 bg-gray-bg-light">
                 <div class="w-full px-4 sm:px-10 py-10">
                     <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
                         
-                        <!-- Column 1: Brand and Description -->
                         <div class="flex flex-col gap-4 max-w-[420px]">
                             <a class="flex items-center gap-3" href="index.html">
                                 <div class="flex h-12 w-12 items-center justify-center">
@@ -295,16 +299,13 @@
                                     <span class="text-xs font-semibold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-text-secondary to-text-secondary-end">CYBERSEC SOLUTION</span>
                                 </div>
                             </a>
-                            <!-- === UPDATED FOOTER CONTENT === -->
                             <p class="text-text-secondary text-sm leading-relaxed">
                                 <span class="font-medium text-text-primary text-lg tracking-tighter">Securing Today, Preparing for Tomorrow</span> - Real-time protection for businesses, industry-focused professional training.
                             </p>
                         </div>
 
-                        <!-- Column 2: Quick Links -->
                         <div class="flex flex-col gap-5 min-w-[220px]">
                             <h3 class="text-text-primary text-base font-bold mb-5">Quick Links</h3>
-                            <!-- === UPDATED FOOTER LINKS === -->
                             <ul class="space-y-3">
                                 <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="index.html">Home</a></li>
                                 <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="internships.html">Internships</a></li>
@@ -314,28 +315,23 @@
                             </ul>
                         </div>
 
-                        <!-- Column 3: Contact Info -->
                         <div class="flex flex-col gap-5 min-w-[220px]">
                             <h3 class="text-text-primary text-base font-bold mb-5">Contact Info</h3>
-                            <!-- === UPDATED CONTACT INFO === -->
                             <ul class="space-y-4">
-                                
                                 <li class="flex items-start gap-3">
                                     <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">language</span>
                                     <a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="https://www.akulacybersec.info" target="_blank">www.akulacybersec.info</a>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="material-symbols-outlined text-primary-start text-xl mt-0.5">mail</span>
-                                    <a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="mailto:office@akulacybersec.info">office@akulacybersec.info</a>
+                                    <a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="mailto:office@akula.info">office@akula.info</a>
                                 </li>
                             </ul>
                         </div>
 
                     </div>
                     
-                    <!-- Bottom Bar: Copyright and Socials -->
                     <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left text-gray-500 text-sm mt-12 border-t border-solid border-gray-200 pt-8 gap-4">
-                        <!-- === UPDATED COPYRIGHT === -->
                         <span>© 2021 AKULA CYBERSEC SOLUTIONS PVT. LTD. All rights reserved.</span>
                         <div class="flex gap-4">
                             <a class="text-gray-500 hover:text-primary-start transition-colors" href="#">
@@ -357,42 +353,103 @@
         </div>
     </div>
 
-<!-- === REMOVED UNUSED switchTab function === -->
 <script>
+    // Initialize EmailJS with your Public Key
+    (function(){
+        emailjs.init("8MeycMZw0hn9NzNpS"); // Replace with your EmailJS Public Key
+    })();
+
+    // Toast notification function
+    function showToast(message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 300);
+        }, 3000);
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnLoader = document.getElementById('btn-loader');
 
+        // Mobile menu toggle
         if (menuButton && mobileMenu) {
             menuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
         }
 
-        // === NEW: Scroll Animation Script ===
+        // Scroll animation
         const observerOptions = {
-            root: null, // use the viewport
+            root: null,
             rootMargin: '0px',
-            threshold: 0.1 // trigger when 10% of the element is visible
+            threshold: 0.1
         };
 
         const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Animate only once
+                    observer.unobserve(entry.target);
                 }
             });
         };
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        // Select all elements with the 'scroll-animate' class
         const elementsToAnimate = document.querySelectorAll('.scroll-animate');
         elementsToAnimate.forEach(el => {
             observer.observe(el);
         });
-        // === End Scroll Animation Script ===
+
+        // EmailJS Form Submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Disable button and show loader
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+
+            // Get form data
+            const formData = {
+                full_name: document.getElementById('full-name').value,
+                user_email: document.getElementById('email').value,
+                phone_number: document.getElementById('phone-number').value,
+                message: document.getElementById('message').value,
+                to_email: 'office@akula.info' // Your receiving email
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_pt8fyrd', 'template_cdub77j', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showToast('We\'ll get back to you soon.', 'success');
+                    contactForm.reset(); // Clear the form
+                    
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    btnText.classList.remove('hidden');
+                    btnLoader.classList.add('hidden');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    showToast('Failed to send message. Please try again or email us directly.', 'error');
+                    
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    btnText.classList.remove('hidden');
+                    btnLoader.classList.add('hidden');
+                });
+        });
     });
 </script>
 </body>
