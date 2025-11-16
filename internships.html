@@ -198,45 +198,13 @@
                 <div class="w-full px-4 sm:px-10 md:px-20 lg:px-32 flex justify-center mt-4">
                     <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 gap-12 md:gap-16">
 
-                    <section class="bg-background-light border border-gray-200 rounded-2xl p-8 shadow-lg">
-                        <div class="flex flex-col gap-6 text-center">
-                            <div>
-                                <p class="uppercase text-xs font-semibold tracking-[0.4em] text-primary-start">Program Pillars</p>
-                                <h2 class="text-2xl md:text-3xl font-black text-text-primary mt-2">How We Build Job-Ready Defenders</h2>
-                                <p class="text-text-secondary text-sm md:text-base mt-3 max-w-3xl mx-auto">Each cohort advances through three disciplined streams that connect curriculum, real incidents, and placement readiness.</p>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
-                                    <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-primary-start text-3xl">lightbulb</span>
-                                        <h3 class="text-lg font-bold text-text-primary">Discovery Labs</h3>
-                                    </div>
-                                    <p class="text-sm text-text-secondary">Threat-modeling workshops with rotating roles ensure every learner understands attacker mindset and blue-team resilience.</p>
-                                </div>
-                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
-                                    <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-primary-start text-3xl">hub</span>
-                                        <h3 class="text-lg font-bold text-text-primary">Live Incident Pods</h3>
-                                    </div>
-                                    <p class="text-sm text-text-secondary">Students rotate through SOC pods, triaging simulated alerts with Splunk, Azure Sentinel, and custom SIEM pipelines.</p>
-                                </div>
-                                <div class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left">
-                                    <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-primary-start text-3xl">verified</span>
-                                        <h3 class="text-lg font-bold text-text-primary">Career Launch Studio</h3>
-                                    </div>
-                                    <p class="text-sm text-text-secondary">Placement strategists align resume packets, mock panel interviews, and employer showcases for every specialization.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
+                
                     <!-- Learning Plan Section -->
                     <!-- === SECTION MODIFIED === -->
                     <section id="learning-plans" class="py-12 md:py-16 scroll-animate">
                         <div class="flex flex-col gap-4 text-center mb-10 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
-                                Our Upskilling Program Phases
+                                Our Upskilling Programs 
                             </h2>
                             <p class="text-text-secondary text-base font-normal leading-normal max-w-3xl mx-auto">
                                 A new, structured pathway to build skills, confidence, and career readiness for every day of study.
@@ -365,7 +333,7 @@
                                 @click="activeTab = 'benefits'" 
                                 :class="activeTab === 'benefits' ? 'border-primary-start text-primary-start' : 'border-transparent text-gray-500 hover:text-text-primary'"
                                 class="px-6 py-3 font-medium text-sm border-b-2 transition-colors whitespace-nowrap">
-                                Eligibility & Benefits
+                                Eligibility
                             </button>
                         </div>
                         <div class="transition-all duration-300">
@@ -385,7 +353,7 @@
                                         </ul>
                                     </div>
                                     <div class="w-full md:w-1/2">
-                                        <h4 class="font-semibold text-text-primary mb-2">Campus Placement Support</h4>
+                                        <h4 class="font-semibold text-text-primary mb-2">Training Support</h4>
                                         <ul class="space-y-2 text-text-secondary text-sm">
                                             <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Resume & interview training</li>
                                             <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Mock interviews & HR prep</li>
@@ -425,190 +393,113 @@
                             </div>
                             <!-- Eligibility & Benefits Tab -->
                             <div x-show="activeTab === 'benefits'" x-cloak x-transition>
-                                <div class="flex flex-col md:flex-row gap-8 items-start">
+                                <div class="items-start">
                                     <div class="w-full md:w-1/2">
-                                        <h3 class="font-bold text-xl text-text-primary mb-4">Who is Eligible?</h3>
+                                        <h3 class="font-bold text-xl text-text-primary mb-4 text-center">Who is Eligible?</h3>
                                         <div class="flex items-center gap-3 p-4 bg-corporate-card-bg rounded-lg border border-primary-start/50">
                                             <span class="material-symbols-outlined text-primary-start text-4xl">school</span>
                                             <p class="text-text-primary font-medium">Fresh Graduates with a minimum score of 50%.</p>
                                         </div>
                                     </div>
                                     <div class="w-full md:w-1/2">
-                                        <h3 class="font-bold text-xl text-text-primary mb-4">Key Benefits</h3>
-                                        <ul class="space-y-2 text-text-secondary text-sm">
-                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Real-World Practical Experience</li>
-                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Build a demonstrable portfolio of projects</li>
-                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Improved Employability & Career Readiness</li>
-                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Gain Career Clarity</li>
-                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Industry Exposure and Networking</li>
-                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Develop in-demand soft skills</li>
-                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Career Direction and Specialization</li>
-                                        </ul>
-                                    </div>
+                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- How to Apply Section (Placeholder) -->
-                    <section class="scroll-animate">
-                        <h2 class="text-text-primary text-3xl sm:text-4xl font-bold leading-tight tracking-[-0.015em] mb-12 text-center">
-                            How to <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">Apply</span>
-                        </h2>
-                        <div class="grid md:grid-cols-3 gap-8 text-center">
-                            <div class="flex flex-col items-center gap-4">
-                                <div class="w-16 h-16 bg-gradient-to-br from-primary-start/20 to-primary-end/20 rounded-full flex items-center justify-center">
-                                    <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent font-bold text-xl">1</span>
+                     <section id="content-cybersec" class="scroll-animate">
+                              <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6">Benefits </h2>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
+                             <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <!-- <span class="material-symbols-outlined text-primary-start text-4xl">hub</span> -->
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Enhanced Academic Reputation</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">● Positions the university as a leader in technology and digital innovation.</p>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">● Attracts more students interested in future-ready career programs like cybersecurity, AI, and networking.</p>
                                 </div>
-                                <h3 class="font-bold text-lg text-text-primary">Submit Application</h3>
-                                <p class="text-text-secondary text-sm">Complete our online application form and upload your resume and cover letter. Application deadline: December 15th.</p>
                             </div>
-                            <div class="flex flex-col items-center gap-4">
-                                <div class="w-16 h-16 bg-gradient-to-br from-primary-start/20 to-primary-end/20 rounded-full flex items-center justify-center">
-                                    <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent font-bold text-xl">2</span>
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <!-- <span class="material-symbols-outlined text-primary-start text-4xl">shield</span> -->
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Industry-Aligned Curriculum & Certifications</h3>
+                                      <p class="text-text-secondary text-sm font-normal leading-normal">● Integrates globally recognized certifications (e.g., CompTIA, Cisco, Fortinet, EC-Council) into the university syllabus.</p>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">● Keeps academic programs aligned with current industry standards and employer demands.</p>
+                               </div>
+                            </div>
+
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <!-- <span class="material-symbols-outlined text-primary-start text-4xl">developer_mode</span> -->
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Improved Placement & Internship Opportunities</h3>
+                                     <p class="text-text-secondary text-sm font-normal leading-normal">● Offers students access to hands-on labs, live projects, and internship programs through the institute’s corporate network.</p>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">● Boosts campus placement rates and employability in the cybersecurity and IT domains.</p>
+                               </div>
+                            </div>
+
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <!-- <span class="material-symbols-outlined text-primary-start text-4xl">lock</span> -->
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Faculty Development & Research Support</h3>
+                                 <p class="text-text-secondary text-sm font-normal leading-normal">● Provides faculty training programs and exposure to emerging cybersecurity tools and methodologies.</p>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">● Encourages joint research, workshops, and publications in cybersecurity and data protection.</p>
                                 </div>
-                                <h3 class="font-bold text-lg text-text-primary">Technical Interview</h3>
-                                <p class="text-text-secondary text-sm">Qualified candidates will be invited for a technical interview to assess their skills and problem-solving abilities.</p>
                             </div>
-                            <div class="flex flex-col items-center gap-4">
-                                <div class="w-16 h-16 bg-gradient-to-br from-primary-start/20 to-primary-end/20 rounded-full flex items-center justify-center">
-                                    <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent font-bold text-xl">3</span>
+
+                             <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <!-- <span class="material-symbols-outlined text-primary-start text-4xl">lock</span> -->
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Academic-Industry Collaboration</h3>
+                                  <p class="text-text-secondary text-sm font-normal leading-normal">● Strengthens partnerships between the university and cybersecurity companies, government agencies, and research bodies.</p>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">● Enables joint initiatives like seminars, hackathons, and security awareness programs.</p>
+                               </div>
+                            </div>
+
+                             <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <!-- <span class="material-symbols-outlined text-primary-start text-4xl">lock</span> -->
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Contribution to National Cyber Readiness</h3>
+                                   <p class="text-text-secondary text-sm font-normal leading-normal">● Supports the nation’s digital security goals by producing skilled professionals ready to protect critical infrastructure and data.</p>
+                                                    </div>
+                            </div>
+
+                            <div class="service-card flex flex-1 flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                                <!-- <span class="material-symbols-outlined text-primary-start text-4xl">monitoring</span> -->
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Infrastructure & Skill Development Support</h3>
+                                   <p class="text-text-secondary text-sm font-normal leading-normal">● Establishment of cyber labs, simulation centers, and training infrastructure within the university.</p>
+                                <p class="text-text-secondary text-sm font-normal leading-normal">● Equips students with practical, job-ready skills through real-world scenarios and tools.</p>
                                 </div>
-                                <h3 class="font-bold text-lg text-text-primary">Final Decision</h3>
-                                <p class="text-text-secondary text-sm">Successful candidates will receive an offer to join our next cohort of interns. We'll notify all applicants by January 31st.</p>
                             </div>
-                        </div>
-                        <div class="text-center mt-12">
-                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-primary-start to-primary-end text-white text-base font-bold leading-normal tracking-[0.015em] mx-auto hover:opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
-                                <span class="truncate">Apply Now</span>
-                            </button>
                         </div>
                     </section>
                     
-                    <!-- Connect with Industry Mentors Section (Placeholder) -->
-                    <section id="mentors" class="py-12 md:py-16 scroll-animate">
-                        <div class="flex flex-col gap-4 text-center mb-10 px-4">
-                            <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
-                                Connect with Industry Mentors
-                            </h2>
-                            <p class="text-text-secondary text-base font-normal leading-normal max-w-3xl mx-auto">
-                                Our AI-powered matching system connects you with experienced professionals who align with your career goals and learning style.
-                            </p>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <!-- Mentor Card 1 -->
-                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="flex flex-col items-center text-center">
-                                    <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/100x100/F58220/FFFFFF?text=DC" alt="David Chen">
-                                    <h3 class="text-text-primary text-xl font-bold">David Chen</h3>
-                                    <p class="text-text-secondary text-sm">CISO at Fortune 500 Company</p>
-                                    <div class="flex items-center gap-1 mt-2">
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star_half</span>
-                                        <span class="text-text-secondary text-xs ml-1">(4.9)</span>
+                    <!-- === ADDED SCROLL ANIMATION === -->
+                    <section class="max-w-5xl mx-auto w-full scroll-animate">
+                        <h2 class="text-3xl font-bold text-text-primary text-center mb-8">What Our Clients Say</h2>
+                        
+                        <div class="relative">
+                            <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110 hidden md:block">
+                                <span class="material-symbols-outlined text-text-primary">chevron_left</span>
+                            </button>
+                            <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110 hidden md:block">
+                                <span class="material-symbols-outlined text-text-primary">chevron_right</span>
+                            </button>
+
+                            <div id="reviewsCarousel" class="overflow-hidden">
+                                <div id="reviewsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-transform duration-700 ease-in-out">
+                                    <div class="col-span-full text-center py-8">
+                                        <span class="material-symbols-outlined text-text-secondary text-4xl mb-2 animate-spin">refresh</span>
+                                        <p class="text-text-secondary">Loading reviews...</p>
                                     </div>
                                 </div>
-                                <p class="text-text-secondary text-sm my-4 text-center">
-                                    20+ years in cybersecurity leadership. Specializes in enterprise security strategy, risk management, and team building.
-                                </p>
-                                <div class="flex flex-wrap gap-2 justify-center mb-4">
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">Leadership</span>
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">Strategy</span>
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">Risk Management</span>
-                                </div>
-                                <div class="border-t border-gray-200 pt-4 space-y-2 text-sm text-text-secondary">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-base">group</span>
-                                        <span>45 mentees guided</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-base">calendar_month</span>
-                                        <span>Available weekends</span>
-                                    </div>
-                                </div>
-                                <a href="#" class="flex w-full min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-6">
-                                    <span class="truncate">Connect</span>
-                                </a>
                             </div>
-                            <!-- Mentor Card 2 -->
-                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="flex flex-col items-center text-center">
-                                    <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/100x100/4F46E5/FFFFFF?text=SM" alt="Sarah Martinez">
-                                    <h3 class="text-text-primary text-xl font-bold">Sarah Martinez</h3>
-                                    <p class="text-text-secondary text-sm">Senior Penetration Tester</p>
-                                    <div class="flex items-center gap-1 mt-2">
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star_half</span>
-                                        <span class="text-text-secondary text-xs ml-1">(4.8)</span>
-                                    </div>
-                                </div>
-                                <p class="text-text-secondary text-sm my-4 text-center">
-                                    12+ years in ethical hacking and penetration testing. Expert in web application security and vulnerability research.
-                                </p>
-                                <div class="flex flex-wrap gap-2 justify-center mb-4">
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">Pen Testing</span>
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">Web Security</span>
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">OSCP</span>
-                                </div>
-                                <div class="border-t border-gray-200 pt-4 space-y-2 text-sm text-text-secondary">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-base">group</span>
-                                        <span>32 mentees guided</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-base">calendar_month</span>
-                                        <span>Available evenings</span>
-                                    </div>
-                                </div>
-                                <a href="#" class="flex w-full min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-6">
-                                    <span class="truncate">Connect</span>
-                                </a>
-                            </div>
-                            <!-- Mentor Card 3 -->
-                            <div class="flex flex-col rounded-lg border border-gray-200 bg-background-light p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="flex flex-col items-center text-center">
-                                    <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/100x100/2D3748/FFFFFF?text=MJ" alt="Marcus Johnson">
-                                    <h3 class="text-text-primary text-xl font-bold">Marcus Johnson</h3>
-                                    <p class="text-text-secondary text-sm">SOC Manager & DFIR Specialist</p>
-                                    <div class="flex items-center gap-1 mt-2">
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="material-symbols-outlined filled text-primary-start">star</span>
-                                        <span class="text-text-secondary text-xs ml-1">(5.0)</span>
-                                    </div>
-                                </div>
-                                <p class="text-text-secondary text-sm my-4 text-center">
-                                    15+ years in SOC operations and digital forensics. Specializes in incident response and malware analysis.
-                                </p>
-                                <div class="flex flex-wrap gap-2 justify-center mb-4">
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">SOC Operations</span>
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">DFIR</span>
-                                    <span class="text-xs text-text-secondary bg-gray-100 px-3 py-1 rounded-full">GCIH</span>
-                                </div>
-                                <div class="border-t border-gray-200 pt-4 space-y-2 text-sm text-text-secondary">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-base">group</span>
-                                        <span>28 mentees guided</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-base">calendar_month</span>
-                                        <span>Available mornings</span>
-                                    </div>
-                                </div>
-                                <a href="#" class="flex w-full min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary-start to-primary-end text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity mt-6">
-                                    <span class="truncate">Connect</span>
-                                </a>
+
+                            <div id="carouselDots" class="flex justify-center gap-2 mt-6 md:hidden">
+                                 Dots will be injected here by JS 
                             </div>
                         </div>
-                    </section>
+                    </section> 
 
                     <!-- FAQ Section -->
                     <!-- === UPDATED FAQ CONTENT === -->
@@ -762,6 +653,279 @@
 
 <!-- Combined Scroll & Menu Script -->
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Scroll Animation Script
+        const observerOptions = {
+            root: null, // use the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Select all elements with the 'scroll-animate' class
+        const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+    <!-- === CAROUSEL SCRIPT (UNIQUE TO THIS PAGE) === -->
+    <script>
+        // Replace with your Google Apps Script Web App URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYlBhszlFsd8XDxc5qxY-cW-XkQepXvMF5qVjUFrInC1nk-VdKXWuu8hKbgD-mG5kL/exec';
+
+        // Carousel elements
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const reviewsContainer = document.getElementById('reviewsContainer');
+        const carouselDots = document.getElementById('carouselDots');
+        
+        // Carousel state
+        let currentIndex = 0;
+        let allReviews = [];
+        const reviewsPerPage = 4; // This is set to 4 in the HTML (lg:grid-cols-4)
+        let autoSlideInterval;
+
+        // Carousel functions
+        function initCarousel() {
+            // Add event listeners to navigation buttons
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => navigateCarousel(-1));
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => navigateCarousel(1));
+            }
+
+            // Pause auto-slide on hover
+            const carouselContainer = document.getElementById('reviewsCarousel')?.closest('.relative');
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+                carouselContainer.addEventListener('mouseleave', startAutoSlide);
+            }
+        }
+
+        function navigateCarousel(direction) {
+            if (allReviews.length <= reviewsPerPage) return;
+
+            currentIndex += direction * reviewsPerPage;
+            
+            if (currentIndex >= allReviews.length) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = Math.floor((allReviews.length - 1) / reviewsPerPage) * reviewsPerPage;
+            }
+
+            renderCarousel();
+            updateCarouselDots();
+            resetAutoSlide();
+        }
+
+        function renderCarousel() {
+            if (!reviewsContainer) return; // Exit if container not found
+            reviewsContainer.innerHTML = '';
+            
+            if (allReviews.length === 0) {
+                reviewsContainer.innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <span class="material-symbols-outlined text-text-secondary text-4xl mb-2">rate_review</span>
+                        <p class="text-text-secondary">No reviews available at this time.</p>
+                    </div>
+                `;
+                // Hide arrows and dots if no reviews
+                if(prevBtn) prevBtn.classList.add('hidden');
+                if(nextBtn) nextBtn.classList.add('hidden');
+                if(carouselDots) carouselDots.innerHTML = '';
+                return;
+            }
+
+            const startIndex = currentIndex;
+            const endIndex = Math.min(startIndex + reviewsPerPage, allReviews.length);
+            const pageReviews = allReviews.slice(startIndex, endIndex);
+
+            pageReviews.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'bg-gray-50 rounded-xl p-6 border border-gray-200 transition-all duration-700 ease-in-out transform hover:scale-105';
+                
+                // Handle potential missing rating
+                const rating = parseInt(review.rating) || 0;
+                let stars = '';
+                for(let i = 0; i < 5; i++) {
+                    if (i < rating) {
+                        stars += `<span class="material-symbols-outlined filled text-yellow-500 text-lg">star</span>`;
+                    } else {
+                        stars += `<span class="material-symbols-outlined text-gray-300 text-lg">star</span>`;
+                    }
+                }
+                
+                // Handle optional review text
+                const reviewText = review.review ? `<p class="text-text-secondary text-sm mb-4 italic">"${review.review}"</p>` : '';
+                
+                // Handle missing name/email
+                const name = review.name || 'Anonymous';
+                const email = review.email || '';
+                const initial = name.charAt(0).toUpperCase();
+
+                reviewCard.innerHTML = `
+                    <div class="flex gap-1 mb-3 text-xl">
+                        ${stars}
+                    </div>
+                    ${reviewText}
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-start to-primary-end flex items-center justify-center text-white font-bold text-sm">
+                            ${initial}
+                        </div>
+                        <div>
+                            <div class="font-bold text-text-primary">${name}</div>
+                            ${email ? `<div class="text-xs text-text-secondary">${email}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+                reviewsContainer.appendChild(reviewCard);
+            });
+
+            // Show/hide navigation arrows based on number of reviews
+            if (allReviews.length > reviewsPerPage) {
+                if(prevBtn) prevBtn.classList.remove('hidden');
+                if(nextBtn) nextBtn.classList.remove('hidden');
+            } else {
+                if(prevBtn) prevBtn.classList.add('hidden');
+                if(nextBtn) nextBtn.classList.add('hidden');
+            }
+        }
+
+        function createCarouselDots() {
+            if (!carouselDots) return;
+            carouselDots.innerHTML = '';
+            if (allReviews.length <= reviewsPerPage) return;
+
+            const totalPages = Math.ceil(allReviews.length / reviewsPerPage);
+            
+            for (let i = 0; i < totalPages; i++) {
+                const dot = document.createElement('button');
+                dot.className = `w-3 h-3 rounded-full transition-all duration-200 ${
+                    i === Math.floor(currentIndex / reviewsPerPage) 
+                        ? 'bg-primary-start' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                }`;
+                dot.addEventListener('click', () => {
+                    currentIndex = i * reviewsPerPage;
+                    renderCarousel();
+                    updateCarouselDots();
+                    resetAutoSlide();
+                });
+                carouselDots.appendChild(dot);
+            }
+        }
+
+        function updateCarouselDots() {
+            if (!carouselDots) return;
+            const dots = carouselDots.querySelectorAll('button');
+            const activePage = Math.floor(currentIndex / reviewsPerPage);
+            
+            dots.forEach((dot, index) => {
+                if (index === activePage) {
+                    dot.className = 'w-3 h-3 rounded-full transition-all duration-200 bg-primary-start';
+                } else {
+                    dot.className = 'w-3 h-3 rounded-full transition-all duration-200 bg-gray-300 hover:bg-gray-400';
+                }
+            });
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide(); // Clear existing interval first
+            if (allReviews.length > reviewsPerPage) {
+                autoSlideInterval = setInterval(() => {
+                    navigateCarousel(1);
+                }, 4000);
+            }
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+        }
+
+        function resetAutoSlide() {
+            stopAutoSlide();
+            startAutoSlide();
+        }
+
+        // Function to load and display reviews
+        function loadReviews() {
+            if (!reviewsContainer) { // Don't run if the carousel isn't on the page
+                return;
+            }
+            // Show loading state
+            reviewsContainer.innerHTML = `
+                <div class="col-span-full text-center py-8">
+                    <span class="material-symbols-outlined text-text-secondary text-4xl mb-2 animate-spin">refresh</span>
+                    <p class="text-text-secondary">Loading reviews...</p>
+                </div>
+            `;
+            
+            // Fetch reviews from Google Apps Script
+            fetch(SCRIPT_URL + '?action=getReviews')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Fetched reviews:', data);
+                    
+                    // Ensure data.reviews is an array, even if it's empty
+                    allReviews = (data.reviews && Array.isArray(data.reviews)) ? data.reviews : [];
+                    
+                    // Reset index and render
+                    currentIndex = 0;
+                    renderCarousel(); // This function will handle the "no reviews" case
+                    createCarouselDots();
+                    updateCarouselDots();
+                    
+                    // Start the autoslide *after* reviews are loaded
+                    resetAutoSlide(); 
+                })
+                .catch(error => {
+                    console.error('Error loading reviews:', error);
+                    reviewsContainer.innerHTML = `
+                        <div class="col-span-full text-center py-8">
+                            <span class="material-symbols-outlined text-text-secondary text-4xl mb-2">error</span>
+                            <p class="text-text-secondary">Unable to load reviews. Please try again later.</p>
+                        </div>
+                    `;
+                    stopAutoSlide(); // Stop slider on error
+                });
+        }
+
+        // Initialize carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('reviewsContainer')) {
+                initCarousel();
+                loadReviews();
+            }
+        });
+    </script>
+    
+    <!-- === MOBILE MENU & SCROLL ANIMATION SCRIPT === -->
+    <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Mobile Menu Toggle
         const menuButton = document.getElementById('mobile-menu-button');
