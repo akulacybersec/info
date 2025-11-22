@@ -6,7 +6,9 @@
     <title>Akula Cybersec Solutions</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="logo.svg" /> -->
+     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='%23F58220' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'></path><text x='12' y='16' text-anchor='middle' font-size='12' font-weight='bold' font-family='sans-serif' fill='white'>A</text></svg>">    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -88,8 +90,13 @@
         <div class="layout-container flex h-full grow flex-col">
             <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 sm:px-10 py-3 backdrop-blur-sm">
                 <a class="flex items-center gap-3" href="index.html">
-                    <div class="flex h-12 w-12 items-center justify-center">
-                        <img src="logo.svg" alt="Akula Cybersec shield logo" class="h-full w-full object-contain" loading="lazy" />
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                        <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Shield outline -->
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <!-- Letter A inside shield -->
+                        <text x="12" y="15" text-anchor="middle" font-size="12" font-family="sans-serif" fill="currentColor">A</text>
+                        </svg>
                     </div>
                     <div class="flex flex-col">
                         <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
@@ -157,14 +164,14 @@
                                             <p class="text-3xl font-black text-primary-start">2,500+</p>
                                             <p class="text-sm text-text-secondary">Students trained</p>
                                         </div>
-                                        <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
+                                        <!-- <div class="rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
                                             <p class="text-3xl font-black text-primary-start">94%</p>
-                                            <p class="text-sm text-text-secondary">Placement success</p>
-                                        </div>
-                                        <div class="rounded-2xl bg-text-primary text-white p-6 flex flex-col gap-2 shadow-lg">
+                                            <p class="text-sm text-text-secondary">Placement success</p> -->
+                                        <!-- </div> -->
+                                        <!-- <div class="rounded-2xl bg-text-primary text-white p-6 flex flex-col gap-2 shadow-lg">
                                             <p class="text-3xl font-black">150+</p>
                                             <p class="text-sm text-white/80">Industry partners</p>
-                                        </div>
+                                        </div> -->
                                         <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
                                             <p class="text-3xl font-black text-primary-start">50+</p>
                                             <p class="text-sm text-text-secondary">Corporate engagements</p>
@@ -216,8 +223,87 @@
                             </div>
                         </div>
                     </section>
+                    <section id="services" class="scroll-animate">
+                        <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Product-Based Services</h2>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">shield</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">AI Threat Intelligence</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Proactively identify and neutralize threats with our advanced AI-powered detection systems.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">code</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Secure Software Development</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">We build security into the core of your applications from the ground up, ensuring robust protection.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">bug_report</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Vulnerability Assessment</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">Our experts conduct comprehensive penetration testing to uncover and remediate vulnerabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-                    <section id="program-overview" class="py-8 scroll-animate">
+                   
+
+                    <section id="cybersecurity-program" class="scroll-animate">
+                        <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Spotlight: Cyber Security Internship Programme</h2>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">inventory_2</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">What's in the Package?</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">
+                                        - System & Network Basics, Incident Response
+                                        <br>- Advanced Topics: Cloud, AI in Defense, SIEM
+                                        <br>- Practical Learning: Projects, Simulations, Virtual Labs
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">work</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Career & Placement Support</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">
+                                        - Resume & Interview Training
+                                        <br>- Certification Assistance (CEH, CompTIA)
+                                        <br>- Networking & Placement Drives
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                                <div class="text-primary-start">
+                                    <span class="material-symbols-outlined" style="font-size: 32px;">info</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-text-primary text-base font-bold leading-tight">Program Details</h3>
+                                    <p class="text-text-secondary text-sm font-normal leading-normal">
+                                        <b>Duration:</b> 0-3 months
+                                        <br><b>Eligibility:</b> Fresh Graduates
+                                        <br><b>Score:</b> Minimum 50%
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                     <section id="program-overview" class="py-8 scroll-animate">
                         <div class="flex flex-col gap-4 text-center mb-8 px-4">
                             <h2 class="text-text-primary text-[32px] font-bold leading-tight tracking-[-0.015em] md:text-4xl">
                                 Our Training & Internship Methodology
@@ -298,84 +384,6 @@
                                 <span class="text-primary-start text-sm font-bold leading-normal mt-auto flex items-center gap-1">
                                     Become Truly Job-Ready
                                 </span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="cybersecurity-program" class="scroll-animate">
-                        <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Spotlight: Cyber Security Internship Programme</h2>
-                        <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">inventory_2</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">What's in the Package?</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">
-                                        - System & Network Basics, Incident Response
-                                        <br>- Advanced Topics: Cloud, AI in Defense, SIEM
-                                        <br>- Practical Learning: Projects, Simulations, Virtual Labs
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">work</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">Career & Placement Support</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">
-                                        - Resume & Interview Training
-                                        <br>- Certification Assistance (CEH, CompTIA)
-                                        <br>- Networking & Placement Drives
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">info</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">Program Details</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">
-                                        <b>Duration:</b> 0-3 months
-                                        <br><b>Eligibility:</b> Fresh Graduates
-                                        <br><b>Score:</b> Minimum 50%
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="services" class="scroll-animate">
-                        <h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Product-Based Services</h2>
-                        <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">shield</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">AI Threat Intelligence</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Proactively identify and neutralize threats with our advanced AI-powered detection systems.</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">code</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">Secure Software Development</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">We build security into the core of your applications from the ground up, ensuring robust protection.</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-1 gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                                <div class="text-primary-start">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">bug_report</span>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-text-primary text-base font-bold leading-tight">Vulnerability Assessment</h3>
-                                    <p class="text-text-secondary text-sm font-normal leading-normal">Our experts conduct comprehensive penetration testing to uncover and remediate vulnerabilities.</p>
-                                </div>
                             </div>
                         </div>
                     </section>
@@ -518,8 +526,16 @@
                         <!-- Column 1: Brand and Description -->
                         <div class="flex flex-col gap-4 max-w-[420px]">
                             <a class="flex items-center gap-3" href="index.html">
-                                <div class="flex h-12 w-12 items-center justify-center">
+                                <!-- <div class="flex h-12 w-12 items-center justify-center">
                                     <img src="logo.svg" alt="Akula Cybersec shield logo" class="h-full w-full object-contain" loading="lazy" />
+                                </div> -->
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                                    <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Shield outline -->
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <!-- Letter A inside shield -->
+                                    <text x="12" y="15" text-anchor="middle" font-size="12" font-family="sans-serif" fill="currentColor">A</text>
+                                    </svg>
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
@@ -533,8 +549,8 @@
                         </div>
 
                         <!-- Column 2: Quick Links -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links :</h3>
                             <!-- === UPDATED FOOTER LINKS === -->
                             <ul class="space-y-3">
                                 <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="index.html">Home</a></li>
@@ -546,8 +562,8 @@
                         </div>
 
                         <!-- Column 3: Contact Info -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info :</h3>
                             <!-- === UPDATED CONTACT INFO === -->
                             <ul class="space-y-4">
                                 

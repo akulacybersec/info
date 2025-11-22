@@ -177,14 +177,14 @@
                                             <p class="text-3xl font-black text-primary-start">180 hrs</p>
                                             <p class="text-sm text-text-secondary">Live mentor time</p>
                                         </div>
-                                        <div class="rounded-2xl bg-text-primary text-white p-6 flex flex-col gap-2 shadow-lg">
+                                        <!-- <div class="rounded-2xl bg-text-primary text-white p-6 flex flex-col gap-2 shadow-lg">
                                             <p class="text-3xl font-black">40+</p>
                                             <p class="text-sm text-white/80">Breach response drills</p>
                                         </div>
                                         <div class="rounded-2xl bg-white/90 backdrop-blur border border-white/60 p-6 flex flex-col gap-2 shadow-sm">
                                             <p class="text-3xl font-black text-primary-start">8 Tracks</p>
                                             <p class="text-sm text-text-secondary">Career pathways curated</p>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
@@ -335,6 +335,7 @@
                                 class="px-6 py-3 font-medium text-sm border-b-2 transition-colors whitespace-nowrap">
                                 Eligibility
                             </button>
+                            
                         </div>
                         <div class="transition-all duration-300">
                             <!-- Cyber Security Tab -->
@@ -353,7 +354,17 @@
                                         </ul>
                                     </div>
                                     <div class="w-full md:w-1/2">
-                                        <h4 class="font-semibold text-text-primary mb-2">Training Support</h4>
+                                        <h4 class="font-semibold text-text-primary mb-2 text-center">Training Support</h4>
+                                        <ul class="space-y-2 text-text-secondary text-sm ">
+                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Resume & interview training</li>
+                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Mock interviews & HR prep</li>
+                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Networking with cybersecurity firms</li>
+                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Assistance for certifications (CEH, CompTIA & others)</li>
+                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Placement drives & job fairs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="w-full md:w-1/2">
+                                        <h4 class="font-semibold text-text-primary mb-2">Employee Security Awareness Program</h4>
                                         <ul class="space-y-2 text-text-secondary text-sm">
                                             <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Resume & interview training</li>
                                             <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-start text-base">check</span>Mock interviews & HR prep</li>
@@ -393,12 +404,12 @@
                             </div>
                             <!-- Eligibility & Benefits Tab -->
                             <div x-show="activeTab === 'benefits'" x-cloak x-transition>
-                                <div class="items-start">
-                                    <div class="w-full md:w-1/2">
+                                <div class="items-start ">
+                                    <div class="w-full md:w-full">
                                         <h3 class="font-bold text-xl text-text-primary mb-4 text-center">Who is Eligible?</h3>
-                                        <div class="flex items-center gap-3 p-4 bg-corporate-card-bg rounded-lg border border-primary-start/50">
+                                        <div class="flex items-center gap-3 p-4 bg-corporate-card-bg rounded-lg border border-primary-start/50 text-center">
                                             <span class="material-symbols-outlined text-primary-start text-4xl">school</span>
-                                            <p class="text-text-primary font-medium">Fresh Graduates with a minimum score of 50%.</p>
+                                            <p class="text-text-primary font-medium text-center">Fresh Graduates with a minimum score of 50%.</p>
                                         </div>
                                     </div>
                                     <div class="w-full md:w-1/2">
@@ -581,8 +592,16 @@
                         <!-- Column 1: Brand and Description -->
                         <div class="flex flex-col gap-4 max-w-[420px]">
                             <a class="flex items-center gap-3" href="index.html">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-start to-primary-end shadow-[0_10px_25px_rgba(245,130,32,0.45)] overflow-hidden">
+                                <!-- <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-start to-primary-end shadow-[0_10px_25px_rgba(245,130,32,0.45)] overflow-hidden">
                                     <img src="logo.svg" alt="Akula Cybersec shield logo" class="h-full w-full object-cover" loading="lazy" />
+                                </div> -->
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-start to-primary-end p-1 shadow-md">
+                                    <svg class="h-full w-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Shield outline -->
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <!-- Letter A inside shield -->
+                                    <text x="12" y="15" text-anchor="middle" font-size="12" font-family="sans-serif" fill="currentColor">A</text>
+                                    </svg>
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-xl font-black uppercase tracking-tighter text-transparent">AKULA</span>
@@ -596,8 +615,8 @@
                         </div>
 
                         <!-- Column 2: Quick Links -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Quick Links :</h3>
                             <!-- === UPDATED FOOTER LINKS === -->
                             <ul class="space-y-3">
                                 <li><a class="text-text-secondary hover:text-primary-start text-sm transition-colors" href="index.html">Home</a></li>
@@ -609,8 +628,8 @@
                         </div>
 
                         <!-- Column 3: Contact Info -->
-                        <div class="flex flex-col gap-5 min-w-[220px]">
-                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info</h3>
+                        <div class="flex flex-row gap-5 min-w-[220px]">
+                            <h3 class="text-text-primary text-base font-bold mb-5">Contact Info :</h3>
                             <!-- === UPDATED CONTACT INFO === -->
                             <ul class="space-y-4">
                                 
