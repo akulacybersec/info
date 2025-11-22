@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akula Cybersec Solutions - Corporate Training</title>
+    <style>
+        :root {
+            --primary: #00ff9d;
+            --secondary: #00b8ff;
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --accent: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .slides-container {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            max-width: 900px;
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.1);
+        }
+
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            text-align: left;
+            margin-bottom: 0;
+            color: #aaa;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 10;
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--primary);
+            color: var(--bg);
+        }
+
+        .progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .logo {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        ul {
+            text-align: left;
+            font-size: 1.2rem;
+            color: #ccc;
+            list-style-position: inside;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">AKULA <span>CYBERSEC</span></div>
+    <div class="progress" id="progress"></div>
+
+    <div class="slides-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>Akula Cybersec Solutions</h1>
+            <p>Empowering Professionals, Securing Digital Assets</p>
+            <p style="font-size: 1.2rem; color: var(--secondary)">Strategic Cybersecurity Growth for Teams & Talent</p>
+        </div>
+
+        <!-- Slide 2: About Us -->
+        <div class="slide">
+            <h2>Strategic Growth</h2>
+            <p>We don't just train; we transform. Our mission is to build a secure digital ecosystem by empowering
+                professionals with the skills to defend against tomorrow's threats.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Empower</h3>
+                    <p>Equipping teams with cutting-edge cybersecurity skills.</p>
+                </div>
+                <div class="card">
+                    <h3>Secure</h3>
+                    <p>Protecting digital assets through proactive defense strategies.</p>
+                </div>
+                <div class="card">
+                    <h3>Innovate</h3>
+                    <p>Leveraging AI and advanced technologies for superior security.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Our Services -->
+        <div class="slide">
+            <h2>Our Product-Based Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>AI Threat Intelligence</h3>
+                    <p>Proactively identify and neutralize threats with our advanced AI-powered detection systems.</p>
+                </div>
+                <div class="card">
+                    <h3>Secure Software Development</h3>
+                    <p>We build security into the core of your applications from the ground up, ensuring robust
+                        protection.</p>
+                </div>
+                <div class="card">
+                    <h3>Vulnerability Assessment</h3>
+                    <p>Our experts conduct comprehensive penetration testing to uncover and remediate vulnerabilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Corporate Training -->
+        <div class="slide">
+            <h2>Corporate Training</h2>
+            <p>Tailored training solutions to upskill your workforce and secure your organization.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Customized Workshops</h3>
+                    <p>Training modules tailored to your specific industry and technology stack.</p>
+                </div>
+                <div class="card">
+                    <h3>Employee Upskilling</h3>
+                    <p>Continuous learning programs to keep your team ahead of emerging threats.</p>
+                </div>
+                <div class="card">
+                    <h3>Executive Briefings</h3>
+                    <p>High-level security overviews and risk management strategies for leadership.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Training & Internship -->
+        <div class="slide">
+            <h2>Cyber Security Internship Programme</h2>
+            <p>A comprehensive program designed to launch careers in cybersecurity.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>The Package</h3>
+                    <ul>
+                        <li>System & Network Basics, Incident Response</li>
+                        <li>Advanced Topics: Cloud, AI in Defense, SIEM</li>
+                        <li>Practical Learning: Projects, Simulations, Virtual Labs</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Career Support</h3>
+                    <ul>
+                        <li>Resume & Interview Training</li>
+                        <li>Certification Assistance (CEH, CompTIA)</li>
+                        <li>Networking & Placement Drives</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Program Details</h3>
+                    <ul>
+                        <li>Duration: 0-3 months</li>
+                        <li>Eligibility: Fresh Graduates</li>
+                        <li>Score Requirement: Minimum 50%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Methodology -->
+        <div class="slide">
+            <h2>Training Methodology</h2>
+            <p>Our 3-Phase approach ensures deep learning and practical mastery.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Phase 1: Discovery</h3>
+                    <p>Workshops, basic coding/design principles, and introduction to industry tools. No prior
+                        experience needed.</p>
+                </div>
+                <div class="card">
+                    <h3>Phase 2: Application</h3>
+                    <p>Guided team projects focusing on practical problem-solving, Version Control (Git), and
+                        Agile/Scrum.</p>
+                </div>
+                <div class="card">
+                    <h3>Phase 3: Mastery</h3>
+                    <p>Advanced specializations (AI/ML, Cybersecurity), complex problem-solving, and industry
+                        mentorship.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Strategic Advantages -->
+        <div class="slide">
+            <h2>Why Choose Us?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Immersive Labs</h3>
+                    <p>Live cyber-range simulations and SOC war rooms replicate real-world defense environments.</p>
+                </div>
+                <div class="card">
+                    <h3>Mentor Collective</h3>
+                    <p>Guidance from Industry CISOs, Red Team leads, and cloud architects with tailored roadmaps.</p>
+                </div>
+                <div class="card">
+                    <h3>Outcome Blueprint</h3>
+                    <p>Structured playbooks aligning certification prep, competency benchmarks, and hiring pipelines.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Contact -->
+        <div class="slide">
+            <h2>Get In Touch</h2>
+            <p>Ready to Transform Your Career or Secure Your Business?</p>
+            <div class="card" style="text-align: center; max-width: 500px; align-items: center;">
+                <h3>Contact Us</h3>
+                <p style="text-align: center; margin-bottom: 1rem;">info@akulacybersec.com</p>
+                <p style="text-align: center;">www.akulacybersec.info</p>
+                <button style="margin-top: 2rem;" onclick="alert('Thank you for your interest!')">Request a
+                    Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+            const progressWidth = ((currentSlide + 1) / slides.length) * 100;
+            progress.style.width = `${progressWidth}%`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlide();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        updateSlide();
+    </script>
+</body>
+
+</html>
